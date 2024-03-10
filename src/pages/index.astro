@@ -1,10 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { ShipTable } from "@/components/ships/ship-table";
+import { columns } from "@/components/ships/columns";
+import { type ShipOverview } from "@/types/Ship";
+
+import { units } from "@/data/units";
+
 import "@/styles/globals.css";
 ---
 
 <Layout title="OPTC Ships">
-  <main></main>
+  <main>
+    <ShipTable data={units} columns={columns} client:load />
+  </main>
 </Layout>
 
 <style>
@@ -55,7 +63,16 @@ import "@/styles/globals.css";
   .G {
     background: orange;
   }
+  .SEMLA {
+    background: saddlebrown;
+  }
   .EMPTY {
     background: #777;
+  }
+
+  .badge {
+    border-radius: 4px;
+    padding: 2px;
+    vertical-align: text-bottom;
   }
 </style>
