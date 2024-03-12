@@ -1,21 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { ShipTable } from "@/components/ships/ship-table";
-import { columns } from "@/components/ships/columns";
-import { type ShipOverview } from "@/types/Ship";
-
-import { units } from "@/data/units";
-
+import { Ships } from "@/components/ships/ships";
 import "@/styles/globals.css";
 ---
 
 <Layout title="OPTC Ships">
-  <main>
-    <ShipTable data={units} columns={columns} client:load />
+  <main class="my-3">
+    <Ships client:load />
   </main>
 </Layout>
 
-<style>
+<style is:global>
   .STR {
     background: #f75252;
   }

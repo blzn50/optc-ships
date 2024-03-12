@@ -2,38 +2,41 @@
 import { ThemeToggle } from "@/components/ThemeToggle.tsx";
 ---
 
-<div class="sticky top-0 z-40 flex-none border-b">
-	<div class="container my-3 flex justify-between items-center">
-
-		<div>
-			<a class="flex items-center align-middle gap-x-1" href="/">
-				<span class="h-12 w-12">
-					<img src="/favicon.png" />
-				</span>
-				<h3 class="hidden md:inline-block text-2xl font-bold">OPTC Ships</h3>
-				
-			</a>
-		</div>
-		<!-- search bar -->
-		<ThemeToggle client:load />
-	</div>
+<div class="sticky top-0 z-40 w-full flex-none border-b bg-inherit">
+  <div class="container my-3 flex justify-between items-center">
+    <div>
+      <a class="flex items-center align-middle gap-x-1" href="/">
+        <span class="h-12 w-12">
+          <img src="/favicon.png" />
+        </span>
+        <h3 class="hidden md:inline-block text-2xl font-bold">OPTC Ships</h3>
+      </a>
+    </div>
+    <!-- search bar -->
+    <ThemeToggle client:load />
+  </div>
 </div>
 
 <script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')){
-			return localStorage.getItem('theme')
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark': 'light'
-	}
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add': 'remove']('dark')
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-	if(typeof localStorage !== 'undefined'){
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark': 'light')
-		})
-		observer.observe(document.documentElement, {attributes: true, attributeFilter: ['class']})
-	}
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
 </script>

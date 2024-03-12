@@ -1,10 +1,13 @@
 import { useState } from "react";
 import {
   type ColumnDef,
+  type SortingState,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import "lazysizes";
 
 import {
   Table,
@@ -14,6 +17,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
+import { Button } from "../ui/button";
 
 interface ShipTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -25,14 +30,25 @@ export function ShipTable<TData, TValue>({
   data,
 }: ShipTableProps<TData, TValue>) {
   const [columnVisibility, setColumnVisibility] = useState({});
+  const [sorting, setSorting] = useState<SortingState>([
+    {
+      id: "id",
+      desc: false,
+    },
+  ]);
+
   const table = useReactTable({
     data,
     columns,
     state: {
       columnVisibility,
+      sorting,
     },
-    onColumnVisibilityChange: setColumnVisibility,
+    enableSortingRemoval: false,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
+    onSortingChange: setSorting,
   });
 
   return (
@@ -43,12 +59,31 @@ export function ShipTable<TData, TValue>({
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <TableHead key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
+                  {header.isPlaceholder ? null : header.column.getCanSort() ? (
+                    <Button
+                      variant="link"
+                      className="break-words p-0 font-semibold"
+                      onClick={header.column.getToggleSortingHandler()}
+                    >
+                      {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
                       )}
+                      {{
+                        asc: <ArrowUp className="ml-2 h-4 w-4" />,
+                        desc: <ArrowDown className="ml-2 h-4 w-4" />,
+                      }[header.column.getIsSorted() as string] ?? (
+                        <ArrowUpDown className="ml-2 h-4 w-4 text-gray-400 dark:text-gray-500" />
+                      )}
+                    </Button>
+                  ) : (
+                    <>
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                    </>
+                  )}
                 </TableHead>
               ))}
             </TableRow>
