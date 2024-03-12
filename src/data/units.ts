@@ -34,7 +34,7 @@ export const units: ShipOverview[] = [
     colaCount: 15226,
     superColaCount: 20,
     effect:
-      "Boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV][SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV][SEMLA] slots, and allows crew to obtain [RCV][SEMLA] slots with PERFECT taps",
+      "Boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
     hasSpecial: false,
   },
   {
@@ -306,7 +306,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Boosts Powerhouse and Cerebral characters' ATK by 1.85x, HP by 1.5x, makes their [RCV][TND] slots have matching slot effects, and makes it much easier to land PERFECT strikes",
+      "Boosts Powerhouse and Cerebral characters' ATK by 1.85x, HP by 1.5x, makes their [RCV] [TND] slots have matching slot effects, and makes it much easier to land PERFECT strikes",
     hasSpecial: false,
   },
   {
@@ -349,7 +349,7 @@ export const units: ShipOverview[] = [
     colaCount: 15260,
     superColaCount: 20,
     effect:
-      "Boosts crew's chance of landing on own type slot, and boosts crew's HP by 1.5x. If Captain is a Driven or Powerhouse class, boosts STR, DEX, and QCK characters' ATK by 1.7x, if crew lands 3 PERFECT strikes in a row, boosts their ATK by approximately 1.8x, and allows STR, DEX, and QCK characters to obtain [RCV][SEMLA] slots with PERFECT taps",
+      "Boosts crew's chance of landing on own type slot, and boosts crew's HP by 1.5x. If Captain is a Driven or Powerhouse class, boosts STR, DEX, and QCK characters' ATK by 1.7x, if crew lands 3 PERFECT strikes in a row, boosts their ATK by approximately 1.8x, and allows STR, DEX, and QCK characters to obtain [RCV] [SEMLA] slots with PERFECT taps",
     hasSpecial: true,
   },
   {
@@ -358,7 +358,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Boosts crew's chance of landing on [RCV][TND] slots. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.7x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV][TND] slots, and makes it a little easier to land PERFECT strikes",
+      "Boosts crew's chance of landing on [RCV] [TND] slots. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.7x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
     hasSpecial: false,
   },
   {
@@ -419,7 +419,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have Rainbow, [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
+      "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
     hasSpecial: false,
   },
   {
@@ -445,7 +445,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 0,
     effect:
-      "Boosts crew's HP by 1.2x, slightly boosts crew's chance of landing on [TND] slots, and if Captain is a STR or DEX type, boosts crew's ATK by approximately 1.65x when they have [TND][BOMB][S. BOMB][WANO] slots (1.55x otherwise)",
+      "Boosts crew's HP by 1.2x, slightly boosts crew's chance of landing on [TND] slots, and if Captain is a STR or DEX type, boosts crew's ATK by approximately 1.65x when they have [TND] [BOMB] [SUPERBOMB] [WANO] slots (1.55x otherwise)",
     hasSpecial: true,
   },
   {
@@ -472,7 +472,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn, boosts Free Spirit and Slasher characters' ATK by 1.7x, HP by 1.3x, makes their [RCV][TND] slots have matching slot effects, makes it much easier to land PERFECT strikes, boosts QCK and PSY characters' ATK by a further 1.1x, and heals crew by 1,000 HP at end of turn",
+      "Reduces Special charge time by 1 turn, boosts Free Spirit and Slasher characters' ATK by 1.7x, HP by 1.3x, makes their [RCV] [TND] slots have matching slot effects, makes it much easier to land PERFECT strikes, boosts QCK and PSY characters' ATK by a further 1.1x, and heals crew by 1,000 HP at end of turn",
     hasSpecial: true,
   },
   {
@@ -481,7 +481,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, makes crew's [TND][RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
     hasSpecial: false,
   },
   {
@@ -499,7 +499,7 @@ export const units: ShipOverview[] = [
     colaCount: 15500,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts Shooter characters' ATK by 1.9x, HP by 1.25x, makes crew's [PSY][INT] slots have matching slot effects, and makes it much easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts Shooter characters' ATK by 1.9x, HP by 1.25x, makes crew's [PSY] [INT] slots have matching slot effects, and makes it much easier to land PERFECT strikes",
     hasSpecial: false,
   },
   {
@@ -508,7 +508,7 @@ export const units: ShipOverview[] = [
     colaCount: 15500,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x (~2.1875x), makes crew's [PSY][DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x (~2.1875x), makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
     hasSpecial: false,
   },
   {
@@ -517,7 +517,7 @@ export const units: ShipOverview[] = [
     colaCount: 15500,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.7x, HP by 1.4x, boosts their ATK by approximately 2x when they have [G] or Rainbow slots, boosts amount of Berries earned by 3x, and if every class is on the crew and crew launches a Special to set the chain multiplier, extends it by 1 turn",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.7x, HP by 1.4x, boosts their ATK by approximately 2x when they have [G] or [RAINBOW] slots, boosts amount of Berries earned by 3x, and if every class is on the crew and crew launches a Special to set the chain multiplier, extends it by 1 turn",
     hasSpecial: false,
   },
 ];
