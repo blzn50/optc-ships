@@ -8,6 +8,7 @@ export const columns: ColumnDef<ShipOverview>[] = [
   {
     accessorKey: "id",
     header: "Ship ID",
+    size: 80,
   },
   {
     accessorKey: "name",
@@ -16,7 +17,6 @@ export const columns: ColumnDef<ShipOverview>[] = [
       const shipId = String(row.getValue("id"));
       const shipName = String(row.getValue("name"));
       const shipIcon = getShipThumbnail(shipId);
-
       return (
         <div className="flex items-center gap-1">
           <img
@@ -29,6 +29,7 @@ export const columns: ColumnDef<ShipOverview>[] = [
         </div>
       );
     },
+    size: 200,
   },
   {
     accessorKey: "colaCount",
@@ -36,12 +37,19 @@ export const columns: ColumnDef<ShipOverview>[] = [
     cell: ({ row }) => {
       const count = parseInt(row.getValue("colaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return formatted;
+      return <span>{formatted}</span>;
     },
+    size: 100,
   },
   {
     accessorKey: "superColaCount",
     header: "Super Cola Needed",
+    cell: ({ row }) => {
+      const count = parseInt(row.getValue("superColaCount"));
+      const formatted = new Intl.NumberFormat("en-US").format(count);
+      return <span>{formatted}</span>;
+    },
+    size: 125,
   },
   {
     accessorKey: "effect",
@@ -53,17 +61,15 @@ export const columns: ColumnDef<ShipOverview>[] = [
       const text = replaceAndSanitizeText(effectText);
       return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
     },
+    size: 300,
   },
   {
     accessorKey: "hasSpecial",
     header: "Special",
     cell: ({ row }) => {
       const shipId = Boolean(row.getValue("hasSpecial"));
-      return (
-        <div className="flex justify-center">
-          {shipId ? <Check size={16} /> : "-"}
-        </div>
-      );
+      return shipId ? <Check size={16} /> : "-";
     },
+    size: 80,
   },
 ];

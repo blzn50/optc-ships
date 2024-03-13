@@ -18,7 +18,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
-import { Button } from "../ui/button";
 
 interface ShipTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -58,24 +57,27 @@ export function ShipTable<TData, TValue>({
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <TableHead key={header.id}>
+                <TableHead
+                  key={header.id}
+                  className="px-2"
+                  style={{
+                    minWidth: header.getSize(),
+                  }}
+                  onClick={header.column.getToggleSortingHandler()}
+                >
                   {header.isPlaceholder ? null : header.column.getCanSort() ? (
-                    <Button
-                      variant="link"
-                      className="break-words p-0 font-semibold"
-                      onClick={header.column.getToggleSortingHandler()}
-                    >
+                    <span className="text-foreground flex items-center justify-between cursor-pointer font-semibold hover:underline">
                       {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
                       )}
                       {{
-                        asc: <ArrowUp className="ml-2 h-4 w-4" />,
-                        desc: <ArrowDown className="ml-2 h-4 w-4" />,
+                        asc: <ArrowUp className="h-4 w-4" />,
+                        desc: <ArrowDown className="h-4 w-4" />,
                       }[header.column.getIsSorted() as string] ?? (
-                        <ArrowUpDown className="ml-2 h-4 w-4 text-gray-400 dark:text-gray-500" />
+                        <ArrowUpDown className="h-4 w-4 text-gray-400 dark:text-gray-500" />
                       )}
-                    </Button>
+                    </span>
                   ) : (
                     <>
                       {flexRender(
@@ -92,12 +94,9 @@ export function ShipTable<TData, TValue>({
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
+              <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className="px-2">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
