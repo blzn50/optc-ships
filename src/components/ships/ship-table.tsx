@@ -62,11 +62,11 @@ export function ShipTable<TData, TValue>({
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="hover:bg-inherit">
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
-                    className="px-2"
+                    className={`px-2 ${header.index % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
                     style={{
                       minWidth: header.getSize(),
                     }}
@@ -101,9 +101,12 @@ export function ShipTable<TData, TValue>({
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id}>
+                <TableRow key={row.id} className="hover:bg-inherit">
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="px-2">
+                    <TableCell
+                      key={cell.id}
+                      className={`px-2 ${cell.column.getIndex() % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
