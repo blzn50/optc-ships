@@ -234,7 +234,7 @@ export const units: ShipOverview[] = [
   {
     id: 27,
     name: "Kizaru's Arrival Cannonball - Sabaody in Chaos",
-    colaCount: 15256,
+    colaCount: 256,
     superColaCount: 0,
     effect:
       "Boosts Shooter characters' ATK by 1.55x and HP by 1.2x, reduces their CD by 2 at the start of battle",
@@ -337,7 +337,7 @@ export const units: ShipOverview[] = [
   {
     id: 40,
     name: "Nostra Castello",
-    colaCount: 15244,
+    colaCount: 244,
     superColaCount: 0,
     effect:
       "Boosts ATK by 1.55x and HP by 1.3x and makes it a little easier to hit PERFECTs, cuts the current HP of all enemies by 3% at the end of the turn, reduces crew's ATK if you have a Slasher, Free Spirit or Powerhouse characters in your crew",
@@ -442,7 +442,7 @@ export const units: ShipOverview[] = [
   {
     id: 53,
     name: "Victoria Punk",
-    colaCount: 15202,
+    colaCount: 202,
     superColaCount: 0,
     effect:
       "Boosts crew's HP by 1.2x, slightly boosts crew's chance of landing on [TND] slots, and if Captain is a STR or DEX type, boosts crew's ATK by approximately 1.65x when they have [TND] [BOMB] [SUPERBOMB] [WANO] slots (1.55x otherwise)",
