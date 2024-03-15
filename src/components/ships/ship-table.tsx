@@ -30,6 +30,7 @@ export function ShipTable<TData, TValue>({
   columns,
   data,
 }: ShipTableProps<TData, TValue>) {
+  const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 15 });
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "id",
@@ -42,17 +43,13 @@ export function ShipTable<TData, TValue>({
     columns,
     state: {
       sorting,
-    },
-    initialState: {
-      pagination: {
-        pageIndex: 0,
-        pageSize: 15,
-      },
+      pagination,
     },
     enableSortingRemoval: false,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    onPaginationChange: setPagination,
     onSortingChange: setSorting,
   });
 
@@ -130,22 +127,30 @@ export function ShipTable<TData, TValue>({
       </div>
 
       <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
+        <div className="flex-1 text-sm">
+          Showing {pagination.pageIndex + 1} to{" "}
+          {pagination.pageSize * (pagination.pageIndex + 1)} of{" "}
+          {table.getFilteredRowModel().rows.length}{" "}
+          {table.getFilteredRowModel().rows.length === 1 ? "entry" : "entries"}
+        </div>
+        <div className="space-x-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     </div>
   );
