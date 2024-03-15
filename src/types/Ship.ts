@@ -8,6 +8,7 @@ export type ShipOverview = {
 };
 
 export type ShipBasic = {
+  name: string;
   obtain: string;
   note?: string;
   specialEffect1?: string;

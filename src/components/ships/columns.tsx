@@ -2,15 +2,8 @@ import { type ColumnDef } from "@tanstack/react-table";
 import { Check } from "lucide-react";
 
 import type { ShipOverview } from "@/types/Ship";
-import {
-  flattenShipData,
-  getShipThumbnail,
-  replaceAndSanitizeText,
-} from "@/lib/utils";
-import { Dialog, DialogTrigger } from "../ui/dialog";
-import { ShipDetail } from "../shipDetail/ship-detail";
-import { shipDetailColumns } from "../shipDetail/columns";
-import { details } from "@/data/details";
+import { getShipThumbnail, replaceAndSanitizeText } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
   {
@@ -22,6 +15,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => {
+      const navigate = useNavigate();
       const shipId = String(row.getValue("id"));
       const shipName = String(row.getValue("name"));
       const shipIcon = getShipThumbnail(shipId);
@@ -33,28 +27,12 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
             data-src={`/${shipIcon}`}
             alt={shipName}
           />
-          <Dialog>
-            <DialogTrigger asChild>
-              <a
-                className="text-blue-500 hover:text-blue-700 hover:underline text-left"
-                // href={`/#/view/${shipId}`}
-              >
-                {shipName}
-              </a>
-            </DialogTrigger>
-            <ShipDetail
-              columns={shipDetailColumns}
-              data={flattenShipData(details[parseInt(shipId)])}
-              ship={{
-                id: shipId,
-                name: shipName,
-                obtain: details[parseInt(shipId)].obtain,
-                note: details[parseInt(shipId)].note,
-                specialEffect1: details[parseInt(shipId)].specialEffect1,
-                specialEffect2: details[parseInt(shipId)].specialEffect2,
-              }}
-            />
-          </Dialog>
+          <a
+            className="text-blue-500 hover:text-blue-700 hover:underline text-left cursor-pointer"
+            onClick={() => navigate(`view/${shipId}`)}
+          >
+            {shipName}
+          </a>
         </div>
       );
     },

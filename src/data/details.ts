@@ -2,7 +2,7 @@ import type { ShipInfo } from "@/types/Ship";
 
 export const details: Record<number, ShipInfo> = {
   1: {
-    // Dinghy
+    name: "Dinghy",
     obtain: "",
     cola: [0, 2, 2, 4, 4, 6, 6, 8, 8, 8, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -24,7 +24,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   2: {
-    // Merry Go
+    name: "Merry Go",
     obtain: "Clear Syrup Village",
     cola: [0, 3, 3, 5, 5, 7, 7, 9, 9, 9, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -46,7 +46,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   3: {
-    // Navy Ship
+    name: "Navy Ship",
     obtain: "Clear Arlong Park",
     cola: [0, 6, 6, 10, 10, 14, 23, 30, 45, 90, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -68,7 +68,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Paralysis duration by 1 turn",
   },
   4: {
-    // Baratie
+    name: "Baratie",
     obtain: "Clear Baratie",
     cola: [0, 3, 4, 7, 10, 14, 23, 30, 45, 90, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -90,7 +90,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Changes crew's [TND] slots into [SEMLA] slots",
   },
   5: {
-    // Coffin Boat
+    name: "Coffin Boat",
     obtain: "Clear Forest of Training: Hawk",
     cola: [0, 7, 7, 11, 14, 19, 25, 45, 100, 100, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -113,7 +113,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   6: {
-    // Miss Love Duck
+    name: "Miss Love Duck",
     obtain: "Complete all Alvida's Hideout Missions",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -136,7 +136,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Boosts Striker characters' HP by 1.3x",
   },
   7: {
-    // Going Merry - flying model
+    name: "Going Merry - Flying Model",
     obtain: "Clear Jaya",
     cola: [0, 3, 5, 8, 10, 15, 23, 29, 40, 100, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -158,7 +158,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Despair duration by 1 turn",
   },
   8: {
-    // Moby Dick
+    name: "Moby Dick",
     obtain: "Clear Forest of Training: Beard",
     cola: [0, 9, 10, 14, 16, 20, 27, 45, 100, 139, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -180,7 +180,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces damage taken by 20% when HP is 50% or below",
   },
   9: {
-    // Big Top
+    name: "Big Top",
     obtain: "Complete all Orange Town Missions",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -204,7 +204,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts ATK by a further 1.1x for characters with a Cost of 40 or less",
   },
   10: {
-    // Bezan Black
+    name: "Bezan Black",
     obtain: "Complete all Syrup Village Missions",
     cola: [0, 7, 7, 7, 13, 20, 20, 30, 38, 38, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -226,7 +226,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Despair duration by 1 turn",
   },
   11: {
-    // Aokiji's Bicycle
+    name: "Aokiji's Bicycle",
     obtain: "Clear Forest of Training: Pheasant",
     cola: [0, 25, 25, 25, 25, 31, 31, 42, 42, 63, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -249,7 +249,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   12: {
-    // Striker
+    name: "Striker",
     obtain: "Clear Forest of Training: Flame Fist",
     cola: [0, 17, 17, 17, 17, 24, 24, 24, 50, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -272,7 +272,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Boosts damage dealt to Ignited enemies by 1.05x",
   },
   13: {
-    // Thousand Sunny
+    name: "Thousand Sunny",
     obtain: "Clear Enies Lobby: Tower of Law - Gates of Justice",
     cola: [0, 7, 8, 8, 14, 20, 20, 30, 36, 45, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -309,7 +309,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   14: {
-    // Dreadnaught Sabre
+    name: "Dreadnaught Sabre",
     obtain: "Complete all Baratie Missions",
     cola: [0, 8, 10, 12, 14, 16, 18, 21, 24, 27, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -331,7 +331,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Boosts Driven and Powerhouse characters' ATK by 200",
   },
   15: {
-    // Kuja Pirate Ship
+    name: "Kuja Pirate Ship",
     obtain: "Clear Forest of Training: Snake",
     note: "HP reduction value is 99% at every level",
     cola: [0, 18, 20, 22, 24, 26, 28, 30, 34, 40, 5000, 10000],
@@ -371,7 +371,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces crew's decrease chain multiplier growth rate duration by 2 turns",
   },
   16: {
-    // Ark Maxim
+    name: "Ark Maxim",
     obtain: "Clear Forest of Training: Kami",
     cola: [0, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -409,7 +409,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Paralysis duration by 1 turn",
   },
   17: {
-    // Red Force
+    name: "Red Force",
     obtain: "Clear Forest of Training: Red Hair",
     cola: [0, 20, 20, 20, 24, 24, 28, 32, 36, 40, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -431,7 +431,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces ATK Down duration by 1 turn",
   },
   18: {
-    // Thousand Sunny - 2nd Anniversary Model
+    name: "Thousand Sunny - 2nd Anniversary Model",
     obtain: "Clear the limited time quest during 2nd Anniversary",
     period: ["During 2nd Anniversary", "After 2nd Anniversary"],
     effect: [
@@ -440,7 +440,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   19: {
-    // Sun Pirates Ship
+    name: "Sun Pirates Ship",
     obtain: "Clear Forest of Training: Sun",
     cola: [0, 5, 7, 8, 10, 12, 14, 24, 35, 53, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -463,7 +463,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Fighter characters' Special charge time by 1 turn at start of quest",
   },
   20: {
-    // Donquixote Pirates Ship
+    name: "Donquixote Pirates Ship",
     obtain: "Clear Forest of Training: Heavenly Demon",
     cola: [0, 10, 16, 36, 44, 50, 50, 50, 50, 63, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -502,7 +502,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts the chain multiplier growth rate of ship's Special by +1.2",
   },
   21: {
-    // Rocketman
+    name: "Rocketman",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
     note: "Drastically reduces HP of non-Powerhouse characters in your crew (99%)",
     cola: [0, 2, 4, 6, 10, 14, 22, 26, 49, 95, 5000, 10000],
@@ -541,7 +541,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Paralysis duration by 1 turn",
   },
   22: {
-    // Moby Dick - Paramount War Version
+    name: "Moby Dick - Paramount War Version",
     obtain: "Clear the limited time Marineford Event Quest",
     period: ["During Marineford Campaign", "After Marineford Campaign"],
 
@@ -553,7 +553,7 @@ export const details: Record<number, ShipInfo> = {
     cd: [18, "-"],
   },
   23: {
-    // Garp's Battleship
+    name: "Garp's Battleship",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points.",
     cola: [0, 21, 21, 21, 21, 21, 21, 21, 21, 21, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -577,7 +577,7 @@ export const details: Record<number, ShipInfo> = {
       "If crew uses a Special to set the chain multiplier, extends the duration of that effect by 1 turn",
   },
   24: {
-    // Polar Tang
+    name: "Polar Tang",
     obtain: "Clear Forest of Training: ROOM",
     cola: [0, 14, 14, 21, 21, 40, 40, 40, 50, 60, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -615,7 +615,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Free Spirit and Slasher characters' Special charge time by 1 turn at start of quest",
   },
   25: {
-    // Big Top - Grand Line Feast
+    name: "Big Top - Grand Line Feast",
     obtain: "Clear the limited time Holiday event quest.",
     period: ["During Holiday Campaign", "After Holiday Campaign"],
 
@@ -625,7 +625,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   26: {
-    // Thousand Sunny - Coated Vessel
+    name: "Thousand Sunny - Coated Vessel",
     obtain: "Clear Sabaody Part 2",
     cola: [0, 11, 11, 11, 11, 11, 17, 17, 28, 39, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -662,7 +662,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   27: {
-    // Kizaru's Arrival Cannonball - Sabaody in Chaos
+    name: "Kizaru's Arrival Cannonball - Sabaody in Chaos",
     obtain: "Clear Forest of Training: Monkey",
     cola: [0, 8, 12, 16, 24, 28, 32, 36, 40, 60],
     effect: [
@@ -692,7 +692,7 @@ export const details: Record<number, ShipInfo> = {
     cd: [20, 19, 19, 19, 18, 18, 18, 16, 16, 15],
   },
   28: {
-    //  Mister Luffy Go
+    name: "Mister Luffy Go",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
     note: "Damage reduction amount is estimated to be 97%.",
     cola: [0, 1, 5, 9, 13, 19, 25, 32, 40, 50, 5000, 10000],
@@ -731,7 +731,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's HP by 1.6x when 6 Striker characters are on the crew",
   },
   29: {
-    // Thriller Bark
+    name: "Thriller Bark",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
     cola: [0, 16, 17, 18, 19, 20, 21, 25, 30, 38, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -754,7 +754,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Extends the duration of slot effect boosts by 1 turn",
   },
   30: {
-    // Karasumaru
+    name: "Karasumaru",
     obtain:
       "Clear the limited-time 4-Stamina Usopp Training Forest (Forest of Training: Nose?!)",
     period: ["During Campaign", "After Campaign"],
@@ -767,7 +767,7 @@ export const details: Record<number, ShipInfo> = {
     cd: [12, 16],
   },
   32: {
-    // Thousand Sunny - Special Anniversary Model
+    name: "Thousand Sunny - Special Anniversary Model",
     obtain: "Clear the limited time quest during 3rd anniversary.",
     period: [
       "3rd Anniversary Part 1",
@@ -782,7 +782,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   33: {
-    // Flying Dutchman
+    name: "Flying Dutchman",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
     cola: [0, 1, 4, 5, 7, 11, 12, 14, 20, 22, 24, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -819,7 +819,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   34: {
-    //  Marshall D. Teach's Pirate Ship
+    name: "Marshall D. Teach's Pirate Ship",
     obtain: "Clear Forest of Training: Darkness",
     cola: [0, 26, 26, 27, 27, 27, 27, 28, 28, 28, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -841,7 +841,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   35: {
-    // Revolutionary Army Blackbirds
+    name: "Revolutionary Army Blackbirds",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
     cola: [0, 13, 14, 15, 16, 17, 18, 21, 22, 63, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -864,7 +864,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest",
   },
   36: {
-    // Zunesha
+    name: "Zunesha",
     obtain: "Clear the 30 Gem unlockable Zunesha Isle",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -886,7 +886,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special Bind duration by 1 turn",
   },
   37: {
-    // Sexy Foxy
+    name: "Sexy Foxy",
     obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
     cola: [0, 5, 9, 14, 18, 23, 28, 32, 37, 42, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -908,7 +908,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   38: {
-    // Laboon
+    name: "Laboon",
     obtain: "Clear the limited time New Year campaign quest",
     period: ["During Campaign", "After Campaign"],
     effect: [
@@ -917,7 +917,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   39: {
-    // Thousand Sunny - 4th Anniversary Model
+    name: "Thousand Sunny - 4th Anniversary Model",
     obtain: "Clear the limited time 4th Anniversary campaign quest",
     period: [
       "4th Anniversary Part 1",
@@ -934,7 +934,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   40: {
-    // Nostra Castello
+    name: "Nostra Castello",
     obtain: "Clear Forest of Training: Gang",
     note: "Your crew's attack is reduced by 50% for every instance of a Powerhouse/Slasher/Free Spirit class on your crew, which can stack even from the same unit if they have two of the mentioned classes",
     cola: [0, 26, 26, 27, 27, 27, 27, 28, 28, 28],
@@ -952,7 +952,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   41: {
-    // Queen Mama Chanter
+    name: "Queen Mama Chanter",
     obtain:
       "Clear Big Mom's 0-Stamina Training Forest (Forest of Training: Mama)",
     cola: [0, 10, 13, 20, 20, 27, 40, 30, 40, 60, 5000, 10000],
@@ -991,7 +991,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Changes crew's [RCV] slots to [SEMLA] slots",
   },
   42: {
-    // Germa 66 Ship
+    name: "Germa 66 Ship",
     obtain: "Clear the 30 gem unlockable Germa Ship Isle",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1013,7 +1013,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special Reverse by 1 turn",
   },
   43: {
-    // Going Merry - 5th Anniversary Model
+    name: "Going Merry - 5th Anniversary Model",
     obtain: "Clear the limited time 5th Anniversary campaign quest",
     period: [
       "5th Anniversary Part 1",
@@ -1028,6 +1028,7 @@ export const details: Record<number, ShipInfo> = {
     ],
   },
   44: {
+    name: "Hoe",
     obtain: "Clear the 30 gem unlockable Hoe Isle",
     cola: [0, 10, 12, 14, 18, 23, 29, 37, 48, 65, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1064,6 +1065,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   45: {
+    name: "Megalo",
     obtain: "Clear the 30 gem unlockable Megalo Isle",
     cola: [0, 8, 10, 12, 16, 20, 26, 33, 44, 63, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1101,13 +1103,13 @@ export const details: Record<number, ShipInfo> = {
       "Boosts top-row characters' ATK by 1.7x, and reduces the duration of healing effect converted to damage effect by 1 turn",
   },
   46: {
-    // Thousand Sunny - Flying Model
+    name: "Thousand Sunny - Flying Model",
     obtain: "Clear the limited time STAMPEDE Movie Collaboration Isle",
     period: ["During collaboration event", "After collaboration event"],
     effect: ["Boosts ATK and EXP gained by 1.5x", "Boosts ATK by 1.2x"],
   },
   47: {
-    // Piece of Spadille
+    name: "Piece of Spadille",
     obtain:
       "Clear Ultimate difficulty of the Raid Ace event isle once during it's debut",
     cola: [0, 8, 10, 12, 16, 20, 26, 33, 44, 63, 5000, 10000],
@@ -1130,6 +1132,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Despair duration by 1 turn",
   },
   48: {
+    name: "Giant Koi",
     obtain: "Clear the 30 gem unlockable Giant Koi Ship Isle",
     note: "The actual HP threshold requirement is >99%, not 100%. The ship's multiplier is also able to change during the turn, as the HP condition is not 'at the start of the turn'.",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
@@ -1167,7 +1170,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Heals crew by 2,000 HP at end of turn",
   },
   49: {
-    // Grudge Dolph
+    name: "Grudge Dolph",
     obtain: "Clear Forest of Training: Straw",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1189,7 +1192,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special Bind duration by 1 turn",
   },
   50: {
-    // Going Merry - Farewell Edition
+    name: "Going Merry - Farewell Edition",
     obtain: "Clear the limited-time Merry Adventure quest",
     period: ["During campaign period", "After campaign period"],
     effect: [
@@ -1200,7 +1203,7 @@ export const details: Record<number, ShipInfo> = {
     cd: [12, "-"],
   },
   51: {
-    // Shark Superb
+    name: "Shark Superb",
     obtain: "Clear the 30 gem unlockable Arlong Ship Isle",
     cola: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1222,7 +1225,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   53: {
-    // Victoria Punk
+    name: "Victoria Punk",
     obtain: "Clear Forest of Training: Magnetic Field",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50],
     effect: [
@@ -1252,6 +1255,7 @@ export const details: Record<number, ShipInfo> = {
     cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 10],
   },
   54: {
+    name: "Liberal Hind",
     obtain: "Clear the 30 gem unlockable Liberal Hind Ship Isle",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1288,6 +1292,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
   55: {
+    name: "Nostra Castello (Amphibious)",
     obtain:
       "Clear the 30 gem unlockable Nostra Castello (Amphibious) Ship Isle",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
@@ -1310,6 +1315,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Heals crew by 2,000 HP at end of turn",
   },
   56: {
+    name: "Oro Jackson",
     obtain: "Clear the 30 gem unlockable Oro Jackson Ship Isle",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1347,6 +1353,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces crew's Bind duration by 2 turns when using ship Special",
   },
   59: {
+    name: "Whale Shark",
     obtain: "Clear the 30 gem unlockable Whale Shark Ship Isle",
     cola: [0, 6, 9, 12, 15, 18, 23, 30, 39, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1368,6 +1375,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   61: {
+    name: "Shiki's Island Ship",
     obtain: "Clear the 30 gem unlockable Shiki's Island Ship Isle",
     cola: [0, 5, 9, 16, 26, 36, 56, 86, 116, 150, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1389,7 +1397,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
   62: {
-    // White Tiger Ship
+    name: "White Tiger",
     obtain: "Purchase from Kizuna Insignia Exchange for 200 insignias",
     cola: [0, 5, 9, 16, 26, 36, 56, 86, 116, 150, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1412,6 +1420,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Reduces Crew's Paralysis by 1 turn",
   },
   63: {
+    name: "Catapult",
     obtain: "Clear the 30 gem unlockable Catapult Ship Isle",
     cola: [0, 5, 9, 16, 26, 36, 56, 86, 116, 150, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1433,7 +1442,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect2: "Passively boosts Fighter characters' base ATK by 200",
   },
   64: {
-    // Gran Tesoro Ship
+    name: "Gran Tesoro",
     obtain: "Purchase from Treasure Bazaar for 20,000 tickets",
     cola: [0, 5, 9, 16, 26, 36, 56, 86, 116, 150, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
