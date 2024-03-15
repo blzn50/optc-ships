@@ -7,15 +7,25 @@ export type ShipOverview = {
   hasSpecial: boolean;
 };
 
-export type ShipDetail = {
+export type ShipBasic = {
   obtain: string;
-  cola: number[];
-  superCola?: (number | string)[];
-  effect: string[];
   note?: string;
-  period?: string[];
-  special?: string[];
-  cd?: (number | string)[];
   specialEffect1?: string;
   specialEffect2?: string;
 };
+
+export type ShipInfo = ShipBasic & {
+  cola?: number[];
+  superCola?: number[];
+  effect: string[];
+  period?: string[];
+  special?: string[];
+  cd?: (number | string)[];
+};
+
+export type ShipDetail = Pick<ShipOverview, "effect"> &
+  Partial<Pick<ShipOverview, "colaCount" | "superColaCount">> & {
+    period?: string;
+    special?: string;
+    cd?: number | string;
+  };

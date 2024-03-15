@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import type { ShipDetail, ShipInfo } from "@/types/Ship";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -67,4 +68,27 @@ export function replaceAndSanitizeText(text: string) {
       /\[TND\]/g,
       '<span class="px-1 rounded text-xs font-semibold align-text-bottom text-white TND">TND</span>',
     );
+}
+
+export function replaceAndSanitizeSpecial(text: string) {
+  return text.replace(
+    /\[THRESHOLD_DAMAGE_CUT\]/,
+    '<img class="w-4 h-4 inline" src="/threshold_damagecut.png" alt="threshold damage cut" />',
+  );
+}
+
+export function flattenShipData(shipInfo: ShipInfo) {
+  const shipDetail: ShipDetail[] = [];
+  for (let index = 0; index < shipInfo.effect.length; index++) {
+    const tempDetail = {
+      effect: shipInfo.effect[index],
+      ...(shipInfo.superCola && { superColaCount: shipInfo.superCola[index] }),
+      ...(shipInfo.cola && { colaCount: shipInfo.cola[index] }),
+      ...(shipInfo.cd && { cd: shipInfo.cd[index] }),
+      ...(shipInfo.period && { period: shipInfo.period[index] }),
+      ...(shipInfo.special && { special: shipInfo.special[index] }),
+    };
+    shipDetail.push(tempDetail);
+  }
+  return shipDetail;
 }

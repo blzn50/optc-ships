@@ -66,7 +66,7 @@ export function ShipTable<TData, TValue>({
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
-                    className={`px-2 ${header.index % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
+                    className={`p-2 ${header.index % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
                     style={{
                       minWidth: header.getSize(),
                     }}
@@ -105,7 +105,7 @@ export function ShipTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={`px-2 ${cell.column.getIndex() % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
+                      className={`p-2 ${cell.column.getIndex() % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
