@@ -1,5 +1,3 @@
-import { Outlet } from "react-router-dom";
-
 import { ShipTable } from "@/components/ships/ship-table.tsx";
 import { shipsColumns } from "@/components/ships/columns.tsx";
 import { units } from "@/data/units";
@@ -8,10 +6,5 @@ import { units } from "@/data/units";
 // https://github.com/withastro/astro/issues/7709. Table from shadcn is causing issue with hydration if header
 // or cell is custom formatted.
 export function Ships() {
-  return (
-    <>
-      <ShipTable data={units} columns={shipsColumns} />
-      <Outlet />
-    </>
-  );
+  return <ShipTable data={units} columns={shipsColumns} />;
 }

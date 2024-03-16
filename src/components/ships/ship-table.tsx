@@ -2,12 +2,15 @@ import { useState } from "react";
 import {
   type ColumnDef,
   type SortingState,
+  type FilterFn,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { useStore } from "@nanostores/react";
 import "lazysizes";
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 
@@ -20,11 +23,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { searchVal } from "@/searchStore";
 
 interface ShipTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
+
+const fuzzyFilter: FilterFn<any> = (row, columnId, value, _) => {
+  const toMatch = new RegExp(value, "i");
+  const itemRank = (row.getValue(columnId) as string).search(toMatch);
+  return itemRank > -1;
+};
 
 export function ShipTable<TData, TValue>({
   columns,
@@ -38,17 +48,26 @@ export function ShipTable<TData, TValue>({
     },
   ]);
 
+  const $searchVal = useStore(searchVal);
+
   const table = useReactTable({
     data,
     columns,
+    filterFns: {
+      fuzzy: fuzzyFilter,
+    },
     state: {
       sorting,
       pagination,
+      globalFilter: $searchVal,
     },
+    globalFilterFn: fuzzyFilter,
     enableSortingRemoval: false,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    onGlobalFilterChange: searchVal.set,
     onPaginationChange: setPagination,
     onSortingChange: setSorting,
   });
@@ -129,10 +148,16 @@ export function ShipTable<TData, TValue>({
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm">
           Showing {pagination.pageIndex + 1} to{" "}
-          {pagination.pageSize * (pagination.pageIndex + 1)} of{" "}
-          {table.getFilteredRowModel().rows.length}{" "}
+          {table.getFilteredRowModel().rows.length < pagination.pageSize
+            ? table.getFilteredRowModel().rows.length
+            : pagination.pageSize * (pagination.pageIndex + 1)}{" "}
+          of {table.getFilteredRowModel().rows.length}{" "}
           {table.getFilteredRowModel().rows.length === 1 ? "entry" : "entries"}
+          {!!$searchVal &&
+            ` (filtered from ${table.getPreFilteredRowModel().rows.length} total
+            entries)`}
         </div>
+        <div className="flex-1 text-sm"></div>
         <div className="space-x-2">
           <Button
             variant="outline"
