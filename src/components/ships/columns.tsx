@@ -10,6 +10,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     accessorKey: "id",
     header: "Ship ID",
     size: 80,
+    enableGlobalFilter: false,
   },
   {
     accessorKey: "name",
@@ -46,6 +47,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
       const formatted = new Intl.NumberFormat("en-US").format(count);
       return <span>{formatted}</span>;
     },
+    enableGlobalFilter: false,
     size: 100,
   },
   {
@@ -56,6 +58,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
       const formatted = new Intl.NumberFormat("en-US").format(count);
       return <span>{formatted}</span>;
     },
+    enableGlobalFilter: false,
     size: 125,
   },
   {
@@ -77,6 +80,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
       const shipId = Boolean(row.getValue("hasSpecial"));
       return shipId ? <Check size={16} /> : "-";
     },
+    enableGlobalFilter: false,
     size: 80,
   },
 ];
