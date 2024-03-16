@@ -35,8 +35,6 @@ export function ShipDetail() {
 
   const data = useMemo(() => {
     return flattenShipData(details[parseInt(shipId)]);
-
-    return [];
   }, [shipId]);
 
   return (
