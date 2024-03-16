@@ -2,7 +2,7 @@
 import App from "../index.astro";
 import type { GetStaticPaths } from "astro";
 
-import { details } from "../../data/details";
+import { details } from "@/data/details";
 
 export const getStaticPaths = (() => {
   const ids = Object.keys(details);
