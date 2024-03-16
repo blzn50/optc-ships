@@ -1,12 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { CSRApp } from "../components/Router";
+import Layout from "@/layouts/Layout.astro";
+import App from "@/components/App.tsx";
+
 import "@/styles/globals.css";
 ---
 
 <Layout title="OPTC Ships">
   <main class="my-3">
-    <CSRApp client:only />
+    <App client:only />
   </main>
 </Layout>
 
