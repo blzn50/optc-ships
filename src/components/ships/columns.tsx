@@ -1,9 +1,9 @@
 import { type ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 
-import type { ShipOverview } from "@/types/Ship";
 import { getShipThumbnail, replaceAndSanitizeText } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
+import type { ShipOverview } from "@/types/Ship";
 
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
   {
@@ -16,7 +16,6 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => {
-      const navigate = useNavigate();
       const shipId = String(row.getValue("id"));
       const shipName = String(row.getValue("name"));
       const shipIcon = getShipThumbnail(shipId);
@@ -26,14 +25,14 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
             className="w-14 h-14 lazyload"
             loading="lazy"
             data-src={`/${shipIcon}`}
-            alt={shipName}
+            alt={`${shipName} thumbnail`}
           />
-          <a
+          <Link
             className="text-blue-500 hover:text-blue-700 hover:underline text-left cursor-pointer"
-            onClick={() => navigate(`view/${shipId}`)}
+            to={`view/${shipId}`}
           >
             {shipName}
-          </a>
+          </Link>
         </div>
       );
     },
