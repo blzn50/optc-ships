@@ -3,8 +3,8 @@ import { ThemeToggle } from "@/components/ThemeToggle.tsx";
 import { Search } from "@/components/Search.tsx";
 ---
 
-<div class="sticky top-0 z-40 w-full flex-none border-b bg-inherit">
-  <div class="container my-3 flex justify-between items-center gap-2">
+<header class="sticky top-0 z-40 w-full border-b bg-inherit">
+  <div class="container py-1.5 flex justify-between items-center gap-2">
     <div class="flex">
       <a class="flex items-center gap-x-1" href="/" aria-label="Go to home">
         <span class="h-12 w-12">
@@ -36,7 +36,7 @@ import { Search } from "@/components/Search.tsx";
       <ThemeToggle client:load />
     </div>
   </div>
-</div>
+</header>
 
 <script is:inline>
   const getThemePreference = () => {
