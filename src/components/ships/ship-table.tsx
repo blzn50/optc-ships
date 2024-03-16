@@ -145,36 +145,39 @@ export function ShipTable<TData, TValue>({
         </Table>
       </div>
 
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm">
-          Showing {pagination.pageIndex + 1} to{" "}
-          {table.getFilteredRowModel().rows.length < pagination.pageSize
-            ? table.getFilteredRowModel().rows.length
-            : pagination.pageSize * (pagination.pageIndex + 1)}{" "}
-          of {table.getFilteredRowModel().rows.length}{" "}
-          {table.getFilteredRowModel().rows.length === 1 ? "entry" : "entries"}
-          {!!$searchVal &&
-            ` (filtered from ${table.getPreFilteredRowModel().rows.length} total
+      <div className="sticky bottom-0 z-40 bg-white dark:bg-black">
+        <div className="flex items-center justify-end space-x-2 h-14">
+          <div className="flex-1 text-sm">
+            Showing {pagination.pageIndex + 1} to{" "}
+            {table.getFilteredRowModel().rows.length < pagination.pageSize
+              ? table.getFilteredRowModel().rows.length
+              : pagination.pageSize * (pagination.pageIndex + 1)}{" "}
+            of {table.getFilteredRowModel().rows.length}{" "}
+            {table.getFilteredRowModel().rows.length === 1
+              ? "entry"
+              : "entries"}
+            {!!$searchVal &&
+              ` (filtered from ${table.getPreFilteredRowModel().rows.length} total
             entries)`}
-        </div>
-        <div className="flex-1 text-sm"></div>
-        <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+          </div>
+          <div className="space-x-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+            </Button>
+          </div>
         </div>
       </div>
     </div>
