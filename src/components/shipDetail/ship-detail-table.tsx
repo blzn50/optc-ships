@@ -34,6 +34,7 @@ export function ShipDetailTable<TData, TValue>({
     columns,
     initialState: {
       columnVisibility: {
+        "colaCount.superColaCount": "colaCount" in ship,
         colaCount: "colaCount" in ship,
         superColaCount: "superColaCount" in ship,
         period: "period" in ship,
