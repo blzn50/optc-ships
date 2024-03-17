@@ -34,6 +34,7 @@ export function ShipDetailTable<TData, TValue>({
     columns,
     initialState: {
       columnVisibility: {
+        "colaCount.superColaCount": "colaCount" in ship,
         colaCount: "colaCount" in ship,
         superColaCount: "superColaCount" in ship,
         period: "period" in ship,
@@ -46,7 +47,7 @@ export function ShipDetailTable<TData, TValue>({
   });
 
   return (
-    <div className="rounded-md border">
+    <div className="rounded-md border max-md:h-max max-md:max-w-2xl max-md:overflow-x-auto">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -54,14 +55,14 @@ export function ShipDetailTable<TData, TValue>({
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className="p-2"
+                  className="p-2 bg-[#523f25]"
                   style={{
                     minWidth: header.getSize(),
                     width: header.getSize() + 20,
                   }}
                 >
                   {header.isPlaceholder ? null : (
-                    <span className="text-foreground flex items-center justify-between font-semibold">
+                    <span className="text-slate-50 flex items-center justify-between font-semibold">
                       {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),

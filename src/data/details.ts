@@ -618,7 +618,6 @@ export const details: Record<number, ShipInfo> = {
     name: "Big Top - Grand Line Feast",
     obtain: "Clear the limited time Holiday event quest.",
     period: ["During Holiday Campaign", "After Holiday Campaign"],
-
     effect: [
       "Boosts ATK, EXP and Berries by 1.5x",
       "Boosts ATK of characters with 20 cost or less by 1.2x",
