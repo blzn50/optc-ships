@@ -2,7 +2,7 @@ import { type ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 
-import { getShipThumbnail, replaceAndSanitizeText } from "@/lib/utils";
+import { getShipThumbnail, replaceAndSanitizeEffect } from "@/lib/utils";
 import type { ShipOverview } from "@/types/Ship";
 
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
@@ -67,7 +67,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     cell: ({ row }) => {
       const effectText = String(row.getValue("effect"));
       // if needed, sanitize the val with js-xss or dompurify
-      const text = replaceAndSanitizeText(effectText);
+      const text = replaceAndSanitizeEffect(effectText);
       return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
     },
     size: 300,

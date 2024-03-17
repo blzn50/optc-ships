@@ -1,7 +1,10 @@
 import { type ColumnDef } from "@tanstack/react-table";
 
 import type { ShipDetail } from "@/types/Ship";
-import { replaceAndSanitizeSpecial, replaceAndSanitizeText } from "@/lib/utils";
+import {
+  replaceAndSanitizeSpecial,
+  replaceAndSanitizeEffect,
+} from "@/lib/utils";
 
 export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
   {
@@ -43,7 +46,7 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
     cell: ({ row }) => {
       const effectText = String(row.getValue("effect"));
       // if needed, sanitize the val with js-xss or dompurify
-      const text = replaceAndSanitizeText(effectText);
+      const text = replaceAndSanitizeEffect(effectText);
       return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
     },
   },
