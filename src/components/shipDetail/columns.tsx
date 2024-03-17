@@ -9,7 +9,7 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
     accessorKey: "colaCount",
     header: "Level",
     cell: ({ row }) => row.index + 1,
-    size: 50,
+    size: 10,
   },
   {
     accessorKey: "colaCount",
@@ -19,7 +19,7 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
       const formatted = new Intl.NumberFormat("en-US").format(count);
       return <span>{count === 0 ? "-" : formatted}</span>;
     },
-    size: 80,
+    size: 40,
   },
   {
     accessorKey: "superColaCount",
@@ -29,12 +29,12 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
       const formatted = new Intl.NumberFormat("en-US").format(count);
       return <span>{count === 0 ? "-" : formatted}</span>;
     },
-    size: 90,
+    size: 60,
   },
   {
     accessorKey: "period",
     header: "Period",
-    size: 220,
+    size: 200,
   },
   {
     accessorKey: "effect",
@@ -46,7 +46,6 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
       const text = replaceAndSanitizeText(effectText);
       return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
     },
-    size: 250,
   },
   {
     accessorKey: "special",
@@ -57,11 +56,11 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
       const text = replaceAndSanitizeSpecial(special);
       return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
     },
-    size: 160,
+    size: 120,
   },
   {
     accessorKey: "cd",
     header: "CD",
-    size: 50,
+    size: 10,
   },
 ];
