@@ -6,7 +6,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-import { getShipFullImage, flattenShipData } from "@/lib/utils";
+import {
+  getShipFullImage,
+  flattenShipData,
+  replaceAndSanitizeEffect,
+} from "@/lib/utils";
 import { ShipDetailTable } from "./ship-detail-table";
 import { details } from "@/data/details";
 import { shipDetailColumns } from "./columns";
@@ -74,12 +78,22 @@ export function ShipDetail() {
         )}
         {!!ship.specialEffect1 && (
           <blockquote className="text-center p-1 mb-1 max-md:mb-0 bg-stone-200 dark:bg-stone-800 font-light">
-            <b>Special Effect 1:</b> {ship.specialEffect1}
+            <b>Special Effect 1:</b>{" "}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: replaceAndSanitizeEffect(ship.specialEffect1),
+              }}
+            ></span>
           </blockquote>
         )}
         {!!ship.specialEffect2 && (
           <blockquote className="text-center p-1 mb-1 max-md:mb-0 bg-stone-200 dark:bg-stone-800 font-light">
-            <b>Special Effect 2:</b> {ship.specialEffect2}
+            <b>Special Effect 2:</b>{" "}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: replaceAndSanitizeEffect(ship.specialEffect2),
+              }}
+            ></span>
           </blockquote>
         )}
         <ShipDetailTable data={data} columns={shipDetailColumns} />

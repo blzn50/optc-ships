@@ -18,7 +18,7 @@ export function getShipFullImage(shipId: string) {
   return `full/ship_${id}_full.png`;
 }
 
-export function replaceAndSanitizeText(text: string) {
+export function replaceAndSanitizeEffect(text: string) {
   return text
     .replaceAll(
       /\[?(STR|DEX|QCK|INT)\]?/g,
