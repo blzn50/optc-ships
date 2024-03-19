@@ -47,7 +47,11 @@ export function ShipTable<TData, TValue>({
   columns,
   data,
 }: ShipTableProps<TData, TValue>) {
-  const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 15 });
+  const paginationPageSize = localStorage.getItem("pagination.pageSize");
+  const [pagination, setPagination] = useState({
+    pageIndex: 0,
+    pageSize: Number(paginationPageSize) || 15,
+  });
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "id",
@@ -169,7 +173,10 @@ export function ShipTable<TData, TValue>({
           </div>
           <div className="space-x-2">
             <Select
-              onValueChange={(val) => table.setPageSize(Number(val))}
+              onValueChange={(val) => {
+                table.setPageSize(Number(val));
+                localStorage.setItem("pagination.pageSize", val);
+              }}
               defaultValue={table.getState().pagination.pageSize.toString()}
             >
               <SelectTrigger className="w-[80px] h-9 inline-flex">
