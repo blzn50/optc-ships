@@ -14,6 +14,7 @@ import { useStore } from "@nanostores/react";
 import "lazysizes";
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -22,7 +23,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 import { searchVal } from "@/searchStore";
 
 interface ShipTableProps<TData, TValue> {
@@ -40,7 +47,11 @@ export function ShipTable<TData, TValue>({
   columns,
   data,
 }: ShipTableProps<TData, TValue>) {
-  const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 15 });
+  const paginationPageSize = localStorage.getItem("pagination.pageSize");
+  const [pagination, setPagination] = useState({
+    pageIndex: 0,
+    pageSize: Number(paginationPageSize) || 15,
+  });
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "id",
@@ -161,6 +172,25 @@ export function ShipTable<TData, TValue>({
             entries)`}
           </div>
           <div className="space-x-2">
+            <Select
+              onValueChange={(val) => {
+                table.setPageSize(Number(val));
+                localStorage.setItem("pagination.pageSize", val);
+              }}
+              defaultValue={table.getState().pagination.pageSize.toString()}
+            >
+              <SelectTrigger className="w-[80px] h-9 inline-flex">
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                {["15", "25", "50", "100"].map((pageSize) => (
+                  <SelectItem key={pageSize} value={pageSize}>
+                    {pageSize}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
             <Button
               variant="outline"
               size="sm"

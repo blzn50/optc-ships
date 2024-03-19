@@ -410,7 +410,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Boosts QCK and INT characters' ATK by 1.7x, HP by 1.35x, makes their [RCV] slots have matching slot effects, boosts their ATK by approximately 1.85x when HP is full at start of attack, and boosts amount of Berries earned by 3x / Special (11 turns): Heals crew by 12,500 HP and boosts the chain multiplier by +1.2 for 1 turn",
+      "Boosts QCK and INT characters' ATK by 1.7x, HP by 1.35x, makes their [RCV] slots have matching slot effects, boosts their ATK by approximately 1.85x when HP is full at start of attack, and boosts amount of Berries earned by 3x",
     hasSpecial: true,
   },
   {
