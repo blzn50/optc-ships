@@ -234,10 +234,10 @@ export const units: ShipOverview[] = [
   {
     id: 27,
     name: "Kizaru's Arrival Cannonball - Sabaody in Chaos",
-    colaCount: 256,
-    superColaCount: 0,
+    colaCount: 15256,
+    superColaCount: 20,
     effect:
-      "Boosts Shooter characters' ATK by 1.55x and HP by 1.2x, reduces their CD by 2 at the start of battle",
+      "Boosts Shooter characters' ATK by 1.75x, HP by 1.2x, reduces their Special charge time by 2 turns at start of quest, boosts Slasher characters' ATK by 1.1x, and makes it easier to land PERFECT strikes",
     hasSpecial: true,
   },
   {
@@ -337,10 +337,10 @@ export const units: ShipOverview[] = [
   {
     id: 40,
     name: "Nostra Castello",
-    colaCount: 244,
-    superColaCount: 0,
+    colaCount: 15244,
+    superColaCount: 20,
     effect:
-      "Boosts ATK by 1.55x and HP by 1.3x and makes it a little easier to hit PERFECTs, cuts the current HP of all enemies by 3% at the end of the turn, reduces crew's ATK if you have a Slasher, Free Spirit or Powerhouse characters in your crew",
+      "Boosts crew's ATK by 1.6x, HP by 1.3x, boosts Driven and Shooter characters' ATK by a further 1.2x, makes it easier to land PERFECT strikes, reduces all enemies' HP by 5% at end of turn, but slightly reduces ATK depending on number of Slasher, Free Spirit, or Powerhouse classes on the crew",
     hasSpecial: false,
   },
   {
@@ -442,10 +442,10 @@ export const units: ShipOverview[] = [
   {
     id: 53,
     name: "Victoria Punk",
-    colaCount: 202,
-    superColaCount: 0,
+    colaCount: 15202,
+    superColaCount: 20,
     effect:
-      "Boosts crew's HP by 1.2x, slightly boosts crew's chance of landing on [TND] slots, and if Captain is a STR or DEX type, boosts crew's ATK by approximately 1.65x when they have [TND] [BOMB] [SUPERBOMB] [WANO] slots (1.55x otherwise)",
+      "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
     hasSpecial: true,
   },
   {
