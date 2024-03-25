@@ -290,6 +290,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.55x, HP by 1.3x, and makes it easier to land PERFECT strikes",
       "Boosts crew's ATK by 1.65x, HP by 1.3x, and makes it easier to land PERFECT strikes",
     ],
+    cd: [25, 23, 21, 21, 20, 19, 19, 17, 17, 15, 12, 9],
     special: [
       "Deal 32,000 typeless damage to all enemies",
       "Deal 32,000 typeless damage to all enemies",
@@ -304,7 +305,6 @@ export const details: Record<number, ShipInfo> = {
       "Doubles crew's ATK for 1 turn and deals 100,000 in non-type damage to all enemies",
       "Boosts crew's ATK by 2.25x for 1 turn and deals 100,000 in non-type damage to all enemies",
     ],
-    cd: [25, 23, 21, 21, 20, 19, 19, 17, 17, 15, 12, 9],
     specialEffect1: "Reduces ATK Down duration by 1 turn",
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
@@ -350,6 +350,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Free Spirit and Shooter characters' ATK by 1.6x, HP by 1.35x, and makes it a little easier to land PERFECT strikes",
       "Boosts Free Spirit and Shooter characters' ATK by 1.75x, HP by 1.4x, and makes it a little easier to land PERFECT strikes",
     ],
+    cd: [20, 20, 20, 18, 18, 18, 15, 15, 15, 15, 10, 10],
     special: [
       "Heals crew by 1,000 HP",
       "Heals crew by 2,000 HP",
@@ -364,7 +365,6 @@ export const details: Record<number, ShipInfo> = {
       "Heals crew by 6,500 HP, and heals crew by 3,500 HP at end of turn for 1 turn",
       "Heals crew by 10,000 HP, and heals crew by 5,000 HP at end of turn for 1 turn",
     ],
-    cd: [20, 20, 20, 18, 18, 18, 15, 15, 15, 15, 10, 10],
     specialEffect1:
       "Reduces Free Spirit and Shooter characters' Special charge time by 1 turn at start of quest",
     specialEffect2:
@@ -389,6 +389,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts QCK and PSY characters' ATK by 1.6x, HP by 1.2x, and heals crew by 2,000 HP at end of turn",
       "Boosts QCK and PSY characters' ATK by 1.75x, HP by 1.4x, and heals crew by 4,000 HP at end of turn",
     ],
+    cd: [25, 23, 20, 20, 20, 20, 20, 17, 17, 17, 11, 10],
     special: [
       "Deals 10,000 damage to all enemies",
       "Deals 10,000 damage to all enemies",
@@ -403,7 +404,6 @@ export const details: Record<number, ShipInfo> = {
       "Deals 56,560 damage to all enemies, and applies Paralysis (50% chance not to reduce action turns) to all enemies for 1 turn",
       "Deals 56,560 damage to all enemies, reduces all enemies [THRESHOLD_DAMAGE_CUT] duration by 1 turn, and applies Paralysis (50% chance not to reduce action turns) to all enemies for 1 turn",
     ],
-    cd: [25, 23, 20, 20, 20, 20, 20, 17, 17, 17, 11, 10],
     specialEffect1:
       "Reduces QCK and PSY characters' Special charge time by 1 turn at start of quest",
     specialEffect2: "Reduces Paralysis duration by 1 turn",
@@ -481,6 +481,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Driven characters' ATK by 1.6x, HP by 1.35x, makes it easier for Driven characters to land PERFECT strikes",
       "Boosts Driven characters' ATK by 1.8x, HP by 1.5x, makes it easier for Driven characters to land PERFECT strikes",
     ],
+    cd: [20, 19, 19, 19, 19, 18, 18, 17, 17, 15, 10, 10],
     special: [
       "Boosts chain multiplier by 0.2 for 2 turns",
       "Boosts chain multiplier by 0.2 for 2 turns",
@@ -495,7 +496,6 @@ export const details: Record<number, ShipInfo> = {
       "Boosts chain multiplier by +0.7 for 2 turns",
       "Boosts chain multiplier by +1.0 for 2 turns (increases chain multiplier boost by +0.2 if boost is already in effect)",
     ],
-    cd: [20, 19, 19, 19, 19, 18, 18, 17, 17, 15, 10, 10],
     specialEffect1:
       "Reduces Driven characters' Special charge time by 1 turn at start of quest",
     specialEffect2:
@@ -521,6 +521,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Powerhouse characters' ATK by 1.7x, cuts crew's HP by 30%, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 1500 HP)",
       "Boosts Powerhouse characters' ATK by 1.85x, cuts crew's HP by 30%, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP)",
     ],
+    cd: [25, 23, 22, 21, 20, 19, 19, 19, 18, 17, 11, 11],
     special: [
       "None-type damage to 1 enemy",
       "None-type damage to 1 enemy",
@@ -535,7 +536,6 @@ export const details: Record<number, ShipInfo> = {
       "Deals 99,999 non-type damage to one enemy and boosts the type effects of normal attacks for Powerhouse characters by 1.75x for 1 turn",
       "Deals 99,999 non-type damage to one enemy, boosts the type effects of normal attacks for Powerhouse characters by 2x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
     ],
-    cd: [25, 23, 22, 21, 20, 19, 19, 19, 18, 17, 11, 11],
     specialEffect1:
       "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest",
     specialEffect2: "Reduces Paralysis duration by 1 turn",
@@ -544,13 +544,12 @@ export const details: Record<number, ShipInfo> = {
     name: "Moby Dick - Paramount War Version",
     obtain: "Clear the limited time Marineford Event Quest",
     period: ["During Marineford Campaign", "After Marineford Campaign"],
-
     effect: [
       "Boosts crew's ATK by 1.5x and HP by 1.4x, reduces HP by 4% at the end of the turn",
       "Boosts crew's HP by 1.3x",
     ],
-    special: ["Cut enemy's HP by 20%", "-"],
     cd: [18, "-"],
+    special: ["Cut enemy's HP by 20%", "-"],
   },
   23: {
     name: "Garp's Battleship",
@@ -595,6 +594,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Free Spirit and Slasher characters' ATK by 1.5x, HP by 1.25x, makes it a little easier to land PERFECT strikes, and boosts Cerebral characters' ATK by a further 1.1x",
       "Boosts Free Spirit and Slasher characters' ATK by 1.6x, HP by 1.25x, makes it a little easier to land PERFECT strikes, and boosts Cerebral characters' ATK by a further 1.2x",
     ],
+    cd: [25, 24, 23, 23, 23, 22, 21, 19, 19, 18, 12, 12],
     special: [
       "Heals 5000 HP when crew's HP is extremely low (<20%)",
       "Heals 5000 HP when crew's HP is extremely low (<20%)",
@@ -609,7 +609,6 @@ export const details: Record<number, ShipInfo> = {
       "If crew's HP is 30% or below, boosts Free Spirit and Slasher characters' base ATK by +600 for 1 turn (effect can be overwritten with other base ATK boost effects) and heals crew by 10,000 HP",
       "If crew's HP is 50% or below, boosts Free Spirit and Slasher characters' base ATK by +800 for 1 turn (effect can be overwritten with other base ATK boost effects) and heals crew by 15,000 HP",
     ],
-    cd: [25, 24, 23, 23, 23, 22, 21, 19, 19, 18, 12, 12],
     specialEffect1: "Reduces Paralysis duration by 1 turn",
     specialEffect2:
       "Reduces Free Spirit and Slasher characters' Special charge time by 1 turn at start of quest",
@@ -642,6 +641,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.55x, reduces damage taken by 15%, and makes it a little easier to land PERFECT strikes",
       "Boosts crew's ATK by 1.65x, reduces damage taken by 20%, and makes it easier to land PERFECT strikes",
     ],
+    cd: [22, 21, 20, 19, 19, 18, 17, 17, 17, 16, 12, 12],
     special: [
       "Halves damage taken for 1 turn",
       "Halves damage taken for 1 turn",
@@ -656,7 +656,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces damage taken by 60% for 1 turn",
       "Reduces damage taken by 80% for 1 turn",
     ],
-    cd: [22, 21, 20, 19, 19, 18, 17, 17, 17, 16, 12, 12],
     specialEffect1: "Reduces Bind duration by 1 turn",
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
@@ -679,6 +678,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Shooter characters' ATK by 1.65x, HP by 1.2x, reduces their Special charge time by 2 turns at start of quest, and makes it a little easier to land PERFECT strikes",
       "Boosts Shooter characters' ATK by 1.75x, HP by 1.2x, reduces their Special charge time by 2 turns at start of quest, boosts Slasher characters' ATK by 1.1x, and makes it easier to land PERFECT strikes",
     ],
+    cd: [20, 19, 19, 19, 18, 18, 18, 16, 16, 15, 12, 12],
     special: [
       "Reduces all enemies' HP by 5%",
       "Reduces all enemies' HP by 5%",
@@ -694,7 +694,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces all enemies' DEF Up duration by 1 turn and reduces all enemies' HP by 10%",
       "Reduces all enemies' DEF Up duration by 2 turns and reduces all enemies' HP by 10%",
     ],
-    cd: [20, 19, 19, 19, 18, 18, 18, 16, 16, 15, 12, 12],
     specialEffect1:
       "Reduces Slasher characters' Special charge time by 1 turn at start of quest",
     specialEffect2: "Reduces ship's Special charge time by 3 turns",
@@ -719,6 +718,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, makes it a little easier to land PERFECT strikes, and if 6 Striker characters are on the crew, boosts ATK by 1.7x and HP by 1.2x",
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, makes it a little easier to land PERFECT strikes, boosts Driven characters' ATK by 1.1x, and if 6 Striker characters are on the crew, boosts crew's ATK by a further 1.75x and HP by 1.2x",
     ],
+    cd: [20, 20, 19, 19, 18, 18, 17, 17, 17, 17, 13, 12],
     special: [
       "Vastly reduces a portion of damage over 10,000 from each enemy for 1 turn",
       "Vastly reduces a portion of damage over 10,000 from each enemy for 1 turn",
@@ -733,7 +733,6 @@ export const details: Record<number, ShipInfo> = {
       "Massively reduces a portion of each enemy's dealt damage that exceeds 5,000 for 1 turn",
       "Massively reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn",
     ],
-    cd: [20, 20, 19, 19, 18, 18, 17, 17, 17, 17, 13, 12],
     specialEffect1: "Reduces damage taken by 10%",
     specialEffect2:
       "Boosts crew's HP by 1.6x when 6 Striker characters are on the crew",
@@ -766,13 +765,12 @@ export const details: Record<number, ShipInfo> = {
     obtain:
       "Clear the limited-time 4-Stamina Usopp Training Forest (Forest of Training: Nose?!)",
     period: ["During Campaign", "After Campaign"],
-
     effect: [
       "Doubles ATK and HP of Shooter characters, boosts other characters' ATK by 1.5x and slightly boosts their HP (1.02x)",
       "Boosts ATK of Shooter characters' by 1.2x",
     ],
-    special: ["Delays all enemies by 2 turns", "Delays all enemies by 1 turn"],
     cd: [12, 16],
+    special: ["Delays all enemies by 2 turns", "Delays all enemies by 1 turn"],
   },
   32: {
     name: "Thousand Sunny - Special Anniversary Model",
@@ -782,7 +780,6 @@ export const details: Record<number, ShipInfo> = {
       "3rd Anniversary Part 2",
       "After 3rd Anniversary",
     ],
-
     effect: [
       "Boosts ATK by 1.5x and Pirate EXP by 3x",
       "Boosts ATK by 1.5x. At the start of battle, all specials start at MAX charge",
@@ -808,6 +805,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.55x and Pirate EXP earned by 1.5x",
       "Boosts crew's ATK by 1.65x and Pirate EXP earned by 1.75x",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 16, 11, 11],
     special: [
       "-",
       "-",
@@ -822,7 +820,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces all enemies' DEF by 50% for 1 turn and boosts damage dealt to DEF Down enemies by 1.5x for 1 turn",
       "Reduces all enemies' DEF by 90% for 1 turn and boosts damage dealt to DEF Down enemies by 1.75x for 1 turn",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 16, 11, 11],
     specialEffect1: "Boosts crew's HP by 1.2x",
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
@@ -933,7 +930,6 @@ export const details: Record<number, ShipInfo> = {
       "4th Anniversary Part 3",
       "After 4th Anniversary",
     ],
-
     effect: [
       "Boosts ATK by 1.5x and Pirate EXP/Berries gained by 3x",
       "Boosts ATK by 1.5x. At the start of battle, all specials start at MAX charge",
@@ -984,6 +980,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's chance of landing on own type slot, and boosts crew's HP by 1.5x. If Captain is a Driven or Powerhouse class, boosts STR, DEX, and QCK characters' ATK by 1.6x, and if crew lands 3 PERFECT strikes in a row, boosts their ATK by 1.75x",
       "Boosts crew's chance of landing on own type slot, and boosts crew's HP by 1.5x. If Captain is a Driven or Powerhouse class, boosts STR, DEX, and QCK characters' ATK by 1.7x, if crew lands 3 PERFECT strikes in a row, boosts their ATK by approximately 1.8x, and allows STR, DEX, and QCK characters to obtain [RCV] [SEMLA] slots with PERFECT taps",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 6, 6, 6],
     special: [
       "-",
       "-",
@@ -998,7 +995,6 @@ export const details: Record<number, ShipInfo> = {
       "Changes bottom-row characters' slots to [RCV]",
       "Changes bottom-row characters' slots to [RCV]",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 6, 6, 6],
     specialEffect1:
       "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest",
     specialEffect2: "Changes crew's [RCV] slots to [SEMLA] slots",
@@ -1033,7 +1029,6 @@ export const details: Record<number, ShipInfo> = {
       "5th Anniversary Part 2",
       "After 5th Anniversary",
     ],
-
     effect: [
       "Boosts ATK by 1.5x and Pirate EXP/Berries gained by 3x",
       "Boosts ATK by 1.5x. At the start of battle, all specials start at MAX charge",
@@ -1059,6 +1054,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.6x, makes it a little easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.75x",
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.65x, makes it easier to land PERFECT strikes, boosts Pirate EXP earned by 1.75x, and heals crew by 2,000 HP at end of turn",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 15, 12, 12],
     special: [
       "-",
       "-",
@@ -1073,7 +1069,6 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's slot effects by 1.75x for 2 turns and heals crew by 5,000 HP at end of turn for 2 turns",
       "Doubles crew's slot effects for 2 turns and heals crew by 5,000 HP at end of turn for 2 turns",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 15, 12, 12],
     specialEffect1: "Doubles Pirate EXP earned",
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
@@ -1096,6 +1091,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's HP by 1.3x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.5x, boosts middle and bottom-row characters' ATK by 1.65x, boosts Captain's RCV by 400, and reduces damage taken by 10%",
       "Boosts crew's HP by 1.4x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.6x, boosts middle and bottom-row characters' ATK by 1.8x, boosts Captain's RCV by 600, and reduces damage taken by 15%",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 8, 8, 8],
     special: [
       "-",
       "-",
@@ -1110,7 +1106,6 @@ export const details: Record<number, ShipInfo> = {
       "Locks crew's slots for 2 turns",
       "Reduces crew's Slot Bind duration by 1 turn and locks crew's slots for 2 turns",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 8, 8, 8],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
     specialEffect2:
       "Boosts top-row characters' ATK by 1.7x, and reduces the duration of healing effect converted to damage effect by 1 turn",
@@ -1164,6 +1159,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts QCK and INT characters' ATK by 1.6x, HP by 1.2x, makes their [RCV] slots have matching slot effects, boosts their ATK by 1.7x when HP is full at start of attack, and boosts amount of Berries earned by 2x / Special (11 turns): Heals crew by 10,000 HP and boosts the chain multiplier by +0.8 for 1 turn",
       "Boosts QCK and INT characters' ATK by 1.7x, HP by 1.35x, makes their [RCV] slots have matching slot effects, boosts their ATK by approximately 1.85x when HP is full at start of attack, and boosts amount of Berries earned by 3x / Special (11 turns): Heals crew by 12,500 HP and boosts the chain multiplier by +1.2 for 1 turn",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 11, 11, 11],
     special: [
       "-",
       "-",
@@ -1178,7 +1174,6 @@ export const details: Record<number, ShipInfo> = {
       "Heals crew by 10,000 HP and boosts the chain multiplier by +0.8 for 1 turn",
       "Heals crew by 12,500 HP and boosts the chain multiplier by +1.2 for 1 turn",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 11, 11, 11],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
     specialEffect2: "Heals crew by 2,000 HP at end of turn",
   },
@@ -1212,8 +1207,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 5 turn at start of quest, boosts ATK by 1.5x and makes PERFECTs easier to hit",
       "Boosts ATK by 1.2x",
     ],
-    special: ["Restores 32% of max HP", "-"],
     cd: [12, "-"],
+    special: ["Restores 32% of max HP", "-"],
   },
   51: {
     name: "Shark Superb",
@@ -1256,6 +1251,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, boosts crew's ATK by 1.65x, and boosts crew's ATK by approximately 1.8x when they have [BOMB] [SUPERBOMB] slots",
       "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 10, 10, 10],
     special: [
       "-",
       "-",
@@ -1270,7 +1266,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces the duration of all enemy barriers by 1 turn",
       "Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 10, 10, 10],
     specialEffect1: "Reduces Despair duration by 1 turn",
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
   },
@@ -1293,6 +1288,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts Captain's RCV by 500, boosts crew's HP by 1.2x, and heals crew by 1,000 HP at end of turn. If Captain is a Free Spirit, Slasher, or Cerebral class, boosts crew's ATK by 1.6x. If 6 PSY characters are on the crew, boosts ATK a further 1.15x",
       "Reduces Special charge time by 1 turn at start of quest, boosts PSY characters' Special charge time by a further 1 turn, boosts Captain's RCV by 500, boosts crew's HP by 1.2x, and heals crew by 1,000 HP at end of turn. If Captain is a Free Spirit, Slasher, or Cerebral class, boosts crew's ATK by 1.6x. If 6 PSY characters are on the crew, boosts ATK a further 1.2x",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 10, 10, 9],
     special: [
       "-",
       "-",
@@ -1307,7 +1303,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces PSY characters' Special charge time by 1 turn",
       "Reduces PSY characters' Special charge time by 1 turn",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 10, 10, 9],
     specialEffect1: "Boosts crew's HP by 1.4x",
     specialEffect2: "Reduces Bind duration by 1 turn",
   },
@@ -1353,6 +1348,7 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn, boosts Free Spirit and Slasher characters' ATK by 1.6x, HP by 1.3x, makes their [RCV] [TND] slots have matching slot effects, makes it much easier to land PERFECT strikes, boosts QCK and PSY characters' ATK by a further 1.1x, and heals crew by 1,000 HP at end of turn",
       "Reduces Special charge time by 1 turn, boosts Free Spirit and Slasher characters' ATK by 1.7x, HP by 1.3x, makes their [RCV] [TND] slots have matching slot effects, makes it much easier to land PERFECT strikes, boosts QCK and PSY characters' ATK by a further 1.1x, and heals crew by 1,000 HP at end of turn",
     ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 9, 9, 9],
     special: [
       "-",
       "-",
@@ -1367,7 +1363,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces crew's Paralysis duration by 2 turns",
       "Reduces crew's Paralysis duration by 2 turns",
     ],
-    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 9, 9, 9],
     specialEffect1: "Boosts Free Spirit and Slasher characters' ATK by 150",
     specialEffect2:
       "Reduces crew's Bind duration by 2 turns when using ship Special",
@@ -1490,6 +1485,7 @@ NUMBER: {
   cola: [],
   superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
   effect: [],
+  cd: [],
   specialEffect1: "",
   specialEffect2: ""
 },
