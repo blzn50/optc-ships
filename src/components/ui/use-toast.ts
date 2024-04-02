@@ -70,7 +70,6 @@ const addToRemoveQueue = (toastId: string) => {
 };
 
 export const reducer = (state: State, action: Action): State => {
-  console.log("action.type", action.type);
   switch (action.type) {
     case "ADD_TOAST":
       return {
@@ -98,6 +97,9 @@ export const reducer = (state: State, action: Action): State => {
           addToRemoveQueue(toast.id);
         });
       }
+
+      // hide toast once dismissed until another update
+      localStorage.setItem("isToastHidden", "true");
 
       return {
         ...state,
