@@ -1,20 +1,20 @@
+import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-
+import { details } from "@/data/details";
 import {
   getShipFullImage,
   flattenShipData,
   replaceAndSanitizeEffect,
 } from "@/lib/utils";
 import { ShipDetailTable } from "./ship-detail-table";
-import { details } from "@/data/details";
 import { shipDetailColumns } from "./columns";
-import { useMemo } from "react";
 
 export function ShipDetail() {
   let navigate = useNavigate();
@@ -52,7 +52,7 @@ export function ShipDetail() {
         </DialogHeader>
         <div className="py-3 flex justify-center">
           <img
-            className="lazyload min-h-10 md:min-h-60"
+            className="lazyload min-h-20 md:min-h-64"
             loading="lazy"
             data-src={`/${getShipFullImage(ship.id)}`}
             alt={ship.name}

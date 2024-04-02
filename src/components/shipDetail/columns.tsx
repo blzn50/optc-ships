@@ -37,7 +37,7 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
   {
     accessorKey: "period",
     header: "Period",
-    size: 200,
+    size: 160,
   },
   {
     accessorKey: "effect",
