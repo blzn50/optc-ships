@@ -914,10 +914,12 @@ export const details: Record<number, ShipInfo> = {
   },
   38: {
     name: "Laboon",
-    obtain: "Clear the limited time New Year campaign quest",
+    obtain:
+      "Purchase from Rayleigh's Bazaar for 500 points during Brook's Promise Campaign",
+    note: "Campaign period: April 3 0:00 ~ April 19 11:59 PST",
     period: ["During Campaign", "After Campaign"],
     effect: [
-      "Boosts ATK by 1.5x. At the start of battle, all specials start at MAX charge",
+      "Reduces crew's special CD by 5 turns at the start, boosts their ATK by 1.6x, HP by 2x, makes it easier to land PERFECTS, and boosts Pirate EXP and Berries earned by 2x",
       "Boosts ATK by 1.2x",
     ],
   },

@@ -323,7 +323,8 @@ export const units: ShipOverview[] = [
     name: "Laboon",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
+    effect:
+      "Reduces crew's special CD by 5 turns at the start, boosts their ATK by 1.6x, HP by 2x, makes it easier to land PERFECTS, and boosts Pirate EXP and Berries earned by 2x",
     hasSpecial: false,
   },
   {
