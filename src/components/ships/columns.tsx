@@ -8,9 +8,12 @@ import type { ShipOverview } from "@/types/Ship";
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
   {
     accessorKey: "id",
-    header: "Ship ID",
+    header: () => <div className="text-right">Ship ID</div>,
     size: 80,
     enableGlobalFilter: false,
+    cell: ({ row }) => (
+      <div className="text-right pr-2">{row.getValue("id")}</div>
+    ),
   },
   {
     accessorKey: "name",
@@ -44,7 +47,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     cell: ({ row }) => {
       const count = parseInt(row.getValue("colaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <span>{formatted}</span>;
+      return <div className="text-right pr-3">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 100,
@@ -55,7 +58,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     cell: ({ row }) => {
       const count = parseInt(row.getValue("superColaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <span>{formatted}</span>;
+      return <div className="text-right pr-3">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 125,

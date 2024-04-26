@@ -10,17 +10,19 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
   {
     id: "colaCount.superColaCount",
     accessorKey: "colaCount",
-    header: "Level",
-    cell: ({ row }) => row.index + 1,
+    header: () => <div className="text-right pr-1">Level</div>,
+    cell: ({ row }) => <div className="text-right pr-1">{row.index + 1}</div>,
     size: 10,
   },
   {
     accessorKey: "colaCount",
-    header: "Cola Needed",
+    header: () => <div className="text-right pr-1">Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("colaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <span>{count === 0 ? "-" : formatted}</span>;
+      return (
+        <div className="text-right pr-1">{count === 0 ? "-" : formatted}</div>
+      );
     },
     size: 40,
   },
@@ -30,7 +32,9 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
     cell: ({ row }) => {
       const count = parseInt(row.getValue("superColaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <span>{count === 0 ? "-" : formatted}</span>;
+      return (
+        <div className="text-right pr-1">{count === 0 ? "-" : formatted}</div>
+      );
     },
     size: 60,
   },
@@ -41,29 +45,36 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
   },
   {
     accessorKey: "effect",
-    header: "Effect",
+    header: () => <div className="pl-1">Effect</div>,
     enableSorting: false,
     cell: ({ row }) => {
       const effectText = String(row.getValue("effect"));
       // if needed, sanitize the val with js-xss or dompurify
       const text = replaceAndSanitizeEffect(effectText);
-      return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
+      return (
+        <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
+      );
     },
   },
   {
     accessorKey: "special",
-    header: "Special",
+    header: () => <div className="pl-1">Special</div>,
     cell: ({ row }) => {
       const special = String(row.getValue("special"));
       // if needed, sanitize the val with js-xss or dompurify
       const text = replaceAndSanitizeSpecial(special);
-      return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
+      return (
+        <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
+      );
     },
-    size: 120,
+    size: 130,
   },
   {
     accessorKey: "cd",
-    header: "CD",
-    size: 10,
+    header: () => <div className="text-right pr-1 md:pr-3">CD</div>,
+    cell: ({ row }) => (
+      <div className="text-right pr-1 md:pr-3">{row.getValue("cd")}</div>
+    ),
+    size: 40,
   },
 ];
