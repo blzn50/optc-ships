@@ -12,7 +12,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     size: 80,
     enableGlobalFilter: false,
     cell: ({ row }) => (
-      <div className="text-right pr-2">{row.getValue("id")}</div>
+      <div className="text-right pr-1">{row.getValue("id")}</div>
     ),
   },
   {
@@ -43,22 +43,22 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
   },
   {
     accessorKey: "colaCount",
-    header: "Cola Needed",
+    header: () => <div className="text-right pr-1">Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("colaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <div className="text-right pr-3">{formatted}</div>;
+      return <div className="text-right pr-1">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 100,
   },
   {
     accessorKey: "superColaCount",
-    header: "Super Cola Needed",
+    header: () => <div className="text-right pr-1">Super Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("superColaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <div className="text-right pr-3">{formatted}</div>;
+      return <div className="text-right pr-1">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 125,
@@ -71,7 +71,9 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
       const effectText = String(row.getValue("effect"));
       // if needed, sanitize the val with js-xss or dompurify
       const text = replaceAndSanitizeEffect(effectText);
-      return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
+      return (
+        <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
+      );
     },
     size: 300,
   },

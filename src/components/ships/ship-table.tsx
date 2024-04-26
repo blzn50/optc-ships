@@ -43,6 +43,8 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, _) => {
   return itemRank > -1;
 };
 
+const numberColumns = ["id", "colaCount", "superColaCount"];
+
 export function ShipTable<TData, TValue>({
   columns,
   data,
@@ -101,16 +103,24 @@ export function ShipTable<TData, TValue>({
                   >
                     {header.isPlaceholder ? null : header.column.getCanSort() ? (
                       <span className="text-foreground flex items-center justify-between cursor-pointer font-semibold hover:underline">
+                        {numberColumns.includes(header.id) &&
+                          ({
+                            asc: <ArrowUp className="h-4 w-4" />,
+                            desc: <ArrowDown className="h-4 w-4" />,
+                          }[header.column.getIsSorted() as string] ?? (
+                            <ArrowUpDown className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                          ))}
                         {flexRender(
                           header.column.columnDef.header,
                           header.getContext(),
                         )}
-                        {{
-                          asc: <ArrowUp className="h-4 w-4" />,
-                          desc: <ArrowDown className="h-4 w-4" />,
-                        }[header.column.getIsSorted() as string] ?? (
-                          <ArrowUpDown className="h-4 w-4 text-gray-400 dark:text-gray-500" />
-                        )}
+                        {!numberColumns.includes(header.id) &&
+                          ({
+                            asc: <ArrowUp className="h-4 w-4" />,
+                            desc: <ArrowDown className="h-4 w-4" />,
+                          }[header.column.getIsSorted() as string] ?? (
+                            <ArrowUpDown className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                          ))}
                       </span>
                     ) : (
                       <>
