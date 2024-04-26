@@ -55,20 +55,18 @@ export function ShipDetailTable<TData, TValue>({
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className="p-2 bg-[#523f25]"
+                  className="p-2 bg-[#523f25] border-l border-slate-300 text-slate-50 font-semibold"
                   style={{
                     minWidth: header.getSize(),
                     width: header.getSize() + 20,
                   }}
                 >
-                  {header.isPlaceholder ? null : (
-                    <span className="text-slate-50 flex items-center justify-between font-semibold">
-                      {flexRender(
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
                       )}
-                    </span>
-                  )}
                 </TableHead>
               ))}
             </TableRow>

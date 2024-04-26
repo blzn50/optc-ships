@@ -8,9 +8,12 @@ import type { ShipOverview } from "@/types/Ship";
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
   {
     accessorKey: "id",
-    header: "Ship ID",
+    header: () => <div className="text-right">Ship ID</div>,
     size: 80,
     enableGlobalFilter: false,
+    cell: ({ row }) => (
+      <div className="text-right pr-1">{row.getValue("id")}</div>
+    ),
   },
   {
     accessorKey: "name",
@@ -40,22 +43,22 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
   },
   {
     accessorKey: "colaCount",
-    header: "Cola Needed",
+    header: () => <div className="text-right pr-1">Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("colaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <span>{formatted}</span>;
+      return <div className="text-right pr-1">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 100,
   },
   {
     accessorKey: "superColaCount",
-    header: "Super Cola Needed",
+    header: () => <div className="text-right pr-1">Super Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("superColaCount"));
       const formatted = new Intl.NumberFormat("en-US").format(count);
-      return <span>{formatted}</span>;
+      return <div className="text-right pr-1">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 125,
@@ -68,7 +71,9 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
       const effectText = String(row.getValue("effect"));
       // if needed, sanitize the val with js-xss or dompurify
       const text = replaceAndSanitizeEffect(effectText);
-      return <p dangerouslySetInnerHTML={{ __html: text }}></p>;
+      return (
+        <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
+      );
     },
     size: 300,
   },
