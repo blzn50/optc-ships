@@ -10,19 +10,19 @@ import { DB_VERSION } from "@/data/version";
 // or cell is custom formatted.
 export function Ships() {
   useEffect(() => {
-    // const dbVersion = Number(localStorage.getItem("dbVersion")) || 0;
+    const dbVersion = Number(localStorage.getItem("dbVersion")) || 0;
 
-    // if (dbVersion < DB_VERSION) {
-    //   setTimeout(() => {
-    //     toast({
-    //       title: "Update: 02 April 2024",
-    //       description: "Laboon ship effect updated for the campaign period.",
-    //     });
-    //   }, 500);
-    // update local storage
-    localStorage.setItem("dbVersion", DB_VERSION.toString());
-    localStorage.setItem("isToastHidden", "true");
-    // }
+    if (dbVersion < DB_VERSION) {
+      setTimeout(() => {
+        toast({
+          title: "Update: 26 April 2024",
+          description: "10th Anni Ship added.",
+        });
+      }, 500);
+      // update local storage
+      localStorage.setItem("dbVersion", DB_VERSION.toString());
+      localStorage.setItem("isToastHidden", "false");
+    }
   }, []);
 
   return <ShipTable data={units} columns={shipsColumns} />;

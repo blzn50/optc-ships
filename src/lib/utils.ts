@@ -12,6 +12,21 @@ export function getShipThumbnail(shipId: string) {
   return `icon/ship_${id}_thumbnail.png`;
 }
 
+export function convertToPSTTimestamp() {
+  const dateTime = new Date();
+  dateTime.setHours(dateTime.getUTCHours() - 8);
+  return dateTime.getTime();
+}
+
+/**
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format
+ * @param dateString - format YYYY-MM-DDTHH:mm:ss.sss
+ * @returns no. of milliseconds
+ */
+export function getPSTTimestamp(dateString: string) {
+  return new Date(dateString + "-08:00").getTime();
+}
+
 // public\full\ship_0001_full.png
 export function getShipFullImage(shipId: string) {
   const id = ("0000" + shipId).slice(-4);

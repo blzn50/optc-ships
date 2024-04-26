@@ -1480,9 +1480,36 @@ export const details: Record<number, ShipInfo> = {
     specialEffect1: "Reduces Bind duration by 1 turn",
     specialEffect2: "Reduces ATK Down duration by 1 turn",
   },
+  65: {
+    name: "Thousand Sunny - 10th Anniversary Special Model",
+    obtain: "Clear the limited time 10th Anniversary campaign quest",
+    period: [
+      "10th Anniversary Phase 1",
+      "10th Anniversary Phase 2",
+      "10th Anniversary Phase 3",
+      "10th Anniversary Phase 4",
+      "After 10th Anniversary",
+    ],
+    effect: [
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.7x, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 3x",
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.7x, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 10x",
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.7x, and boosts Pirate EXP and Berries earned by 5x, and reduces crew's Bind and Despair duration by 1 turn",
+      "Sets crew's Special charge by 10 turns at start of quest, boosts crew's ATK by 1.7x, makes crew's type slots have matching slot effects, and boosts Pirate EXP and Berries earned by 2.5x",
+      "Boosts crew's ATK by 1.5x and makes it easier to land PERFECT strikes",
+    ],
+    cd: ["-", 11, 11, 11, "-"],
+    special: [
+      "-",
+      "Reduces crew's Special charge time by 1 turn and changes crew's slots to character's own type",
+      "Reduces crew's Special charge time by 1 turn and changes crew's slots to character's own type",
+      "Reduces crew's Special charge time by 1 turn and changes crew's slots to character's own type",
+      "-",
+    ],
+  },
 };
 /*
 NUMBER: {
+  name: "",
   obtain: "TEXT",
   cola: [],
   superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
