@@ -1,5 +1,8 @@
 import type { ShipOverview } from "@/types/Ship";
 
+import { details } from "./details";
+import { convertToPSTTimestamp, getPSTTimestamp } from "@/lib/utils";
+
 export const units: ShipOverview[] = [
   {
     id: 1,
@@ -519,5 +522,35 @@ export const units: ShipOverview[] = [
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.7x, HP by 1.4x, boosts their ATK by approximately 2x when they have [G] or [RAINBOW] slots, boosts amount of Berries earned by 3x, and if every class is on the crew and crew launches a Special to set the chain multiplier, extends it by 1 turn",
     hasSpecial: false,
+  },
+  /**
+   * p1: 2024-04-27T19:00 -> 2024-05-11T23:59:59
+   * p2: 2024-05-12T00:00 -> 2024-05-12T11:59:59
+   * p3: 2024-05-12T12:00 -> 2024-05-11T23:59:59
+   * p4: 2024-05-13T00:00 -> 2024-06-29T18:59:59
+   */
+  {
+    id: 65,
+    name: "Thousand Sunny - 10th Anniversary Special Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect:
+      details[65].effect[
+        convertToPSTTimestamp() <= getPSTTimestamp("2024-05-11T23:59:59")
+          ? 0
+          : convertToPSTTimestamp() <= getPSTTimestamp("2024-05-12T11:59:59")
+            ? 1
+            : convertToPSTTimestamp() <= getPSTTimestamp("2024-05-11T23:59:59")
+              ? 2
+              : convertToPSTTimestamp() <=
+                  getPSTTimestamp("2024-06-29T18:59:59")
+                ? 3
+                : -1
+      ],
+    hasSpecial:
+      convertToPSTTimestamp() >= getPSTTimestamp("2024-05-12T00:00") &&
+      convertToPSTTimestamp() <= getPSTTimestamp("2024-06-29T18:59:59")
+        ? true
+        : false,
   },
 ];
