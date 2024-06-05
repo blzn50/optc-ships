@@ -21,7 +21,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's chance of landing on own type slot, boosts Captain's RCV by 800, boosts crew's ATK by 1.65x, HP by 1.5x and makes it a much easier to land PERFECT strikes",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
+    specialEffect2:
+      "Reduces Special charge time by 1 turn at start of quest [Special] (9 turns): Changes crew's slots to character's own type",
   },
   2: {
     name: "Merry Go",
@@ -43,7 +44,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20000, boosts crew's ATK by 1.65x, and makes it a much easier to land PERFECT strikes",
     ],
     specialEffect1: "Reduces Despair duration by 1 turn",
-    specialEffect2: "Reduces Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Bind duration by 1 turn [Special] (10 turns): Reduces crew's Despair/Bind duration by 1 turn",
   },
   3: {
     name: "Navy Ship",
@@ -110,7 +112,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Slasher characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Bind duration by 1 turn [Special] (12 turns): Reduces Slasher characters' Special charge time by 2 turns",
   },
   6: {
     name: "Miss Love Duck",
@@ -155,7 +158,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, heals crew by 5,000 HP at end of turn, and boosts crew's ATK by 1.7x and RCV by 1.2x",
     ],
     specialEffect1: "Reduces Despair duration by 1 turn",
-    specialEffect2: "Reduces Despair duration by 1 turn",
+    specialEffect2:
+      "Reduces Despair duration by 1 turn [Special] (10 turns): Reduces crew's Despair duration by 2 turns",
   },
   8: {
     name: "Moby Dick",
@@ -246,7 +250,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Bind duration by 1 turn [Special] (12 turns): Reduces crew's Slot Bind duration by 1 turn, and boosts the type effects of normal attacks for Striker characters by 2.25x for 2 turn",
   },
   12: {
     name: "Striker",
@@ -269,7 +274,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Shooter characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Boosts damage dealt to Ignited enemies by 1.05x",
+    specialEffect2:
+      "Boosts damage dealt to Ignited enemies by 1.05x [Special] (12 turns): Reduces Shooter characters' Special charge time by 1 turn, and boosts the type effects of normal attacks for Shooter characters by 2.5x for 1 turn",
   },
   13: {
     name: "Thousand Sunny",
@@ -428,7 +434,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Cerebral and Shooter characters' ATK by 1.75x, HP by 1.4x, and boosts their chance of landing on own type slots",
     ],
     specialEffect1: "Makes it much easier to land PERFECT strikes",
-    specialEffect2: "Reduces ATK Down duration by 1 turn",
+    specialEffect2:
+      "Reduces ATK Down duration by 1 turn [Special] (12 turns): Reduces crew's ATK Down duration by 1 turn, and if crew has [ATK_UP] status when Special is launched, further increases crew's ATK boost by +0.2 (boosts Cerebral and Shooter characters' ATK by 2.25x for 1 turn otherwise)",
   },
   18: {
     name: "Thousand Sunny - 2nd Anniversary Model",
@@ -573,7 +580,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect1:
       "If crew uses a Special to launch additive chain multiplier boost (except multiplicative boost), extends the duration of that effect by 1 turn",
     specialEffect2:
-      "If crew uses a Special to set the chain multiplier, extends the duration of that effect by 1 turn",
+      "If crew uses a Special to set the chain multiplier, extends the duration of that effect by 1 turn [Special] (10 turns): Boosts STR and PSY characters' chain multiplier growth rate of normal attacks up to +0.5 (GOOD +0.1; GREAT +0.4; PERFECT +0.5) for 1 turn",
   },
   24: {
     name: "Polar Tang",
@@ -657,7 +664,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces damage taken by 80% for 1 turn",
     ],
     specialEffect1: "Reduces Bind duration by 1 turn",
-    specialEffect2: "Reduces Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Bind duration by 1 turn [Updated Special] (12 turns): Reduces damage taken by 90% for 1 turn, and launches effect to boost crew's ATK based on the damage reduction status for 1 turn (approximately 1.3x at 90% damage reduction)",
   },
   27: {
     name: "Kizaru's Arrival Cannonball - Sabaody in Chaos",
@@ -758,7 +766,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces DEX and INT characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Extends the duration of slot effect boosts by 1 turn",
+    specialEffect2:
+      "Extends the duration of slot effect boosts by 1 turn [Special] (11 turns): Applies -15% Driven and Powerhouse Resistance to all enemies for 2 turns",
   },
   30: {
     name: "Karasumaru",
@@ -888,7 +897,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Powerhouse and Cerebral characters' ATK by 1.85x, HP by 1.5x, makes their [RCV] [TND] slots have matching slot effects, and makes it much easier to land PERFECT strikes",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Special Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Special Bind duration by 1 turn [Special] (11 turns): Deals 300,000 non-type damage to one enemy, and reduces all enemies' damage reduction (except [THRESHOLD_DAMAGE_CUT]) duration by 2 turns",
   },
   37: {
     name: "Sexy Foxy",
@@ -1110,7 +1120,7 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
     specialEffect2:
-      "Boosts top-row characters' ATK by 1.7x, and reduces the duration of healing effect converted to damage effect by 1 turn",
+      "Boosts top-row characters' ATK by 1.7x, and reduces the duration of healing effect converted to damage effect by 1 turn [Updated Special] (8 turns): Reduces crew's Slot Bind duration by 2 turns, changes crew's [BLOCK] slots to Rainbow slots (doubling ATK; cannot be changed by crew or enemies), and locks crew's slots for 2 turns",
   },
   46: {
     name: "Thousand Sunny - Flying Model",
