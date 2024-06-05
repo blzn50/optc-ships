@@ -12,6 +12,7 @@ import {
   getShipFullImage,
   flattenShipData,
   replaceAndSanitizeEffect,
+  replaceAndSanitizeSpecial,
 } from "@/lib/utils";
 import { ShipDetailTable } from "./ship-detail-table";
 import { shipDetailColumns } from "./columns";
@@ -91,7 +92,9 @@ export function ShipDetail() {
             <b>Special Effect 2:</b>{" "}
             <span
               dangerouslySetInnerHTML={{
-                __html: replaceAndSanitizeEffect(ship.specialEffect2),
+                __html: replaceAndSanitizeSpecial(
+                  replaceAndSanitizeEffect(ship.specialEffect2),
+                ),
               }}
             ></span>
           </blockquote>

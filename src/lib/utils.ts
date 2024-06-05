@@ -86,10 +86,15 @@ export function replaceAndSanitizeEffect(text: string) {
 }
 
 export function replaceAndSanitizeSpecial(text: string) {
-  return text.replace(
-    /\[THRESHOLD_DAMAGE_CUT\]/,
-    '<img class="w-4 h-4 inline" src="/threshold_damagecut.png" alt="threshold damage cut" />',
-  );
+  return text
+    .replace(
+      /\[THRESHOLD_DAMAGE_CUT\]/,
+      '<img class="w-5 h-5 inline" src="/threshold_damagecut.png" alt="threshold damage cut" />',
+    )
+    .replace(
+      /\[ATK_UP\]/,
+      '<img class="w-5 h-5 inline" src="/atk_up.png" alt="attack up"  />',
+    );
 }
 
 export function flattenShipData(shipInfo: ShipInfo) {
