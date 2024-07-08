@@ -14,6 +14,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     cell: ({ row }) => (
       <div className="text-right pr-1">{row.getValue("id")}</div>
     ),
+    enableHiding: false,
   },
   {
     accessorKey: "name",
@@ -39,10 +40,12 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
         </div>
       );
     },
+    enableHiding: false,
     size: 200,
   },
   {
     accessorKey: "colaCount",
+    meta: { displayLabel: "Cola count" },
     header: () => <div className="text-right pr-1">Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("colaCount"));
@@ -54,6 +57,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
   },
   {
     accessorKey: "superColaCount",
+    meta: { displayLabel: "Super cola count" },
     header: () => <div className="text-right pr-1">Super Cola Needed</div>,
     cell: ({ row }) => {
       const count = parseInt(row.getValue("superColaCount"));
@@ -75,6 +79,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
         <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
       );
     },
+    enableHiding: false,
     size: 300,
   },
   {
@@ -85,6 +90,7 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
       return shipId ? <Check size={16} /> : "-";
     },
     enableGlobalFilter: false,
+    enableHiding: false,
     size: 80,
   },
 ];
