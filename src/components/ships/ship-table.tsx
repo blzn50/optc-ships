@@ -57,6 +57,9 @@ export function ShipTable<TData, TValue>({
   data,
 }: ShipTableProps<TData, TValue>) {
   const paginationPageSize = localStorage.getItem("pagination.pageSize");
+  const toggledColumns: string[] = JSON.parse(
+    localStorage.getItem("toggledColumns") || "[]",
+  );
   const [pagination, setPagination] = useState({
     pageIndex: 0,
     pageSize: Number(paginationPageSize) || 15,
@@ -97,7 +100,10 @@ export function ShipTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex my-3">
+      <div className="flex my-4 items-center">
+        <span className="font-light text-xs text italic p-1 mb-1 max-md:mb-0">
+          The toggled columns will also be reflected in individual ship table.
+        </span>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto" size="sm">
@@ -127,7 +133,18 @@ export function ShipTable<TData, TValue>({
                 <DropdownMenuCheckboxItem
                   key={col.id}
                   checked={col.getIsVisible()}
-                  onCheckedChange={(value) => col.toggleVisibility(!!value)}
+                  onCheckedChange={(value) => {
+                    const newToggledColumns = toggledColumns.filter(
+                      (toggled) => toggled !== col.id,
+                    );
+                    if (newToggledColumns.length === toggledColumns.length)
+                      newToggledColumns.push(col.id);
+                    localStorage.setItem(
+                      "toggledColumns",
+                      JSON.stringify(newToggledColumns),
+                    );
+                    col.toggleVisibility(!!value);
+                  }}
                 >
                   {col.columnDef.meta?.displayLabel}
                 </DropdownMenuCheckboxItem>
