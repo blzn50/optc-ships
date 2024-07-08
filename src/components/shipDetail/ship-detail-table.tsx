@@ -25,6 +25,10 @@ export function ShipDetailTable<TData, TValue>({
   columns,
   data,
 }: ShipDetailTableProps<TData, TValue>) {
+  const toggledColumns: string[] = JSON.parse(
+    localStorage.getItem("toggledColumns") || "[]",
+  );
+
   const ship = useMemo(() => {
     return data[0] as ShipDetail;
   }, [data[0]]);
@@ -35,8 +39,12 @@ export function ShipDetailTable<TData, TValue>({
     initialState: {
       columnVisibility: {
         "colaCount.superColaCount": "colaCount" in ship,
-        colaCount: "colaCount" in ship,
-        superColaCount: "superColaCount" in ship,
+        colaCount:
+          "colaCount" in ship &&
+          toggledColumns.some((found) => found === "colaCount"),
+        superColaCount:
+          "superColaCount" in ship &&
+          toggledColumns.some((found) => found === "superColaCount"),
         period: "period" in ship,
         effect: "effect" in ship,
         special: "special" in ship,
