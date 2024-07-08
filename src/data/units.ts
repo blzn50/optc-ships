@@ -545,7 +545,7 @@ export const units: ShipOverview[] = [
               : convertToPSTTimestamp() <=
                   getPSTTimestamp("2024-06-29T18:59:59")
                 ? 3
-                : -1
+                : 4
       ],
     hasSpecial:
       convertToPSTTimestamp() >= getPSTTimestamp("2024-05-12T00:00") &&
