@@ -4,7 +4,7 @@ export type ShipOverview = {
   colaCount: number;
   superColaCount: number;
   effect: string;
-  hasSpecial: boolean;
+  hasSpecial: "no" | "yes" | "afterMRank5";
 };
 
 export type ShipBasic = {

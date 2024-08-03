@@ -1,6 +1,6 @@
 import { type ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, CheckCheck, Minus } from "lucide-react";
 
 import { getShipThumbnail, replaceAndSanitizeEffect } from "@/lib/utils";
 import type { ShipOverview } from "@/types/Ship";
@@ -86,8 +86,14 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     accessorKey: "hasSpecial",
     header: "Special",
     cell: ({ row }) => {
-      const shipId = Boolean(row.getValue("hasSpecial"));
-      return shipId ? <Check size={16} /> : "-";
+      const specialVal = row.getValue("hasSpecial");
+      return specialVal === "yes" ? (
+        <CheckCheck size={16} />
+      ) : specialVal === "afterMRank5" ? (
+        <Check size={16} />
+      ) : (
+        <Minus size={16} />
+      );
     },
     enableGlobalFilter: false,
     enableHiding: false,
