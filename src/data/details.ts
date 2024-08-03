@@ -8,7 +8,7 @@ export const details: Record<number, ShipInfo> = {
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
       "Boosts Captain's RCV by 30",
-      "Boosts Captain's RCV by 40 and makes it a little easier to land PERFECT strikes0",
+      "Boosts Captain's RCV by 40 and makes it a little easier to land PERFECT strikes",
       "Boosts Captain's RCV by 50 and makes it a little easier to land PERFECT strikes",
       "Boosts Captain's RCV by 60 and makes it a little easier to land PERFECT strikes",
       "Boosts Captain's RCV by 70 and makes it a little easier to land PERFECT strikes",
@@ -17,7 +17,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Captain's RCV by 100, boosts crew's HP by 1.1x, and makes it a little easier to land PERFECT strikes",
       "Boosts Captain's RCV by 110, boosts crew's HP by 1.1x, and makes it a little easier to land PERFECT strikes",
       "Boosts Captain's RCV by 120, boosts crew's HP by 1.3x, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's RCV by 300, boosts crew's ATK by 1.5x, HP by 1.3x and makes it a easier to land PERFECT strikes",
+      "Boosts Captain's RCV by 300, boosts crew's ATK by 1.5x, HP by 1.3x and makes it easier to land PERFECT strikes",
       "Boosts crew's chance of landing on own type slot, boosts Captain's RCV by 800, boosts crew's ATK by 1.65x, HP by 1.5x and makes it a much easier to land PERFECT strikes",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
@@ -41,7 +41,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Captain's HP by 270, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
       "Boosts Captain's HP by 300, boosts crew's ATK by 1.5x, and makes it easier to land PERFECT strikes",
       "Boosts Captain's HP by 10000, boosts crew's ATK by 1.55x, and makes it a much easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20000, boosts crew's ATK by 1.65x, and makes it a much easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20000, boosts crew's ATK by 1.65x, and makes it much easier to land PERFECT strikes",
     ],
     specialEffect1: "Reduces Despair duration by 1 turn",
     specialEffect2:
