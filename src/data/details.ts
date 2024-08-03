@@ -227,7 +227,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts QCK characters' ATK by 1.8x, HP by 1.5x, and boosts crew's chance of landing on [QCK] slots",
     ],
     specialEffect1: "Makes [STR] [DEX] slots have matching slot effects",
-    specialEffect2: "Reduces Despair duration by 1 turn",
+    specialEffect2:
+      "Reduces Despair duration by 1 turn [Special] (12 turns): Reduces crew's Burn duration by 1 turn and boosts the type effects of normal attacks for QCK characters by 2.25x for 2 turns",
   },
   11: {
     name: "Aokiji's Bicycle",
@@ -312,7 +313,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 2.25x for 1 turn and deals 100,000 in non-type damage to all enemies",
     ],
     specialEffect1: "Reduces ATK Down duration by 1 turn",
-    specialEffect2: "Reduces Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Bind duration by 1 turn [Updated Special] (9 turns): Reduces all enemies' DEF Up duration by 1 turn, and boosts crew's ATK by 2.25x for 1 turn and deals 100,000 in non-type damage to all enemies",
   },
   14: {
     name: "Dreadnaught Sabre",
@@ -374,7 +376,7 @@ export const details: Record<number, ShipInfo> = {
     specialEffect1:
       "Reduces Free Spirit and Shooter characters' Special charge time by 1 turn at start of quest",
     specialEffect2:
-      "Reduces crew's decrease chain multiplier growth rate duration by 2 turns",
+      "Reduces crew's decrease chain multiplier growth rate duration by 2 turns [Updated Special] (10 turns): Reduces crew's ATK Down duration by 2 turns, heals crew by 10,000 HP, and heals crew by 5,000 HP at end of turn for 1 turn",
   },
   16: {
     name: "Ark Maxim",
@@ -412,7 +414,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces QCK and PSY characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Paralysis duration by 1 turn",
+    specialEffect2:
+      "Reduces Paralysis duration by 1 turn [Updated Special] (10 turns): Deals 56,560 damage to all enemies, reduces all enemies [THRESHOLD_DAMAGE_CUT] duration by 2 turns, and applies Paralysis (50% chance not to reduce action turns) to all enemies for 1 turn",
   },
   17: {
     name: "Red Force",
@@ -467,7 +470,7 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1: "Makes it easier to land PERFECT strikes",
     specialEffect2:
-      "Reduces Fighter characters' Special charge time by 1 turn at start of quest",
+      "Reduces Fighter characters' Special charge time by 1 turn at start of quest [Special] (12 turns): Reduces crew's Despair duration by 1 turn and boosts Fighter characters' ATK by 2.5x for 2 turns",
   },
   20: {
     name: "Donquixote Pirates Ship",
@@ -545,7 +548,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Paralysis duration by 1 turn",
+    specialEffect2:
+      "Reduces Paralysis duration by 1 turn [Updated Special] (11 turns): Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
   },
   22: {
     name: "Moby Dick - Paramount War Version",
@@ -618,7 +622,7 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1: "Reduces Paralysis duration by 1 turn",
     specialEffect2:
-      "Reduces Free Spirit and Slasher characters' Special charge time by 1 turn at start of quest",
+      "Reduces Free Spirit and Slasher characters' Special charge time by 1 turn at start of quest [Updated Special] (11 turns): If crew's HP is 80% or below, boosts Free Spirit and Slasher characters' base ATK by +1000 for 1 turn (effect can be overwritten with other base ATK boost effects) and heals crew by 15,000 HP",
   },
   25: {
     name: "Big Top - Grand Line Feast",
@@ -875,7 +879,7 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1: "Reduces damage taken by 10%",
     specialEffect2:
-      "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest",
+      "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest [Special] (10 turns): Reduces STR, DEX and QCK characters' Special charge time by 1 turn and reduces their Switch Effect by 2",
   },
   36: {
     name: "Zunesha",
@@ -920,7 +924,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.5x, boosts damage dealt to delayed enemies by 1.25x, doubles Berries earned, and boosts Pirate EXP earned by 1.3x",
     ],
     specialEffect1: "Makes it easier to land PERFECT strikes",
-    specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
+    specialEffect2:
+      "Reduces Special charge time by 1 turn at start of quest [Special] (13 turns): Delays all enemies for 1 turn ignoring immunity to Delay, immunity to all status effects, or immunity (excluding certain status effect)",
   },
   38: {
     name: "Laboon",
@@ -1149,7 +1154,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts Powerhouse, Shooter, Free Spirit and Fighter characters' HP by 1.25x and ATK by 1.6x, and boosts their ATK by approximately 1.8x if HP is 30% or below before attacking",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces Despair duration by 1 turn",
+    specialEffect2:
+      "Reduces Despair duration by 1 turn [Special] (11 turns): If crew's HP is 30% or below, reduces crew's Burn duration by 3 turns, boosts damage dealt to Ignited enemies by 2.25x for 1 turn (increases boost by +0.15 if boost is already in effect)",
   },
   48: {
     name: "Giant Koi",
