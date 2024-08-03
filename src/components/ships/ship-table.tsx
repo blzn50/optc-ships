@@ -70,7 +70,25 @@ export function ShipTable<TData, TValue>({
       desc: false,
     },
   ]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(
+    () => {
+      const toggleColumnsInitial: string[] = JSON.parse(
+        localStorage.getItem("toggledColumns") || "[]",
+      );
+      return toggleColumnsInitial.length > 0
+        ? toggleColumnsInitial.reduce(
+            (visible, col) => {
+              visible[col] = true;
+              return visible;
+            },
+            {} as Record<string, boolean>,
+          )
+        : {
+            colaCount: false,
+            superColaCount: false,
+          };
+    },
+  );
 
   const $searchVal = useStore(searchVal);
 
