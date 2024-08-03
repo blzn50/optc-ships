@@ -48,7 +48,7 @@ export function ShipDetailTable<TData, TValue>({
         period: "period" in ship,
         effect: "effect" in ship,
         special: "special" in ship,
-        cd: "cd" in ship,
+        cd: false,
       },
     },
     getCoreRowModel: getCoreRowModel(),
@@ -88,7 +88,7 @@ export function ShipDetailTable<TData, TValue>({
                 className="odd:hover:bg-inherit odd:even:bg-muted/50 odd:bg-inherit even:bg-muted/50"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="p-2">
+                  <TableCell key={cell.id} className="px-2 py-3">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
