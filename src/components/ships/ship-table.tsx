@@ -70,7 +70,25 @@ export function ShipTable<TData, TValue>({
       desc: false,
     },
   ]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(
+    () => {
+      const toggleColumnsInitial: string[] = JSON.parse(
+        localStorage.getItem("toggledColumns") || "[]",
+      );
+      return toggleColumnsInitial.length > 0
+        ? toggleColumnsInitial.reduce(
+            (visible, col) => {
+              visible[col] = true;
+              return visible;
+            },
+            {} as Record<string, boolean>,
+          )
+        : {
+            colaCount: false,
+            superColaCount: false,
+          };
+    },
+  );
 
   const $searchVal = useStore(searchVal);
 
@@ -207,7 +225,7 @@ export function ShipTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={`p-2 ${cell.column.getIndex() % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
+                      className={`px-2 py-3 ${cell.column.getIndex() % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

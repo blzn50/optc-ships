@@ -55,26 +55,28 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
         <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
       );
     },
+    minSize: 210,
   },
   {
     accessorKey: "special",
-    header: () => <div className="pl-1">Special</div>,
+    header: () => <div className="pl-1">[CD] Special</div>,
     cell: ({ row }) => {
       const special = String(row.getValue("special"));
+      const cd = row.getValue("cd");
       // if needed, sanitize the val with js-xss or dompurify
       const text = replaceAndSanitizeSpecial(special);
       return (
-        <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
+        <p
+          className="pl-1"
+          dangerouslySetInnerHTML={{
+            __html: `${cd !== "-" ? `<div>[ <b>${cd} turns</b> ]</div>` : ""} ${text}`,
+          }}
+        ></p>
       );
     },
-    size: 130,
+    size: 180,
   },
   {
     accessorKey: "cd",
-    header: () => <div className="text-right pr-1 md:pr-3">CD</div>,
-    cell: ({ row }) => (
-      <div className="text-right pr-1 md:pr-3">{row.getValue("cd")}</div>
-    ),
-    size: 40,
   },
 ];

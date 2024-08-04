@@ -13,9 +13,14 @@ import {
   flattenShipData,
   replaceAndSanitizeEffect,
   replaceAndSanitizeSpecial,
+  flattenShipModificationData,
 } from "@/lib/utils";
-import { ShipDetailTable } from "./ship-detail-table";
 import { shipDetailColumns } from "./columns";
+import { ShipDetailTable } from "./ship-detail-table";
+import {
+  ShipModificationTable,
+  shipModificationDetailColumns,
+} from "./modification";
 
 export function ShipDetail() {
   let navigate = useNavigate();
@@ -42,10 +47,19 @@ export function ShipDetail() {
     return flattenShipData(details[parseInt(shipId)]);
   }, [shipId]);
 
+  const modificationData = useMemo(() => {
+    if (details[parseInt(shipId)].modification) {
+      return flattenShipModificationData(
+        details[parseInt(shipId)].modification!,
+      );
+    }
+    return undefined;
+  }, [shipId]);
+
   return (
     <Dialog open onOpenChange={() => navigate("/")}>
       <DialogContent
-        className="h-5/6 overflow-y-auto w-11/12 max-w-6xl pt-0 max-md:px-4 border-none"
+        className="h-5/6 overflow-y-auto w-11/12 max-w-6xl pt-0 max-md:px-2 border-none"
         showDialogClose={false}
       >
         <DialogHeader className="sticky top-0 z-40 py-6 max-md:py-4 text-left bg-white dark:bg-black">
@@ -99,7 +113,16 @@ export function ShipDetail() {
             ></span>
           </blockquote>
         )}
-        <ShipDetailTable data={data} columns={shipDetailColumns} />
+        <div className="max-md:h-max max-md:max-w-2xl max-md:overflow-x-auto">
+          <ShipDetailTable data={data} columns={shipDetailColumns} />
+
+          {modificationData && (
+            <ShipModificationTable
+              data={modificationData}
+              columns={shipModificationDetailColumns}
+            />
+          )}
+        </div>
       </DialogContent>
     </Dialog>
   );

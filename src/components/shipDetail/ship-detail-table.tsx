@@ -48,14 +48,14 @@ export function ShipDetailTable<TData, TValue>({
         period: "period" in ship,
         effect: "effect" in ship,
         special: "special" in ship,
-        cd: "cd" in ship,
+        cd: false,
       },
     },
     getCoreRowModel: getCoreRowModel(),
   });
 
   return (
-    <div className="rounded-md border max-md:h-max max-md:max-w-2xl max-md:overflow-x-auto">
+    <div className="rounded-md border">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -63,7 +63,7 @@ export function ShipDetailTable<TData, TValue>({
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className="p-2 bg-[#523f25] border-l border-slate-300 text-slate-50 font-semibold"
+                  className="p-2 bg-[#553c2c] border-l border-slate-300 text-slate-50 font-semibold"
                   style={{
                     minWidth: header.getSize(),
                     width: header.getSize() + 20,
@@ -88,7 +88,7 @@ export function ShipDetailTable<TData, TValue>({
                 className="odd:hover:bg-inherit odd:even:bg-muted/50 odd:bg-inherit even:bg-muted/50"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="p-2">
+                  <TableCell key={cell.id} className="px-2 py-3">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
