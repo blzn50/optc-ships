@@ -15,8 +15,9 @@ export function Ships() {
     if (dbVersion < DB_VERSION) {
       setTimeout(() => {
         toast({
-          title: "Update: 5 June 2024",
-          description: "Special effect 2 updated for some ships",
+          title: "Update: 4 August 2024",
+          description:
+            "Ship special added for 10 ships. Updated the max effect to show info after special effect 2.",
         });
       }, 500);
       // update local storage
