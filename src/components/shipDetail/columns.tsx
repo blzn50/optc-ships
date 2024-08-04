@@ -64,7 +64,7 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
       const special = String(row.getValue("special"));
       const cd = row.getValue("cd");
       // if needed, sanitize the val with js-xss or dompurify
-      const text = replaceAndSanitizeSpecial(special);
+      const text = replaceAndSanitizeEffect(replaceAndSanitizeSpecial(special));
       return (
         <p
           className="pl-1"
