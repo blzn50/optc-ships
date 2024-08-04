@@ -522,7 +522,7 @@ export const units: ShipOverview[] = [
     colaCount: 15500,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.7x, HP by 1.4x, boosts their ATK by approximately 2x when they have [G] or [RAINBOW] slots, reduces crew's Bind/ATK Down duration by 1 turn, boosts amount of Berries earned by 3x, and if every class is on the crew and crew launches a Special to set the chain multiplier, extends it by 1 turn",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.7x, HP by 1.4x, boosts their ATK by approximately 2x when they have [G] or [RAINBOW] slots, reduces crew's Bind/ATK Down duration by 1 turn, boosts amount of Berries earned by 3x, and if every class is on the crew and crew launches a Special to set the chain multiplier, extends the duration of the effect by 1 turn",
     hasSpecial: "no",
   },
   /**
