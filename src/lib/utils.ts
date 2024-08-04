@@ -1,6 +1,11 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import type { ShipDetail, ShipInfo } from "@/types/Ship";
+import type {
+  ShipDetail,
+  ShipInfo,
+  ShipModificationEffect,
+  ShipModificationEffectTable,
+} from "@/types/Ship";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -111,4 +116,20 @@ export function flattenShipData(shipInfo: ShipInfo) {
     shipDetail.push(tempDetail);
   }
   return shipDetail;
+}
+
+export function flattenShipModificationData(
+  modificationInfo: ShipModificationEffectTable,
+) {
+  const modificationDetail: ShipModificationEffect[] = [];
+  for (let index = 0; index < modificationInfo.phase.length; index++) {
+    const tempModificationDetail = {
+      phase: modificationInfo.phase[index],
+      effect: modificationInfo.effect[index],
+      special: modificationInfo.special[index],
+      cd: modificationInfo.cd[index],
+    };
+    modificationDetail.push(tempModificationDetail);
+  }
+  return modificationDetail;
 }
