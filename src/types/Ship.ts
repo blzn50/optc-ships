@@ -22,6 +22,20 @@ export type ShipInfo = ShipBasic & {
   period?: string[];
   special?: string[];
   cd?: (number | string)[];
+  modification?: ShipModificationEffectTable;
+};
+
+export type ShipModificationEffect = {
+  phase: number;
+  effect: string;
+  special?: string;
+  cd?: number | string;
+};
+
+export type ShipModificationEffectTable = Required<
+  Pick<ShipInfo, "effect" | "special" | "cd">
+> & {
+  phase: number[];
 };
 
 export type ShipDetail = Pick<ShipOverview, "effect"> &
