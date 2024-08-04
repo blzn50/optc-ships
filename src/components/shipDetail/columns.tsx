@@ -60,7 +60,7 @@ export const shipDetailColumns: ColumnDef<ShipDetail>[] = [
   {
     accessorKey: "special",
     header: () => <div className="pl-1">[CD] Special</div>,
-    cell: ({ row, column }) => {
+    cell: ({ row }) => {
       const special = String(row.getValue("special"));
       const cd = row.getValue("cd");
       // if needed, sanitize the val with js-xss or dompurify

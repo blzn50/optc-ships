@@ -55,7 +55,7 @@ export function ShipDetailTable<TData, TValue>({
   });
 
   return (
-    <div className="rounded-md border max-md:h-max max-md:max-w-2xl max-md:overflow-x-auto">
+    <div className="rounded-md border">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -63,7 +63,7 @@ export function ShipDetailTable<TData, TValue>({
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className="p-2 bg-[#523f25] border-l border-slate-300 text-slate-50 font-semibold"
+                  className="p-2 bg-[#553c2c] border-l border-slate-300 text-slate-50 font-semibold"
                   style={{
                     minWidth: header.getSize(),
                     width: header.getSize() + 20,
