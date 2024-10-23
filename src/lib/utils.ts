@@ -99,6 +99,14 @@ export function replaceAndSanitizeSpecial(text: string) {
     .replace(
       /\[ATK_UP\]/,
       '<img class="w-5 h-5 inline" src="/atk_up.png" alt="attack up"  />',
+    )
+    .replace(
+      /\[EOT_HEAL\]/,
+      '<img class="w-5 h-5 inline" src="/eot_heal.png" alt="eot heal"  />',
+    )
+    .replace(
+      /\[EOT_HEAL_TO_DAMAGE\]/,
+      '<img class="w-5 h-5 inline" src="/heal_slot_to_damage.png" alt="eot heal slot to damage"  />',
     );
 }
 

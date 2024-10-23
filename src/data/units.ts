@@ -29,7 +29,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Boosts Shooter and Fighter characters' ATK by 500, reduces crew's Paralysis duration by 1 turn, boosts crew's HP by 1.75x, boosts chance of landing on own type slot, and boosts Shooter and Fighter characters' ATK by 1.5x",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 5,
@@ -74,7 +74,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces crew's Special charge time by 1 turn at start of quest, reduces HP to 50%, boosts ATK by 1.55x, HP by 1.6x, if HP is 50% or below before attacking, reduces damage taken by 20%, and if HP is 30% or below before attacking, boosts ATK by a further 1.2x",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 9,

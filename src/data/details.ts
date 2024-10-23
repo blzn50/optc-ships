@@ -92,8 +92,11 @@ export const details: Record<number, ShipInfo> = {
         "Boosts Shooter and Fighter characters' ATK by 500, boosts crew's HP by 1.75x, boosts chance of landing on own type slot, and boosts Shooter and Fighter characters' ATK by 1.5x",
         "Boosts Shooter and Fighter characters' ATK by 500, reduces crew's Paralysis duration by 1 turn, boosts crew's HP by 1.75x, boosts chance of landing on own type slot, and boosts Shooter and Fighter characters' ATK by 1.5x",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Extends the duration of crew's [EOT_HEAL] by 2 turns and boosts Shooter and Fighter characters' base ATK by +1000 for 1 turn",
+      ],
     },
   },
   4: {
@@ -123,8 +126,11 @@ export const details: Record<number, ShipInfo> = {
         "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
         "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 12],
+      special: [
+        "-",
+        "Reduces [EOT_HEAL_TO_DAMAGE] duration by 2 turns, heals crew by 5,000 HP, and changes ATK multiplier of [RCV] [SEMLA] slots to 2.5x when slots match (normally 2.0x when matching) 0.5x when unfavorable, 1.0x otherwise for 1 turn",
+      ],
     },
   },
   5: {
@@ -254,8 +260,11 @@ export const details: Record<number, ShipInfo> = {
         "Reduces crew's Special charge time by 1 turn at start of quest, reduces HP to 50%, boosts ATK by 1.55x, HP by 1.6x, and if HP is 30% or below before attacking, boosts ATK by a further 1.2x",
         "Reduces crew's Special charge time by 1 turn at start of quest, reduces HP to 50%, boosts ATK by 1.55x, HP by 1.6x, if HP is 50% or below before attacking, reduces damage taken by 20%, and if HP is 30% or below before attacking, boosts ATK by a further 1.2x",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 12],
+      special: [
+        "-",
+        "Activates HP Guard of 70% effect for 1 turn and reduces crew's Switch Effect use by 1",
+      ],
     },
   },
   9: {
@@ -1129,7 +1138,7 @@ export const details: Record<number, ShipInfo> = {
       cd: [11, 11],
       special: [
         "Reduces all enemies' DEF by 90% for 1 turn and boosts damage dealt to DEF Down enemies by 1.75x for 1 turn",
-        "Reduces all enemies' DEF by 90% for 1 turn and boosts damage dealt to DEF Down enemies by 1.75x for 1 turn",
+        "Reduces all enemies' DEF by 90% for 1 turn and boosts damage dealt to DEF Down enemies by 2.25x for 1 turn",
       ],
     },
   },
@@ -1864,7 +1873,7 @@ export const details: Record<number, ShipInfo> = {
       cd: [9, 9],
       special: [
         "Reduces crew's Paralysis duration by 2 turns",
-        "Reduces crew's Bind/Paralysis duration by 2 turns",
+        "Reduces crew's Bind/Paralysis duration by 2 turns, and boosts the ATK of the next final tap performed by a Free Spirit or Slasher character by 15% (similar effects can stack, up to 200%; the effect will be spent during the final tap when attacking with all available characters regardless of the type/class requirement of the effect)",
       ],
     },
   },
