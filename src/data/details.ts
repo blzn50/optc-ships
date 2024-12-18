@@ -1877,6 +1877,18 @@ export const details: Record<number, ShipInfo> = {
       ],
     },
   },
+  58: {
+    name: "Thousand Sunny - 8th Anniversary Special Model",
+    obtain: "Clear the limited time 8th Anniversary campaign quest",
+    period: [
+      "8th Anniversary Phase 1",
+      "After 8th Anniversary",
+    ],
+    effect: [
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.55x and HP by 1.2x, makes their [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 2x",
+      "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
+    ],
+  },
   59: {
     name: "Whale Shark",
     obtain: "Clear the 30 gem unlockable Whale Shark Ship Isle",
