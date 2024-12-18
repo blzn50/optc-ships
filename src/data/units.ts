@@ -489,6 +489,14 @@ export const units: ShipOverview[] = [
     hasSpecial: "yes",
   },
   {
+    id: 57,
+    name: "Thousand Sunny - 7th Anniversary Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect: "Boosts crew's ATK by 1.2x",
+    hasSpecial: "no",
+  },
+  {
     id: 58,
     name: "Thousand Sunny - 8th Anniversary Model",
     colaCount: 0,

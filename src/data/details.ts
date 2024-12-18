@@ -1889,6 +1889,18 @@ export const details: Record<number, ShipInfo> = {
       ],
     },
   },
+  57: {
+    name: "Thousand Sunny - 7th Anniversary Special Model",
+    obtain: "Clear the limited time 7th Anniversary campaign quest",
+    period: [
+      "7th Anniversary Phase 1",
+      "After 7th Anniversary",
+    ],
+    effect: [
+      "[Not confirmed] Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
+      "[Not confirmed] Boosts crew's ATK by 1.2x",
+    ],
+  },
   58: {
     name: "Thousand Sunny - 8th Anniversary Special Model",
     obtain: "Clear the limited time 8th Anniversary campaign quest",
