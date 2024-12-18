@@ -490,6 +490,14 @@ export const units: ShipOverview[] = [
     hasSpecial: "no",
   },
   {
+    id: 60,
+    name: "Thousand Sunny - 9th Anniversary Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect: "Boosts crew's ATK by 1.5x and makes it easier to land PERFECT strikes",
+    hasSpecial: "no",
+  },
+  {
     id: 61,
     name: "Shiki's Island Ship",
     colaCount: 15500,

@@ -1908,6 +1908,20 @@ export const details: Record<number, ShipInfo> = {
       special: ["-", "-"],
     },
   },
+  60: {
+    name: "Thousand Sunny - 9th Anniversary Special Model",
+    obtain: "Clear the limited time 9th Anniversary campaign quest",
+    period: [
+      "9th Anniversary Phase 1",
+      "9th Anniversary Phase 2",
+      "After 9th Anniversary",
+    ],
+    effect: [
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.6x, makes their [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 3x",
+      "Reduces Special charge time by 2 turn at start of quest,  boosts crew's ATK by 1.6x, makes their [RCV] slots have matching slot effects, and boosts Pirate EXP and Berries earned by 2x",
+      "Boosts crew's ATK by 1.5x and makes it easier to land PERFECT strikes",
+    ],
+  },
   61: {
     name: "Shiki's Island Ship",
     obtain: "Clear the 30 gem unlockable Shiki's Island Ship Isle",
