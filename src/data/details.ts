@@ -1697,6 +1697,18 @@ export const details: Record<number, ShipInfo> = {
       special: ["-", "-"],
     },
   },
+  52: {
+    name: "Thousand Sunny - 6th Anniversary Special Model",
+    obtain: "Clear the limited time 6th Anniversary campaign quest",
+    period: [
+      "6th Anniversary Phase 1",
+      "After 6th Anniversary",
+    ],
+    effect: [
+      "Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
+      "Boosts crew's ATK by 1.2x",
+    ],
+  },
   53: {
     name: "Victoria Punk",
     obtain: "Clear Forest of Training: Magnetic Field",
