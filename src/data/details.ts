@@ -1898,7 +1898,7 @@ export const details: Record<number, ShipInfo> = {
     ],
     effect: [
       "[Not confirmed] Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
-      "[Not confirmed] Boosts crew's ATK by 1.2x",
+      "Boosts crew's ATK by 1.2x",
     ],
   },
   58: {
@@ -1955,7 +1955,7 @@ export const details: Record<number, ShipInfo> = {
     effect: [
       "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.6x, makes their [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 3x",
       "Reduces Special charge time by 2 turn at start of quest,  boosts crew's ATK by 1.6x, makes their [RCV] slots have matching slot effects, and boosts Pirate EXP and Berries earned by 2x",
-      "Boosts crew's ATK by 1.5x and makes it easier to land PERFECT strikes",
+      "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
     ],
   },
   61: {

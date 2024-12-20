@@ -518,7 +518,7 @@ export const units: ShipOverview[] = [
     name: "Thousand Sunny - 9th Anniversary Model",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts crew's ATK by 1.5x and makes it easier to land PERFECT strikes",
+    effect: "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
     hasSpecial: "no",
   },
   {
