@@ -445,6 +445,14 @@ export const units: ShipOverview[] = [
     hasSpecial: "no",
   },
   {
+    id: 52,
+    name: "Thousand Sunny - 6th Anniversary Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect: "Boosts crew's ATK by 1.2x",
+    hasSpecial: "no",
+  },
+  {
     id: 53,
     name: "Victoria Punk",
     colaCount: 15202,
@@ -481,12 +489,36 @@ export const units: ShipOverview[] = [
     hasSpecial: "yes",
   },
   {
+    id: 57,
+    name: "Thousand Sunny - 7th Anniversary Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect: "Boosts crew's ATK by 1.2x",
+    hasSpecial: "no",
+  },
+  {
+    id: 58,
+    name: "Thousand Sunny - 8th Anniversary Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect: "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
+    hasSpecial: "no",
+  },
+  {
     id: 59,
     name: "Whale Shark",
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
+    hasSpecial: "no",
+  },
+  {
+    id: 60,
+    name: "Thousand Sunny - 9th Anniversary Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect: "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
     hasSpecial: "no",
   },
   {

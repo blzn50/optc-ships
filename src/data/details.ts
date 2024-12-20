@@ -1697,6 +1697,18 @@ export const details: Record<number, ShipInfo> = {
       special: ["-", "-"],
     },
   },
+  52: {
+    name: "Thousand Sunny - 6th Anniversary Special Model",
+    obtain: "Clear the limited time 6th Anniversary campaign quest",
+    period: [
+      "6th Anniversary Phase 1",
+      "After 6th Anniversary",
+    ],
+    effect: [
+      "Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
+      "Boosts crew's ATK by 1.2x",
+    ],
+  },
   53: {
     name: "Victoria Punk",
     obtain: "Clear Forest of Training: Magnetic Field",
@@ -1877,6 +1889,30 @@ export const details: Record<number, ShipInfo> = {
       ],
     },
   },
+  57: {
+    name: "Thousand Sunny - 7th Anniversary Special Model",
+    obtain: "Clear the limited time 7th Anniversary campaign quest",
+    period: [
+      "7th Anniversary Phase 1",
+      "After 7th Anniversary",
+    ],
+    effect: [
+      "[Not confirmed] Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
+      "Boosts crew's ATK by 1.2x",
+    ],
+  },
+  58: {
+    name: "Thousand Sunny - 8th Anniversary Special Model",
+    obtain: "Clear the limited time 8th Anniversary campaign quest",
+    period: [
+      "8th Anniversary Phase 1",
+      "After 8th Anniversary",
+    ],
+    effect: [
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.55x and HP by 1.2x, makes their [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 2x",
+      "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
+    ],
+  },
   59: {
     name: "Whale Shark",
     obtain: "Clear the 30 gem unlockable Whale Shark Ship Isle",
@@ -1907,6 +1943,20 @@ export const details: Record<number, ShipInfo> = {
       cd: ["-", "-"],
       special: ["-", "-"],
     },
+  },
+  60: {
+    name: "Thousand Sunny - 9th Anniversary Special Model",
+    obtain: "Clear the limited time 9th Anniversary campaign quest",
+    period: [
+      "9th Anniversary Phase 1",
+      "9th Anniversary Phase 2",
+      "After 9th Anniversary",
+    ],
+    effect: [
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.6x, makes their [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 3x",
+      "Reduces Special charge time by 2 turn at start of quest,  boosts crew's ATK by 1.6x, makes their [RCV] slots have matching slot effects, and boosts Pirate EXP and Berries earned by 2x",
+      "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
+    ],
   },
   61: {
     name: "Shiki's Island Ship",
