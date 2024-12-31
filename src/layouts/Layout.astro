@@ -1,5 +1,6 @@
 ---
 import Header from "@/components/Header.astro";
+import Umami from "@/components/Umami.astro";
 interface Props {
   title: string;
 }
@@ -25,6 +26,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <Umami id=`${import.meta.env.UMAMI_WEBSITE_ID}` />
   </head>
   <body>
     <Header />
