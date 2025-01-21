@@ -85,7 +85,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Shooter and Fighter characters' ATK by 500, boosts crew's HP by 1.75x, and boosts Shooter and Fighter characters' ATK by 1.5x",
     ],
     specialEffect1: "Boosts crew's chance of landing on own type slot",
-    specialEffect2: "Reduces Paralysis duration by 1 turn",
+    specialEffect2:
+      "Reduces Paralysis duration by 1 turn [Special] (11 turns): Extends the duration of crew's [EOT_HEAL] by 2 turns and boosts Shooter and Fighter characters' base ATK by +1000 for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
@@ -119,7 +120,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Changes crew's [TND] slots into [SEMLA] slots",
+    specialEffect2:
+      "Changes crew's [TND] slots into [SEMLA] slots [Special] (12 turns): Reduces [EOT_HEAL_TO_DAMAGE] duration by 2 turns, heals crew by 5,000 HP, and changes ATK multiplier of [RCV] [SEMLA] slots to 2.5x when slots match (normally 2.0x when matching) 0.5x when unfavorable, 1.0x otherwise for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
@@ -253,7 +255,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces HP to 50% at start of quest, boosts crew's ATK by 1.55x, HP by 1.6x, and if HP is 30% or below at start of attack, boosts ATK by a further 1.2x",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces damage taken by 20% when HP is 50% or below",
+    specialEffect2:
+      "Reduces damage taken by 20% when HP is 50% or below [Special] (12 turns): Activates HP Guard of 70% effect for 1 turn and reduces crew's Switch Effect use by 1",
     modification: {
       phase: [1, 2],
       effect: [
@@ -1700,10 +1703,7 @@ export const details: Record<number, ShipInfo> = {
   52: {
     name: "Thousand Sunny - 6th Anniversary Special Model",
     obtain: "Clear the limited time 6th Anniversary campaign quest",
-    period: [
-      "6th Anniversary Phase 1",
-      "After 6th Anniversary",
-    ],
+    period: ["6th Anniversary Phase 1", "After 6th Anniversary"],
     effect: [
       "Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
       "Boosts crew's ATK by 1.2x",
@@ -1892,10 +1892,7 @@ export const details: Record<number, ShipInfo> = {
   57: {
     name: "Thousand Sunny - 7th Anniversary Special Model",
     obtain: "Clear the limited time 7th Anniversary campaign quest",
-    period: [
-      "7th Anniversary Phase 1",
-      "After 7th Anniversary",
-    ],
+    period: ["7th Anniversary Phase 1", "After 7th Anniversary"],
     effect: [
       "[Not confirmed] Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
       "Boosts crew's ATK by 1.2x",
@@ -1904,10 +1901,7 @@ export const details: Record<number, ShipInfo> = {
   58: {
     name: "Thousand Sunny - 8th Anniversary Special Model",
     obtain: "Clear the limited time 8th Anniversary campaign quest",
-    period: [
-      "8th Anniversary Phase 1",
-      "After 8th Anniversary",
-    ],
+    period: ["8th Anniversary Phase 1", "After 8th Anniversary"],
     effect: [
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.55x and HP by 1.2x, makes their [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 2x",
       "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
