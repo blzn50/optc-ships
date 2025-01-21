@@ -56,7 +56,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, HP by 1.3x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 7,
@@ -425,7 +425,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 50,
@@ -501,7 +501,8 @@ export const units: ShipOverview[] = [
     name: "Thousand Sunny - 8th Anniversary Model",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
+    effect:
+      "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
     hasSpecial: "no",
   },
   {
@@ -518,7 +519,8 @@ export const units: ShipOverview[] = [
     name: "Thousand Sunny - 9th Anniversary Model",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
+    effect:
+      "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
     hasSpecial: "no",
   },
   {
@@ -546,7 +548,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 64,

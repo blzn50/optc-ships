@@ -192,15 +192,19 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Boosts Striker characters' HP by 1.3x",
+    specialEffect2:
+      "Boosts Striker characters' HP by 1.3x [Special] (11 turns): Greatly reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, and heals crew by 5,000 HP at end of turn for 3 turns",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
         "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, HP by 1.3x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Greatly reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, and heals crew by 5,000 HP at end of turn for 3 turns",
+      ],
     },
   },
   7: {
@@ -1377,7 +1381,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Changes crew's [RCV] slots to [SEMLA] slots",
+    specialEffect2:
+      "Changes crew's [RCV] slots to [SEMLA] slots [Updated Special] (6 turns): Reduces crew's Slot Bind duration by 1 turn, and changes middle-row and bottom-row characters' slots to [RCV]",
     modification: {
       phase: [1, 2],
       effect: [
@@ -1387,7 +1392,7 @@ export const details: Record<number, ShipInfo> = {
       cd: [6, 6],
       special: [
         "Changes bottom-row characters' slots to [RCV]",
-        "Changes bottom-row characters' slots to [RCV]",
+        "Reduces crew's Slot Bind duration by 1 turn, and changes middle-row and bottom-row characters' slots to [RCV]",
       ],
     },
   },
@@ -1647,15 +1652,19 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
     ],
     specialEffect1: "Boosts crew's chance of landing on own type slot",
-    specialEffect2: "Reduces Special Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Special Bind duration by 1 turn [Special] (11 turns): Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
         "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
+      ],
     },
   },
   50: {
@@ -2036,15 +2045,19 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces crew's Special charge time by an additional 1 turn",
-    specialEffect2: "Boosts Fighter characters' ATK by 200",
+    specialEffect2:
+      "Boosts Fighter characters' ATK by 200 [Special] (11 turns): Reduces crew's Bind duration by 2 turns, and boosts [STR], [QCK], and [INT] characters' slot effects by 2.25x for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Special charge time by 2 turns at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
         "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Reduces crew's Bind duration by 2 turns, and boosts [STR], [QCK], and [INT] characters' slot effects by 2.25x for 1 turn",
+      ],
     },
   },
   64: {
