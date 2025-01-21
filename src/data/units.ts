@@ -19,7 +19,7 @@ export const units: ShipOverview[] = [
     colaCount: 15057,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20000, boosts crew's ATK by 1.65x, reduces crew's Bind/Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts crew's ATK by 1.65x, reduces crew's Bind/Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
     hasSpecial: "afterMRank5",
   },
   {
@@ -37,7 +37,7 @@ export const units: ShipOverview[] = [
     colaCount: 15226,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
+      "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
     hasSpecial: "afterMRank5",
   },
   {
@@ -56,7 +56,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, HP by 1.3x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 7,
@@ -425,7 +425,7 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
-    hasSpecial: "no",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 50,
@@ -501,7 +501,8 @@ export const units: ShipOverview[] = [
     name: "Thousand Sunny - 8th Anniversary Model",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
+    effect:
+      "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
     hasSpecial: "no",
   },
   {
@@ -510,7 +511,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
+      "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.75x, boosts top-right character's HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
     hasSpecial: "no",
   },
   {
@@ -518,7 +519,8 @@ export const units: ShipOverview[] = [
     name: "Thousand Sunny - 9th Anniversary Model",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
+    effect:
+      "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
     hasSpecial: "no",
   },
   {
@@ -545,8 +547,8 @@ export const units: ShipOverview[] = [
     colaCount: 15500,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
-    hasSpecial: "no",
+      "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts top-right character's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
+    hasSpecial: "afterMRank5",
   },
   {
     id: 64,

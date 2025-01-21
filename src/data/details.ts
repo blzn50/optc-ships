@@ -39,18 +39,18 @@ export const details: Record<number, ShipInfo> = {
     cola: [0, 3, 3, 5, 5, 7, 7, 9, 9, 9, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
-      "Boosts Captain's HP by 100, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 130, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 150, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 170, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 190, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 210, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 230, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 250, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 270, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
-      "Boosts Captain's HP by 300, boosts crew's ATK by 1.5x, and makes it easier to land PERFECT strikes",
-      "Boosts Captain's HP by 10000, boosts crew's ATK by 1.55x, and makes it a much easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20000, boosts crew's ATK by 1.65x, and makes it much easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 100, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 130, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 150, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 170, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 190, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 210, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 230, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 250, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 270, boosts crew's ATK by 1.2x, and makes it a little easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 300, boosts crew's ATK by 1.5x, and makes it easier to land PERFECT strikes",
+      "Boosts top-right character's HP by 10000, boosts crew's ATK by 1.55x, and makes it a much easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts crew's ATK by 1.65x, and makes it much easier to land PERFECT strikes",
     ],
     specialEffect1: "Reduces Despair duration by 1 turn",
     specialEffect2:
@@ -58,8 +58,8 @@ export const details: Record<number, ShipInfo> = {
     modification: {
       phase: [1, 2],
       effect: [
-        "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20,000, boosts crew's ATK by 1.65x, reduces crew's Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
-        "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 20000, boosts crew's ATK by 1.65x, reduces crew's Bind/Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
+        "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20,000, boosts crew's ATK by 1.65x, reduces crew's Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
+        "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts crew's ATK by 1.65x, reduces crew's Bind/Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
       ],
       cd: ["-", 10],
       special: ["-", "Reduces crew's Despair/Bind duration by 1 turn"],
@@ -85,7 +85,8 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Shooter and Fighter characters' ATK by 500, boosts crew's HP by 1.75x, and boosts Shooter and Fighter characters' ATK by 1.5x",
     ],
     specialEffect1: "Boosts crew's chance of landing on own type slot",
-    specialEffect2: "Reduces Paralysis duration by 1 turn",
+    specialEffect2:
+      "Reduces Paralysis duration by 1 turn [Special] (11 turns): Extends the duration of crew's [EOT_HEAL] by 2 turns and boosts Shooter and Fighter characters' base ATK by +1000 for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
@@ -105,26 +106,27 @@ export const details: Record<number, ShipInfo> = {
     cola: [0, 3, 4, 7, 10, 14, 23, 30, 45, 90, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
-      "Boosts Captain's HP by 500",
-      "Boosts Captain's HP by 600",
-      "Boosts Captain's HP by 700",
-      "Boosts Captain's HP by 800",
-      "Boosts Captain's HP by 900",
-      "Boosts Captain's HP by 1000",
-      "Boosts Captain's HP by 1100",
-      "Boosts Captain's HP by 1200",
-      "Boosts Captain's HP by 1300",
-      "Boosts Captain's HP by 2000",
-      "Boosts Captain's HP by 10,000, slightly boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.5x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
-      "Boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
+      "Boosts top-right character's HP by 500",
+      "Boosts top-right character's HP by 600",
+      "Boosts top-right character's HP by 700",
+      "Boosts top-right character's HP by 800",
+      "Boosts top-right character's HP by 900",
+      "Boosts top-right character's HP by 1000",
+      "Boosts top-right character's HP by 1100",
+      "Boosts top-right character's HP by 1200",
+      "Boosts top-right character's HP by 1300",
+      "Boosts top-right character's HP by 2000",
+      "Boosts top-right character's HP by 10,000, slightly boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.5x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
+      "Boosts top-right character's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Changes crew's [TND] slots into [SEMLA] slots",
+    specialEffect2:
+      "Changes crew's [TND] slots into [SEMLA] slots [Special] (12 turns): Reduces [EOT_HEAL_TO_DAMAGE] duration by 2 turns, heals crew by 5,000 HP, and changes ATK multiplier of [RCV] [SEMLA] slots to 2.5x when slots match (normally 2.0x when matching) 0.5x when unfavorable, 1.0x otherwise for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
-        "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
-        "Reduces Special charge time by 1 turn at start of quest, boosts Captain's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
+        "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
+        "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
       ],
       cd: ["-", 12],
       special: [
@@ -190,15 +192,19 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Boosts Striker characters' HP by 1.3x",
+    specialEffect2:
+      "Boosts Striker characters' HP by 1.3x [Special] (11 turns): Greatly reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, and heals crew by 5,000 HP at end of turn for 3 turns",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
         "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, HP by 1.3x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Greatly reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, and heals crew by 5,000 HP at end of turn for 3 turns",
+      ],
     },
   },
   7: {
@@ -253,7 +259,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces HP to 50% at start of quest, boosts crew's ATK by 1.55x, HP by 1.6x, and if HP is 30% or below at start of attack, boosts ATK by a further 1.2x",
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces damage taken by 20% when HP is 50% or below",
+    specialEffect2:
+      "Reduces damage taken by 20% when HP is 50% or below [Special] (12 turns): Activates HP Guard of 70% effect for 1 turn and reduces crew's Switch Effect use by 1",
     modification: {
       phase: [1, 2],
       effect: [
@@ -1374,7 +1381,8 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Changes crew's [RCV] slots to [SEMLA] slots",
+    specialEffect2:
+      "Changes crew's [RCV] slots to [SEMLA] slots [Updated Special] (6 turns): Reduces crew's Slot Bind duration by 1 turn, and changes middle-row and bottom-row characters' slots to [RCV]",
     modification: {
       phase: [1, 2],
       effect: [
@@ -1384,7 +1392,7 @@ export const details: Record<number, ShipInfo> = {
       cd: [6, 6],
       special: [
         "Changes bottom-row characters' slots to [RCV]",
-        "Changes bottom-row characters' slots to [RCV]",
+        "Reduces crew's Slot Bind duration by 1 turn, and changes middle-row and bottom-row characters' slots to [RCV]",
       ],
     },
   },
@@ -1644,15 +1652,19 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
     ],
     specialEffect1: "Boosts crew's chance of landing on own type slot",
-    specialEffect2: "Reduces Special Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Special Bind duration by 1 turn [Special] (11 turns): Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
         "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
+      ],
     },
   },
   50: {
@@ -1700,10 +1712,7 @@ export const details: Record<number, ShipInfo> = {
   52: {
     name: "Thousand Sunny - 6th Anniversary Special Model",
     obtain: "Clear the limited time 6th Anniversary campaign quest",
-    period: [
-      "6th Anniversary Phase 1",
-      "After 6th Anniversary",
-    ],
+    period: ["6th Anniversary Phase 1", "After 6th Anniversary"],
     effect: [
       "Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
       "Boosts crew's ATK by 1.2x",
@@ -1892,10 +1901,7 @@ export const details: Record<number, ShipInfo> = {
   57: {
     name: "Thousand Sunny - 7th Anniversary Special Model",
     obtain: "Clear the limited time 7th Anniversary campaign quest",
-    period: [
-      "7th Anniversary Phase 1",
-      "After 7th Anniversary",
-    ],
+    period: ["7th Anniversary Phase 1", "After 7th Anniversary"],
     effect: [
       "[Not confirmed] Reduces Special charge time by 5 turn at start of quest, boosts crew's ATK by 1.5x, and boosts Pirate EXP and Berries earned by 3x",
       "Boosts crew's ATK by 1.2x",
@@ -1904,10 +1910,7 @@ export const details: Record<number, ShipInfo> = {
   58: {
     name: "Thousand Sunny - 8th Anniversary Special Model",
     obtain: "Clear the limited time 8th Anniversary campaign quest",
-    period: [
-      "8th Anniversary Phase 1",
-      "After 8th Anniversary",
-    ],
+    period: ["8th Anniversary Phase 1", "After 8th Anniversary"],
     effect: [
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.55x and HP by 1.2x, makes their [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 2x",
       "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
@@ -1923,22 +1926,22 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.2x, and makes it easier to land PERFECT strikes",
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.25x, and makes it easier to land PERFECT strikes",
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.3x, and makes it easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.35x and HP by 500, and makes it easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.4x and HP by 1,000, and makes it easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.45x and HP by 2,500, and makes it easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.45x and HP by 2,500, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.1x",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.5x and HP by 5,000, makes [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.2x",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.6x and HP by 10,000, makes [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.25x",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.65x, HP by 20,000, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.25x",
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.35x, boosts top-right character's HP by 500, and makes it easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.4x, boosts top-right character's HP by 1,000, and makes it easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.45x, boosts top-right character's HP by 2,500, and makes it easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.45x, boosts top-right character's HP by 2,500, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.1x",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.5x, boosts top-right character's HP by 5,000, makes [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.2x",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.6x, boosts top-right character's HP by 10,000, makes [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.25x",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.65x, boosts top-right character's HP by 20,000, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.25x",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.75x, boosts top-right character's HP by 20,000, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
     ],
     specialEffect1: "Reduces crew's Paralysis duration by 1 turn",
     specialEffect2: "Reduces Special charge time by 1 turn at start of quest",
     modification: {
       phase: [1, 2],
       effect: [
-        "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
-        "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.75x, HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
+        "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.75x, boosts top-right character's HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
+        "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.75x, boosts top-right character's HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
       ],
       cd: ["-", "-"],
       special: ["-", "-"],
@@ -2030,27 +2033,31 @@ export const details: Record<number, ShipInfo> = {
       "Boosts STR, QCK, and INT characters' ATK by 1.2x",
       "Boosts STR, QCK, and INT characters' ATK by 1.2x and HP by 1.1x",
       "Boosts STR, QCK, and INT characters' ATK by 1.3x and HP by 1.1x",
-      "Boosts STR, QCK, and INT characters' ATK by 1.3x, HP by 1.1x, and boosts Captain's ATK by a further 1.1x",
-      "Boosts STR, QCK, and INT characters' ATK by 1.3x, HP by 1.2x, and boosts Captain's ATK by a further 1.1x",
-      "Boosts STR, QCK, and INT characters' ATK by 1.4x, HP by 1.2x, and boosts Captain's ATK by a further 1.1x",
-      "Boosts STR, QCK, and INT characters' ATK by 1.4x, HP by 1.2x, boosts Captain's ATK by a further 1.1x, and makes it a little easier to land PERFECT strikes",
-      "Boosts STR, QCK, and INT characters' ATK by 1.45x, HP by 1.2x, boosts Captain's ATK by a further 1.15x, and makes it a little easier to land PERFECT strikes",
-      "Boosts STR, QCK, and INT characters' ATK by 1.5x, HP by 1.25x, boosts Captain's ATK by a further 1.15x, and makes it a little easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.55x, HP by 1.25x, boosts Captain's ATK by an additional 1.2x (~1.86x), and makes it a little easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.6x, HP by 1.25x, boosts Captain's ATK by a further 1.2x (~1.92x), makes crew's [PSY] [DEX] slots have matching slot effects, and makes it a little easier to land PERFECT strikes",
-      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x (~2.1875x), makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
+      "Boosts STR, QCK, and INT characters' ATK by 1.3x, HP by 1.1x, and boosts top-right character's ATK by a further 1.1x",
+      "Boosts STR, QCK, and INT characters' ATK by 1.3x, HP by 1.2x, and boosts top-right character's ATK by a further 1.1x",
+      "Boosts STR, QCK, and INT characters' ATK by 1.4x, HP by 1.2x, and boosts top-right character's ATK by a further 1.1x",
+      "Boosts STR, QCK, and INT characters' ATK by 1.4x, HP by 1.2x, boosts top-right character's ATK by a further 1.1x, and makes it a little easier to land PERFECT strikes",
+      "Boosts STR, QCK, and INT characters' ATK by 1.45x, HP by 1.2x, boosts top-right character's ATK by a further 1.15x, and makes it a little easier to land PERFECT strikes",
+      "Boosts STR, QCK, and INT characters' ATK by 1.5x, HP by 1.25x, boosts top-right character's ATK by a further 1.15x, and makes it a little easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.55x, HP by 1.25x, boosts top-right character's ATK by an additional 1.2x (~1.86x), and makes it a little easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.6x, HP by 1.25x, boosts top-right character's ATK by a further 1.2x (~1.92x), makes crew's [PSY] [DEX] slots have matching slot effects, and makes it a little easier to land PERFECT strikes",
+      "Reduces Special charge time by 1 turn at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts top-right character's ATK by a further 1.25x (~2.1875x), makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
     ],
     specialEffect1:
       "Reduces crew's Special charge time by an additional 1 turn",
-    specialEffect2: "Boosts Fighter characters' ATK by 200",
+    specialEffect2:
+      "Boosts Fighter characters' ATK by 200 [Special] (11 turns): Reduces crew's Bind duration by 2 turns, and boosts [STR], [QCK], and [INT] characters' slot effects by 2.25x for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
-        "Reduces Special charge time by 2 turns at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
-        "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts Captain's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
+        "Reduces Special charge time by 2 turns at start of quest, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts top-right character's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
+        "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts top-right character's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
       ],
-      cd: ["-", "-"],
-      special: ["-", "-"],
+      cd: ["-", 11],
+      special: [
+        "-",
+        "Reduces crew's Bind duration by 2 turns, and boosts [STR], [QCK], and [INT] characters' slot effects by 2.25x for 1 turn",
+      ],
     },
   },
   64: {
