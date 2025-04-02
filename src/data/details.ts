@@ -1289,10 +1289,10 @@ export const details: Record<number, ShipInfo> = {
     name: "Laboon",
     obtain:
       "Purchase from Rayleigh's Bazaar for 500 points during Brook's Promise Campaign",
-    note: "Campaign period: April 3 0:00 ~ April 19 11:59 PST",
+    note: "Campaign period: April 3 0:00 ~ April 21 11:59 PST",
     period: ["During Campaign", "After Campaign"],
     effect: [
-      "Reduces crew's special CD by 5 turns at the start, boosts their ATK by 1.6x, HP by 2x, makes it easier to land PERFECTS, and boosts Pirate EXP and Berries earned by 2x",
+      "Reduces crew's special CD by 5 turns at the start of quest, boosts their ATK by 1.6x, HP by 2x, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 2x",
       "Boosts ATK by 1.2x",
     ],
   },
