@@ -328,7 +328,13 @@ export const units: ShipOverview[] = [
     name: "Laboon",
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
+    effect:
+      details[38].effect[
+        convertToPSTTimestamp() >= getPSTTimestamp("2025-04-03T00:00:00") &&
+        convertToPSTTimestamp() <= getPSTTimestamp("2025-04-21T11:59:59")
+          ? 0
+          : 1
+      ],
     hasSpecial: "no",
   },
   {
