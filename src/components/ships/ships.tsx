@@ -15,9 +15,8 @@ export function Ships() {
     if (dbVersion < DB_VERSION) {
       setTimeout(() => {
         toast({
-          title: "Update: 21 January 2025",
-          description:
-            "Ship special added for 4 more ships. Updated ship effect which targets top-right character instead of captain.",
+          title: "Update: 02 April 2025",
+          description: "Laboon ship ability updated for April",
         });
       }, 500);
       // update local storage
