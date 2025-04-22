@@ -730,7 +730,7 @@ export const details: Record<number, ShipInfo> = {
   },
   21: {
     name: "Rocketman",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points",
     note: "Drastically reduces HP of non-Powerhouse characters in your crew (99%)",
     cola: [0, 2, 4, 6, 10, 14, 22, 26, 49, 95, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -793,7 +793,7 @@ export const details: Record<number, ShipInfo> = {
   },
   23: {
     name: "Garp's Battleship",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points.",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points.",
     cola: [0, 21, 21, 21, 21, 21, 21, 21, 21, 21, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
@@ -963,7 +963,6 @@ export const details: Record<number, ShipInfo> = {
       "Reduces all enemies' HP by 5%",
       "Reduces all enemies' HP by 5%",
       "Reduces all enemies' HP by 5%",
-      "Reduces all enemies' HP by 5%",
       "Reduces all enemies' HP by 7%",
       "Reduces all enemies' HP by 7%",
       "Reduces all enemies' HP by 7%",
@@ -973,23 +972,24 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1:
       "Reduces Slasher characters' Special charge time by 1 turn at start of quest",
-    specialEffect2: "Reduces ship's Special charge time by 3 turns",
+    specialEffect2:
+      "Reduces ship's Special charge time by 3 turns [Updated Special] (9 turns): Reduces all enemies' DEF Up duration by 2 turns, further increases lock chain multiplier effect by +0.2, and reduces all enemies' HP by 10%",
     modification: {
       phase: [1, 2],
       effect: [
         "Boosts Shooter characters' ATK by 1.75x, HP by 1.2x, reduces their Special charge time by 2 turns at start of quest, boosts Slasher characters' ATK by 1.1x, reduces Slasher characters' Special charge time by 1 turn at start of quest, and makes it easier to land PERFECT strikes",
-        "Reduces Striker characters' Special charge time by 1 turn at start of quest, makes it a little easier to land PERFECT strikes, reduces damage taken by 10%, boosts Driven characters' ATK by 1.1x, and if 6 Striker characters are on the crew, boosts crew's ATK by a further 1.75x and HP by 1.6x",
+        "Boosts Shooter characters' ATK by 1.75x, HP by 1.2x, reduces their Special charge time by 2 turns at start of quest, boosts Slasher characters' ATK by 1.1x, reduces Slasher characters' Special charge time by 1 turn at start of quest, and makes it easier to land PERFECT strikes",
       ],
       cd: [12, 9],
       special: [
         "Reduces all enemies' DEF Up duration by 2 turns and reduces all enemies' HP by 10%",
-        "Reduces all enemies' DEF Up duration by 2 turns and reduces all enemies' HP by 10%",
+        "Reduces all enemies' DEF Up duration by 2 turns, further increases lock chain multiplier effect by +0.2, and reduces all enemies' HP by 10%",
       ],
     },
   },
   28: {
     name: "Mister Luffy Go",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points",
     note: "Damage reduction amount is estimated to be 97%.",
     cola: [0, 1, 5, 9, 13, 19, 25, 32, 40, 50, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
@@ -1040,7 +1040,7 @@ export const details: Record<number, ShipInfo> = {
   },
   29: {
     name: "Thriller Bark",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points",
     cola: [0, 16, 17, 18, 19, 20, 21, 25, 30, 38, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
@@ -1102,7 +1102,7 @@ export const details: Record<number, ShipInfo> = {
   },
   33: {
     name: "Flying Dutchman",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points",
     cola: [0, 4, 5, 7, 11, 12, 14, 20, 22, 24, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
@@ -1182,7 +1182,7 @@ export const details: Record<number, ShipInfo> = {
   },
   35: {
     name: "Revolutionary Army Blackbirds",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points",
     cola: [0, 13, 14, 15, 16, 17, 18, 21, 22, 63, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
@@ -1252,7 +1252,7 @@ export const details: Record<number, ShipInfo> = {
   },
   37: {
     name: "Sexy Foxy",
-    obtain: "Purchase from Rayleigh's Bazaar for 7500 points",
+    obtain: "Purchase from Rayleigh's Bazaar for 7500 training points",
     cola: [0, 5, 9, 14, 18, 23, 28, 32, 37, 42, 5000, 10000],
     superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
     effect: [
@@ -1288,7 +1288,7 @@ export const details: Record<number, ShipInfo> = {
   38: {
     name: "Laboon",
     obtain:
-      "Purchase from Rayleigh's Bazaar for 500 points during Brook's Promise Campaign",
+      "Purchase from Rayleigh's Bazaar for 500 training points during Brook's Promise Campaign",
     note: "Campaign period: April 3 0:00 ~ April 21 11:59 PST",
     period: ["During Campaign", "After Campaign"],
     effect: [
@@ -1802,17 +1802,18 @@ export const details: Record<number, ShipInfo> = {
       "Reduces PSY characters' Special charge time by 1 turn",
     ],
     specialEffect1: "Boosts crew's HP by 1.4x",
-    specialEffect2: "Reduces Bind duration by 1 turn",
+    specialEffect2:
+      "Reduces Bind duration by 1 turn [Updated Special] (9 turns): Reduces PSY characters' Special charge time by 1 turn and applies -10% PSY Resistance to all enemies for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Special charge time by 1 turn at start of quest, boosts PSY characters' Special charge time by a further 1 turn, boosts Captain's RCV by 500, boosts crew's HP by 1.4x, and heals crew by 1,000 HP at end of turn. If Captain is a Free Spirit, Slasher, or Cerebral class, boosts crew's ATK by 1.6x. If 6 PSY characters are on the crew, boosts ATK a further 1.2x",
-        "Reduces crew's Bind duration by 1 turn, reduces Special charge time by 1 turn at start of quest, boosts PSY characters' Special charge time by a further 1 turn, boosts Captain's RCV by 500, boosts crew's HP by 1.4x, and heals crew by 1,000 HP at end of turn. If Captain is a Free Spirit, Slasher, or Cerebral class, boosts crew's ATK by 1.6x. If 6 PSY characters are on the crew, boosts ATK a further 1.2x",
+        "Reduces crew's Bind duration by 1 turn, reduces Special charge time by 1 turn at start of quest, reduces PSY characters' Special charge time by a further 1 turn, boosts Captain's RCV by 500, boosts crew's HP by 1.4x, and heals crew by 1,000 HP at end of turn. If Captain is a Free Spirit, Slasher, or Cerebral class, boosts crew's ATK by 1.6x. If 6 PSY characters are on the crew, boosts ATK a further 1.2x",
       ],
       cd: [9, 9],
       special: [
         "Reduces PSY characters' Special charge time by 1 turn",
-        "Reduces PSY characters' Special charge time by 1 turn",
+        "Reduces PSY characters' Special charge time by 1 turn and applies -10% PSY Resistance to all enemies for 1 turn",
       ],
     },
   },
@@ -2115,6 +2116,13 @@ export const details: Record<number, ShipInfo> = {
       "Reduces crew's Special charge time by 1 turn and changes crew's slots to character's own type",
       "Reduces crew's Special charge time by 1 turn and changes crew's slots to character's own type",
       "-",
+    ],
+  },
+  66: {
+    name: "Vacuum Rocket",
+    obtain: "Purchase from Rayleigh's Bazaar for 1 training point",
+    effect: [
+      "Boosts crew's ATK by 1.2x, and makes it easier to land PERFECT strikes",
     ],
   },
 };
