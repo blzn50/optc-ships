@@ -595,4 +595,13 @@ export const units: ShipOverview[] = [
         ? "yes"
         : "no",
   },
+  {
+    id: 66,
+    name: "Vacuum Rocket",
+    colaCount: 0,
+    superColaCount: 0,
+    effect:
+      "Boosts crew's ATK by 1.2x, and makes it easier to land PERFECT strikes",
+    hasSpecial: "no",
+  },
 ];
