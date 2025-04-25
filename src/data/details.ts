@@ -2125,6 +2125,24 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.2x, and makes it easier to land PERFECT strikes",
     ],
   },
+  67: {
+    name: "Thousand Sunny - 11th Anniversary Special Model",
+    obtain: "Clear the limited time 11th Anniversary campaign quest",
+    period: [
+      "11th Anniversary Phase 1",
+      "11th Anniversary Phase 2",
+      "11th Anniversary Phase 3",
+      "11th Anniversary Phase 4",
+      "After 11th Anniversary",
+    ],
+    effect: [
+      "Reduces crew's Special charge time by 5 turns at start of quest, boosts crew's ATK by 1.8x and HP by 1.1x, makes crew's [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 3x!",
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.8x and HP by 1.1x, makes crew's [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 10x!",
+      "Sets crew's Special gauge to MAX at start of quest, boosts crew's ATK by 1.8x and HP by 1.1x, makes crew's [TND] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP and Berries earned by 5x!",
+      "Reduces crew's Special charge time by 5 turns at start of quest, boosts crew's ATK by 1.8x and HP by 1.1x, makes crew's [TND] slots have matching slot effects, and boosts Pirate EXP and Berries earned by 2x!",
+      "Boosts boosts crew's ATK by 1.5x and HP by 1.1x, and makes it easier to land PERFECT strikes",
+    ],
+  },
 };
 /*
 NUMBER: {
