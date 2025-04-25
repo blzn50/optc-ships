@@ -604,4 +604,31 @@ export const units: ShipOverview[] = [
       "Boosts crew's ATK by 1.2x, and makes it easier to land PERFECT strikes",
     hasSpecial: "no",
   },
+  /**
+   * p1: 2025-04-28T19:00 -> 2025-05-11T23:59:59
+   * p2: 2025-05-12T00:00 -> 2025-05-12T11:59:59
+   * p3: 2025-05-12T12:00 -> 2025-05-12T23:59:59
+   * p4: 2025-05-13T00:00 -> 2025-06-27T18:59:59
+   */
+  {
+    id: 67,
+    name: "Thousand Sunny - 11th Anniversary Special Model",
+    colaCount: 0,
+    superColaCount: 0,
+    effect:
+      details[67].effect[
+        convertToPSTTimestamp() <= getPSTTimestamp("2025-04-28T18:59:59") ||
+        convertToPSTTimestamp() >= getPSTTimestamp("2025-06-27T18:59:59")
+          ? 4
+          : convertToPSTTimestamp() <= getPSTTimestamp("2025-05-11T23:59:59")
+            ? 0
+            : convertToPSTTimestamp() <= getPSTTimestamp("2024-05-12T11:59:59")
+              ? 1
+              : convertToPSTTimestamp() <=
+                  getPSTTimestamp("2024-05-12T23:59:59")
+                ? 2
+                : 3
+      ],
+    hasSpecial: "no",
+  },
 ];
