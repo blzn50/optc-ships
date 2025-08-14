@@ -631,4 +631,13 @@ export const units: ShipOverview[] = [
       ],
     hasSpecial: "no",
   },
+  {
+    id: 68,
+    name: "Jewelry Margherita",
+    colaCount: 15500,
+    superColaCount: 20,
+    effect:
+      "Reduces STR, PSY, and INT characters' Special charge time by 2 turns at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.75x, boosts their ATK by approximately 2x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.1x",
+    hasSpecial: "yes",
+  },
 ];

@@ -2143,6 +2143,57 @@ export const details: Record<number, ShipInfo> = {
       "Boosts boosts crew's ATK by 1.5x and HP by 1.1x, and makes it easier to land PERFECT strikes",
     ],
   },
+  68: {
+    name: "Jewelry Margherita",
+    obtain: "Clear the 30 gem unlockable Jewelry Margherita Isle",
+    cola: [0, 5, 9, 16, 26, 36, 56, 86, 116, 150, 5000, 10000],
+    superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
+    effect: [
+      "Boosts top-right character's HP by 1000, and boosts STR, PSY, and INT characters' ATK by 1.2x",
+      "Boosts top-right character's HP by 2000, and boosts STR, PSY, and INT characters' ATK by 1.2x",
+      "Boosts top-right character's HP by 4000, and boosts STR, PSY, and INT characters' ATK by 1.2x",
+      "Boosts top-right character's HP by 4000, and boosts STR, PSY, and INT characters' ATK by 1.3x",
+      "Boosts top-right character's HP by 5000, and boosts STR, PSY, and INT characters' ATK by 1.3x",
+      "Boosts top-right character's HP by 5000, boosts STR, PSY, and INT characters' ATK by 1.3x, and boosts their ATK by approximately 1.5x when they have [RCV] slots",
+      "Boosts top-right character's HP by 7500, boosts STR, PSY, and INT characters' ATK by 1.4x, and boosts their ATK by approximately 1.6x when they have [RCV] slots",
+      "Boosts top-right character's HP by 7500, boosts STR, PSY, and INT characters' ATK by 1.4x, and boosts their ATK by 1.75x when they have [RCV] slots",
+      "Boosts top-right character's HP by 10000, boosts STR, PSY, and INT characters' ATK by 1.5x, and boosts their ATK by approximately 1.75x when they have [RCV] slots",
+      "Reduces STR, PSY, and INT characters' Special charge time by 1 turn at start of quest, boosts top-right character's HP by 10000, boosts STR, PSY, and INT characters' ATK by 1.5x, boosts their ATK by approximately 1.75x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, and makes [STR] [RCV] slots have matching slot effects",
+      "Reduces STR, PSY, and INT characters' Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.65x, boosts their ATK by approximately 1.8x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.05x",
+      "Reduces STR, PSY, and INT characters' Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.75x, boosts their ATK by approximately 1.9x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.1x",
+    ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 13, 13, 13],
+    special: [
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "Boosts STR, PSY, and INT characters' ATK by 1.5x for 1 turn (effect can be overwritten with other ATK boost effects)",
+      "Boosts STR, PSY, and INT characters' ATK by 1.5x for 1 turn (effect can be overwritten with other ATK boost effects)",
+      "Boosts STR, PSY, and INT characters' ATK by 1.5x for 1 turn (effect can be overwritten with other ATK boost effects)",
+    ],
+    specialEffect1:
+      "Boosts STR, PSY, and INT characters' ATK by approximately 2x when they have [RCV] slots",
+    specialEffect2:
+      "Further reduces STR, PSY, and INT characters' Special charge time by 1 turn at start of quest [Updated Special] (13 turns): Reduces crew's Slot Bind duration by 2 turns, and boosts STR, PSY, and INT characters' ATK by 1.75x for 1 turn (effect can be overwritten with other ATK boost effects)",
+    modification: {
+      phase: [1, 2],
+      effect: [
+        "Reduces STR, PSY, and INT characters' Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.75x, boosts their ATK by approximately 2x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.1x",
+        "Reduces STR, PSY, and INT characters' Special charge time by 2 turns at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.75x, boosts their ATK by approximately 2x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.1x",
+      ],
+      cd: [13, 13],
+      special: [
+        "Boosts STR, PSY, and INT characters' ATK by 1.5x for 1 turn (effect can be overwritten with other ATK boost effects)",
+        "Reduces crew's Slot Bind duration by 2 turns, and boosts STR, PSY, and INT characters' ATK by 1.75x for 1 turn (effect can be overwritten with other ATK boost effects)",
+      ],
+    },
+  },
 };
 /*
 NUMBER: {
