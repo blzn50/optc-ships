@@ -15,8 +15,8 @@ export function Ships() {
     if (dbVersion < DB_VERSION) {
       setTimeout(() => {
         toast({
-          title: "Update: 02 April 2025",
-          description: "Laboon ship ability updated for April",
+          title: "Update: 14 Aug 2025",
+          description: "Jewelry Margherita ship added",
         });
       }, 500);
       // update local storage

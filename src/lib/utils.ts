@@ -87,6 +87,22 @@ export function replaceAndSanitizeEffect(text: string) {
     .replaceAll(
       /\[TND\]/g,
       '<span class="px-1 rounded text-xs font-semibold align-text-bottom text-white TND">TND</span>',
+    )
+    .replaceAll(
+      /\[(Straw Hat Pirates|Red-Haired Pirates|Bandits|Navy|Buggy Pirates|Baratie|Krieg Pirates|Arlong Pirates|Giant Pirate Crew|Spade Pirates|Drum Kingdom|Baroque Works|Alabasta Kingdom|Kami's Army|Jaya|Foxy Pirates|CP0|Galley-La Company|World Government|CP9|Ohara|Impel Down|Thriller Bark Pirates|Rumbar Pirates|Blackbeard Pirates|Revolutionary Army|Kuja Pirates|Whitebeard Pirates|Kamabakka Queendom|Buggy's Delivery|Neo Marines|Golden Lion Pirates|Bluejam Pirates|Fallen Monk Pirates|On-Air Pirates|Hawkins Pirates|Bonney Pirates|Kid Pirates|Heart Pirates|Firetank Pirates|Ryugu Kingdom|Sun Pirates|Flying Pirates|New Fish-Man Pirates|Dressrosa Kingdom|Donquixote Pirates|Tontatta Kingdom|Barto Club|Happosui Army|Beautiful Pirates|Gran Tesoro|World Economic Journal|Evil Black Drum Kingdom|Mokomo Dukedom|Germa 66|Big Mom Pirates|Roger Pirates|Kozuki Clan|Akazaya Nine|SWORD|Animal Kingdom Pirates|Kurozumi Clan|Rolling Pirates|Rocks Pirates|Alvida Pirates|Holy Knights|Windmill Village|CP8)\]/g,
+      '<span class="pl-1 pr-[10px] rounded-s text-xs font-semibold inline-flex justify-center items-center align-text-bottom text-black [clip-path:polygon(0%_0%,100%_0%,93%_50%,100%_100%,0%_100%)] TAG_GROUP_1">$1</span>',
+    )
+    .replaceAll(
+      /\[(Child|Fish-Man|Giant|Royalty|Seven Warlords of the Sea|Supernova|Worst Generation|Celestial Dragon|Merfolk|Scientist|Four Emperors|Navy Fleet Admiral|Navy Admiral|Navy Vice Admiral|Cross Guild|Tontatta|Homies|Sweet Three General|Mink|Tobi Roppo|Lead Performer|Vegapunk|Seraphim|Five Elders)\]/g,
+      '<span class="pl-1 pr-[10px] rounded-s text-xs font-semibold inline-flex justify-center items-center align-text-bottom text-white [clip-path:polygon(0%_0%,100%_0%,93%_50%,100%_100%,0%_100%)] TAG_GROUP_2">$1</span>',
+    )
+    .replaceAll(
+      /\[(Logia-type|Paramythia-type|Zoan-type|Mythical Zoan-type|Ancient Zoan-type)\]/g,
+      '<span class="pl-1 pr-[10px] rounded-s text-xs font-semibold inline-flex justify-center items-center align-text-bottom text-white [clip-path:polygon(0%_0%,100%_0%,93%_50%,100%_100%,0%_100%)] TAG_GROUP_3">$1</span>',
+    )
+    .replaceAll(
+      /\[(East Blue Arc|Alabasta Arc|Skypiea Arc|Davy Back Fight Arc|Water Seven Arc|Enies Lobby Arc|Thriller Bark Arc|Sabaody Archipelago Arc|Amazon Lily Arc|Great Prison Impel Down Arc|Marineford Paramount War Arc|Fish-Man Island Arc|Punk Hazard Arc|Dressrosa Arc|Zou Arc|Whole Cake Island Arc|Reverie Arc|Land of Wano Arc|Egghead Arc|)\]/g,
+      '<span class="pl-1 pr-[10px] rounded-s text-xs font-semibold inline-flex justify-center items-center align-text-bottom text-white [clip-path:polygon(0%_0%,100%_0%,93%_50%,100%_100%,0%_100%)] TAG_GROUP_4">$1</span>',
     );
 }
 
