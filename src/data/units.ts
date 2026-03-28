@@ -640,4 +640,13 @@ export const units: ShipOverview[] = [
       "Reduces STR, PSY, and INT characters' Special charge time by 2 turns at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.75x, boosts their ATK by approximately 2x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.1x",
     hasSpecial: "yes",
   },
+  {
+    id: 69,
+    name: "Great Erik",
+    colaCount: 15500,
+    superColaCount: 20,
+    effect:
+      "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces Special charge time a further 1 turn if a character's 1st class is Free Spirit, reduces damage taken by 20%, boosts Free Spirit and Powerhouse characters' ATK by 1.6x, HP by 1.4x, and boosts ATK a further 1.15x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, reduces crew's Limit Special Uses duration by 1 turn, and boosts crew's ATK a further 1.2x",
+    hasSpecial: "yes",
+  },
 ];

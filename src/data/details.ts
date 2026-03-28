@@ -2194,6 +2194,58 @@ export const details: Record<number, ShipInfo> = {
       ],
     },
   },
+  69: {
+    name: "Great Erik",
+    obtain:
+      "On the 10th step of Part 1 of Giant Pirate Crew Sugo-Fest. Might be available in future sugo-fests",
+    cola: [0, 5, 9, 16, 26, 36, 56, 86, 116, 150, 5000, 10000],
+    superCola: [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15],
+    effect: [
+      "Boosts Free Spirit and Powerhouse characters' ATK by 1.2x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.2x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.2x and HP by 1.1x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.3x and HP by 1.1x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.3x and HP by 1.2x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.4x and HP by 1.3x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.5x and HP by 1.3x",
+      "Reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.5x, HP by 1.3x, and boosts ATK a further 1.1x if a character's 1st class is Free Spirit",
+      "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.5x, HP by 1.3x, and boosts ATK a further 1.1x if a character's 1st class is Free Spirit",
+      "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces damage taken by 10%, and boosts Free Spirit and Powerhouse characters' ATK by 1.5x, HP by 1.3x, and boosts ATK a further 1.1x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, boosts crew's ATK a further 1.05x",
+      "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces damage taken by 15%, and boosts Free Spirit and Powerhouse characters' ATK by 1.55x, HP by 1.35x, and boosts ATK a further 1.1x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, boosts crew's ATK a further 1.1x",
+      "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces damage taken by 20%, and boosts Free Spirit and Powerhouse characters' ATK by 1.6x, HP by 1.4x, and boosts ATK a further 1.1x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, reduces crew's Limit Special Uses duration by 1 turn, and boosts crew's ATK a further 1.2x",
+    ],
+    cd: ["-", "-", "-", "-", "-", "-", "-", "-", "-", 13, 13, 13],
+    special: [
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "Reduces damage taken by 90% for 1 turn",
+      "Reduces damage taken by 90% for 1 turn",
+      "Reduces damage taken by 90% for 1 turn",
+    ],
+    specialEffect1:
+      "Boosts ATK a further 1.15x if a character's 1st class is Free Spirit",
+    specialEffect2:
+      "Reduces Special charge time by 1 turn at start of quest if a character's 1st class is Free Spirit [Updated Special] (13 turns): Reduces crew's Bind/Paralysis duration by 2 turns, and reduces damage taken by 90% for 1 turn",
+    modification: {
+      phase: [1, 2],
+      effect: [
+        "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces damage taken by 20%, boosts Free Spirit and Powerhouse characters' ATK by 1.6x, HP by 1.4x, and boosts ATK a further 1.15x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, reduces crew's Limit Special Uses duration by 1 turn, and boosts crew's ATK a further 1.2x",
+        "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces Special charge time a further 1 turn if a character's 1st class is Free Spirit, reduces damage taken by 20%, boosts Free Spirit and Powerhouse characters' ATK by 1.6x, HP by 1.4x, and boosts ATK a further 1.15x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, reduces crew's Limit Special Uses duration by 1 turn, and boosts crew's ATK a further 1.2x",
+      ],
+      cd: [13, 13],
+      special: [
+        "Reduces damage taken by 90% for 1 turn",
+        "Reduces crew's Bind/Paralysis duration by 2 turns, and reduces damage taken by 90% for 1 turn",
+      ],
+    },
+  },
 };
 /*
 NUMBER: {
