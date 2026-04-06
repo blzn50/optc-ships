@@ -8,8 +8,8 @@ import type { ShipOverview } from "@/types/Ship";
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
   {
     accessorKey: "id",
-    header: () => <div className="text-right">Ship ID</div>,
-    size: 80,
+    header: () => <div className="text-right">ID</div>,
+    size: 40,
     enableGlobalFilter: false,
     cell: ({ row }) => (
       <div className="text-right pr-1">{row.getValue("id")}</div>
