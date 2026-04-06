@@ -117,7 +117,7 @@ export function ShipTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <div className="relative w-full">
       <div className="flex my-4 items-center">
         <span className="font-light text-xs text italic p-1 mb-1 max-md:mb-0">
           The toggled columns will also be reflected in individual ship table.
@@ -250,7 +250,7 @@ export function ShipTable<TData, TValue>({
       </div>
 
       <div className="sticky bottom-0 z-40 bg-white dark:bg-black">
-        <div className="flex items-center justify-end space-x-2 h-14">
+        <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 space-x-2 h-auto p-1">
           <div className="flex-1 text-sm">
             Showing {pagination.pageIndex + 1} to{" "}
             {table.getFilteredRowModel().rows.length < pagination.pageSize
@@ -264,7 +264,7 @@ export function ShipTable<TData, TValue>({
               ` (filtered from ${table.getPreFilteredRowModel().rows.length} total
             entries)`}
           </div>
-          <div className="space-x-2">
+          <div className="space-x-2 self-end">
             <Select
               onValueChange={(val) => {
                 table.setPageSize(Number(val));
