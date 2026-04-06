@@ -425,7 +425,7 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Boosts crew's chance of landing on [RCV] [TND] slots and reduces crew's Special Reverse by 1 turn. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
+      "Boosts crew's chance of landing on [RCV] [TND] slots and reduces crew's Special Reverse duration by 1 turn. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
     hasSpecial: "no",
   },
   {

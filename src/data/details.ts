@@ -1416,12 +1416,12 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's chance of landing on [RCV] [TND] slots. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.7x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
     ],
     specialEffect1: "If every type is on the crew, boosts crew's ATK by 1.8x",
-    specialEffect2: "Reduces Special Reverse by 1 turn",
+    specialEffect2: "Reduces Special Reverse duration by 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
         "Boosts crew's chance of landing on [RCV] [TND] slots. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
-        "Boosts crew's chance of landing on [RCV] [TND] slots and reduces crew's Special Reverse by 1 turn. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
+        "Boosts crew's chance of landing on [RCV] [TND] slots and reduces crew's Special Reverse duration by 1 turn. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
       ],
       cd: ["-", "-"],
       special: ["-", "-"],
