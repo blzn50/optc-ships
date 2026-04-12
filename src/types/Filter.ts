@@ -20,7 +20,8 @@ export type BeneficialEffect =
   | "reduce special charge"
   | "atk"
   | "hp"
-  | "land perfect strikes";
+  | "land perfect strikes"
+  | "orb chance booster";
 export type EnemyEffect = "percent-damage" | "threshold-damage" | "def-up";
 export type DamageBoost = "atk" | "slot" | "color-affinity";
 export type EffectUnion =

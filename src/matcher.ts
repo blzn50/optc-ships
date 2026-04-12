@@ -33,6 +33,11 @@ export const filterMatcher = (
         regexMatcher:
           /reduces\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?special\s+charge\s+time\s+by\s+(\d+)\s+turns?/i,
       };
+    case 'orb chance booster':
+      return {
+        textMatcher: 'boosts chance of landing on slot',
+        regexMatcher: /boosts\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?chances? of (?:(?:crew|them)\s+)?landing on\s+(?:([\[\]\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?slot/i
+      }
     default:
       return {
         textMatcher: "",

@@ -40,6 +40,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       "atk",
       "hp",
       "land perfect strikes",
+      "orb chance booster",
     ],
     "reduce-enemy-effect": ["def-up", "percent-damage", "threshold-damage"],
     "reduce-status-effect": [
