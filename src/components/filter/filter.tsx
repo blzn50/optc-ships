@@ -53,8 +53,12 @@ interface FilterEffectTypeUI extends BaseFilterItem {
 type FilterItem = FilterCategoryUI | FilterSubcategoryUI | FilterEffectTypeUI;
 
 const formattedEffectLabel: Record<string, string> = {
+  'atk down': 'ATK down',
   "limit special uses": "special use limit",
   "decrease chain multiplier growth rate": "chain coefficient reduction",
+  atk: "ATK Boost",
+  hp: "HP boost",
+  "land perfect strikes": "perfect strike",
 };
 
 // Helper function to format labels for display
