@@ -16,12 +16,21 @@ export type StatusEffect =
   | "decrease chain multiplier growth rate"
   | "special reverse"
   | "limit special uses";
-export type BeneficialStatusEffect = "reduce special charge";
+export type BeneficialEffect =
+  | "reduce special charge"
+  | "atk"
+  | "hp"
+  | "land perfect strikes";
 export type EnemyEffect = "percent-damage" | "threshold-damage" | "def-up";
 export type DamageBoost = "atk" | "slot" | "color-affinity";
+export type EffectUnion =
+  | StatusEffect
+  | BeneficialEffect
+  | EnemyEffect
+  | DamageBoost;
 
 type AbilityFilterToEffects = {
-  "beneficial-status-effect": BeneficialStatusEffect[];
+  "beneficial-status-effect": BeneficialEffect[];
   "reduce-enemy-effect": EnemyEffect[];
   "reduce-status-effect": StatusEffect[];
   "boost-damage": DamageBoost[];
@@ -40,6 +49,6 @@ export type FilterHierarchy = {
 export interface FilterState {
   category: FilterCategory | null;
   subcategory: AbilityFilter | null;
-  effectType: string | null;
+  effectType: EffectUnion | null;
   turnCount: number | null;
 }
