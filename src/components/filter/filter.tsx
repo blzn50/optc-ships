@@ -20,7 +20,8 @@ import {
   type StatusEffect,
   type EnemyEffect,
   type DamageBoost,
-  type BeneficialStatusEffect,
+  type BeneficialEffect,
+  type EffectUnion,
 } from "@/types/Filter";
 
 // Discriminated union types for our filter structure
@@ -45,7 +46,7 @@ interface FilterSubcategoryUI extends BaseFilterItem {
 
 interface FilterEffectTypeUI extends BaseFilterItem {
   type: "effectType";
-  value: string;
+  value: EffectUnion | null;
   subCategory: AbilityFilter;
 }
 
@@ -89,7 +90,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
           subcategoryKey === "beneficial-status-effect" &&
           Array.isArray(effectTypes)
         ) {
-          children = (effectTypes as BeneficialStatusEffect[])
+          children = (effectTypes as BeneficialEffect[])
             .map((effectType) => ({
               id: `${subcategoryKey}-${effectType}`,
               label: formatLabel(effectType),

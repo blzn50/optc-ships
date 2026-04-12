@@ -1,6 +1,7 @@
 import { atom } from "nanostores";
 import type { ShipOverview } from "./types/Ship";
 import type { FilterHierarchy, FilterState } from "./types/Filter";
+import { filterMatcher } from "./matcher";
 
 export const isFilterOpen = atom(false);
 
@@ -34,7 +35,12 @@ export const resetFilter = () => {
 // Define our filter hierarchy with better structure
 export const FILTER_HIERARCHY: FilterHierarchy = {
   ability: {
-    "beneficial-status-effect": ["reduce special charge"],
+    "beneficial-status-effect": [
+      "reduce special charge",
+      "atk",
+      "hp",
+      "land perfect strikes",
+    ],
     "reduce-enemy-effect": ["def-up", "percent-damage", "threshold-damage"],
     "reduce-status-effect": [
       "bind",
@@ -70,7 +76,7 @@ const searchForCondition = (
   // Extract condition and turn count from search text
   const searchMatch = searchText.match(regExpression);
 
-  console.log({ searchMatch, textToSearch, regExpression });
+  console.log({ searchText, searchMatch, textToSearch, regExpression });
 
   if (!searchMatch) return false;
 
@@ -147,10 +153,14 @@ export const filterShips = (
     if (filterState.category === "ability") {
       // Check if the ship has an effect that matches our filter
       if (filterState.subcategory === "beneficial-status-effect") {
+        const filterMatcherValue = filterMatcher(
+          filterState.effectType,
+          filterState.turnCount || 1,
+        );
         return searchForCondition(
           ship.effect,
-          `reduces special charge time by ${filterState.turnCount || 1} turn`,
-          /reduces\s+(?:([\w\s'’]*(?:and\s+[\w\s'’]+)?\s+)?)?special\s+charge\s+time\s+by\s+(\d+)\s+turns?/i,
+          filterMatcherValue.textMatcher,
+          filterMatcherValue.regexMatcher,
           {
             matchAnyTurns: filterState.turnCount !== null ? false : true,
           },
@@ -182,8 +192,24 @@ export const filterShips = (
           // If no turn count specified, return all matching effects
           return true;
         }
-        // If no specific effect type selected, return all reduce status effect ships
-        // return searchForCondition(ship.effect, "reduce status effect");
+      }
+
+      if (filterState.subcategory === "boost-damage") {
+        if (filterState.effectType) {
+          const hasEffectType = searchForCondition(
+            ship.effect.toLowerCase(),
+            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
+            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
+            { matchAnyTurns: filterState.turnCount !== null ? false : true },
+          );
+
+          console.log({ hasEffectType });
+
+          if (!hasEffectType) return false;
+
+          // If no turn count specified, return all matching effects
+          return true;
+        }
       }
     }
 
