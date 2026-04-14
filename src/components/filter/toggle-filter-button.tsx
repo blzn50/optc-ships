@@ -4,7 +4,7 @@ import {
   isFilterOpen,
   toggleIsFilterOpen,
   selectedFilterCount,
-} from "@/filterStore";
+} from "@/stores/filterStore";
 import { Button } from "@/components/ui/button";
 
 /* Hamburger menu toggle button - visible below xl */

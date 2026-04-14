@@ -12,7 +12,7 @@ import {
   updateFilter,
   resetFilter,
   FILTER_HIERARCHY,
-} from "@/filterStore";
+} from "@/stores/filterStore";
 import { compareLabel } from "@/lib/array-utils";
 import {
   type FilterCategory,

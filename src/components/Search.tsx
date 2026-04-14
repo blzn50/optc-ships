@@ -3,7 +3,7 @@ import { useStore } from "@nanostores/react";
 import { X } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
-import { searchVal } from "@/searchStore";
+import { searchVal } from "@/stores/searchStore";
 import { Button } from "./ui/button";
 
 export function Search({ debounce = 500 }: { debounce?: number }) {

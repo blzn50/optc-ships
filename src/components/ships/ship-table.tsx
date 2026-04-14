@@ -37,7 +37,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { searchVal } from "@/searchStore";
+import { searchVal } from "@/stores/searchStore";
 
 interface ShipTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
