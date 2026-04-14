@@ -1,11 +1,12 @@
 {
+  "tailwindCSS.classAttributes": ["class", "className", ".*ClassName"],
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["\"([^\"]*)\"", "'([^']*)'", "`([^`]*)`"],
+    ["\"([^\"]*)\"", "'([^']*)'", "`([^`]*)`"]
   ],
   "editor.quickSuggestions": {
     "strings": true
-  },
+  }
 }
