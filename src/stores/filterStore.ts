@@ -229,8 +229,6 @@ export const filterShips = (
             { matchAnyTurns: filterState.turnCount !== null ? false : true },
           );
 
-          console.log({ hasEffectType });
-
           if (!hasEffectType) return false;
 
           // If no turn count specified, return all matching effects
@@ -259,10 +257,64 @@ export const filterShips = (
 
     if (filterState.category === "special" && ship.special) {
       // Implement special filtering logic here
-      if (filterState.subcategory) {
-        // return searchForCondition(ship.special, filterState.subcategory);
+      if (filterState.subcategory === "beneficial-status-effect") {
+        const filterMatcherValue = filterMatcher(
+          filterState.effectType,
+          filterState.turnCount || 1,
+        );
+        return searchForCondition(
+          ship.special,
+          filterMatcherValue.textMatcher,
+          filterMatcherValue.regexMatcher,
+          {
+            matchAnyTurns: filterState.turnCount !== null ? false : true,
+          },
+        );
       }
-      return true;
+
+      if (filterState.subcategory === "reduce-enemy-effect") {
+        return searchForCondition(
+          ship.special,
+          "reduces enemy",
+          /reduces enemy's ([\w\s\/]+) duration by (\d+) turns?/i,
+          { matchAnyTurns: true },
+        );
+      }
+
+      if (filterState.subcategory === "reduce-status-effect") {
+        if (filterState.effectType) {
+          const hasEffectType = searchForCondition(
+            ship.special.toLowerCase(),
+            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
+            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
+            { matchAnyTurns: filterState.turnCount !== null ? false : true },
+          );
+
+
+          if (!hasEffectType) return false;
+
+          // If no turn count specified, return all matching effects
+          return true;
+        }
+      }
+
+      if (filterState.subcategory === "boost-damage") {
+        if (filterState.effectType) {
+          const hasEffectType = searchForCondition(
+            ship.special.toLowerCase(),
+            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
+            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
+            { matchAnyTurns: filterState.turnCount !== null ? false : true },
+          );
+
+          console.log({ hasEffectType });
+
+          if (!hasEffectType) return false;
+
+          // If no turn count specified, return all matching effects
+          return true;
+        }
+      }
     }
 
     return false;

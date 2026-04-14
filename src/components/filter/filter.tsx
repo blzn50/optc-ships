@@ -47,6 +47,7 @@ interface FilterSubcategoryUI extends BaseFilterItem {
 interface FilterEffectTypeUI extends BaseFilterItem {
   type: "effectType";
   value: EffectUnion | null;
+  category: FilterCategory | null;
   subCategory: AbilityFilter;
 }
 
@@ -103,6 +104,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "ability" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -117,6 +119,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "ability" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -156,6 +159,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -170,6 +174,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -184,6 +189,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -198,6 +204,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -212,11 +219,12 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
             .sort(compareLabel);
-        }else if (
+        } else if (
           subcategoryKey === "boost-damage" &&
           Array.isArray(effectTypes)
         ) {
@@ -226,11 +234,12 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
             .sort(compareLabel);
-        }else if (
+        } else if (
           subcategoryKey === "fixed-damage" &&
           Array.isArray(effectTypes)
         ) {
@@ -240,6 +249,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
+              category: "special" as const,
               subCategory: subcategoryKey,
               isSelected: false,
             }))
@@ -428,7 +438,9 @@ export const FilterComponent: React.FC = () => {
 
       if (item.type === "effectType") {
         // Check if this effect type is selected
-        isSelected = item.value === filterState.effectType;
+        isSelected =
+          item.value === filterState.effectType &&
+          item.category === filterState.category;
       } else if (item.type === "subcategory") {
         // Check if this subcategory is selected
         isSelected =
@@ -457,7 +469,7 @@ export const FilterComponent: React.FC = () => {
     // Handle effect type selection/deselection
     if (item.type === "effectType") {
       const isAlreadySelected =
-        filterState.category === "ability" &&
+        filterState.category === item.category &&
         filterState.subcategory === item.subCategory &&
         filterState.effectType === item.value;
 
@@ -472,7 +484,7 @@ export const FilterComponent: React.FC = () => {
       } else {
         // Select the effect type
         updateFilter({
-          category: "ability",
+          category: item.category,
           subcategory: item.subCategory,
           effectType: item.value,
           turnCount: null,
