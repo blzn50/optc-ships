@@ -1,4 +1,4 @@
-import type { EffectUnion } from "./types/Filter";
+import type { EffectUnion } from "@/types/Filter";
 
 type FilterMatcher = {
   textMatcher: string;

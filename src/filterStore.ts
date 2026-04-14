@@ -1,7 +1,7 @@
 import { atom } from "nanostores";
 import type { ShipOverview } from "./types/Ship";
 import type { FilterHierarchy, FilterState } from "./types/Filter";
-import { filterMatcher } from "./matcher";
+import { filterMatcher } from "./lib/matcher";
 
 export const isFilterOpen = atom(false);
 
