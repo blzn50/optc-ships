@@ -17,7 +17,7 @@ import { compareLabel } from "@/lib/array-utils";
 import {
   type FilterCategory,
   type AbilityFilter,
-  type StatusEffect,
+  type StatusDebuff,
   type EnemyEffect,
   type DamageBoost,
   type BeneficialEffect,
@@ -53,7 +53,7 @@ interface FilterEffectTypeUI extends BaseFilterItem {
 type FilterItem = FilterCategoryUI | FilterSubcategoryUI | FilterEffectTypeUI;
 
 const formattedEffectLabel: Record<string, string> = {
-  'atk down': 'ATK down',
+  "atk down": "ATK down",
   "limit special uses": "special use limit",
   "decrease chain multiplier growth rate": "chain coefficient reduction",
   atk: "ATK Boost",
@@ -75,11 +75,14 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
   const abilityEntries = Object.keys(FILTER_HIERARCHY.ability) as Array<
     keyof typeof FILTER_HIERARCHY.ability
   >;
+  const specialEntries = Object.keys(FILTER_HIERARCHY.special) as Array<
+    keyof typeof FILTER_HIERARCHY.special
+  >;
 
   return [
     {
       id: "ability",
-      label: "Ability",
+      label: "Ship Ability",
       type: "category",
       isOpen: true,
       children: abilityEntries.map((key) => {
@@ -96,21 +99,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
         ) {
           children = (effectTypes as BeneficialEffect[])
             .map((effectType) => ({
-              id: `${subcategoryKey}-${effectType}`,
-              label: formatLabel(effectType),
-              value: effectType,
-              type: "effectType" as const,
-              subCategory: subcategoryKey,
-              isSelected: false,
-            }))
-            .sort(compareLabel);
-        } else if (
-          subcategoryKey === "reduce-enemy-effect" &&
-          Array.isArray(effectTypes)
-        ) {
-          children = (effectTypes as EnemyEffect[])
-            .map((effectType) => ({
-              id: `${subcategoryKey}-${effectType}`,
+              id: `ability-${subcategoryKey}-${effectType}`,
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
@@ -122,9 +111,62 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
           subcategoryKey === "reduce-status-effect" &&
           Array.isArray(effectTypes)
         ) {
-          children = (effectTypes as StatusEffect[])
+          children = (effectTypes as StatusDebuff[])
             .map((effectType) => ({
-              id: `${subcategoryKey}-${effectType}`,
+              id: `ability-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        }
+
+        return {
+          id: `ability-${subcategoryKey}`,
+          label: formattedLabel,
+          value: subcategoryKey,
+          type: "subcategory" as const,
+          isOpen: false,
+          children,
+        };
+      }),
+    },
+    {
+      id: "special",
+      label: "Ship Special",
+      type: "category",
+      isOpen: true,
+      children: specialEntries.map((key) => {
+        const effectTypes = FILTER_HIERARCHY.special[key];
+        const subcategoryKey = key as AbilityFilter;
+        const formattedLabel = formatLabel(key as string);
+
+        let children: FilterEffectTypeUI[] = [];
+
+        // Add effect types based on subcategory
+        if (
+          subcategoryKey === "beneficial-status-effect" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as BeneficialEffect[])
+            .map((effectType) => ({
+              id: `special-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        } else if (
+          subcategoryKey === "reduce-status-effect" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as StatusDebuff[])
+            .map((effectType) => ({
+              id: `special-${subcategoryKey}-${effectType}`,
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
@@ -138,7 +180,63 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
         ) {
           children = (effectTypes as DamageBoost[])
             .map((effectType) => ({
-              id: `${subcategoryKey}-${effectType}`,
+              id: `special-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        } else if (
+          subcategoryKey === "reduce-enemy-effect" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as EnemyEffect[])
+            .map((effectType) => ({
+              id: `special-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        } else if (
+          subcategoryKey === "apply-enemy-effect" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as EnemyEffect[])
+            .map((effectType) => ({
+              id: `special-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        }else if (
+          subcategoryKey === "boost-damage" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as EnemyEffect[])
+            .map((effectType) => ({
+              id: `special-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        }else if (
+          subcategoryKey === "fixed-damage" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as EnemyEffect[])
+            .map((effectType) => ({
+              id: `special-${subcategoryKey}-${effectType}`,
               label: formatLabel(effectType),
               value: effectType,
               type: "effectType" as const,
@@ -149,7 +247,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
         }
 
         return {
-          id: subcategoryKey,
+          id: `special-${subcategoryKey}`,
           label: formattedLabel,
           value: subcategoryKey,
           type: "subcategory" as const,
@@ -157,13 +255,6 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
           children,
         };
       }),
-    },
-    {
-      id: "special",
-      label: "Special",
-      type: "category",
-      isOpen: true,
-      children: [], // Will be populated based on ship data
     },
   ];
 };
@@ -225,7 +316,10 @@ const FilterItemComponent: React.FC<{
                 checked={item.isSelected}
                 onCheckedChange={handleSelect}
               />
-              <FieldLabel htmlFor={item.id} className="font-normal">
+              <FieldLabel
+                htmlFor={item.id}
+                className="font-normal cursor-pointer"
+              >
                 {item.label}
               </FieldLabel>
             </Field>

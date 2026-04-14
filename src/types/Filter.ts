@@ -4,38 +4,82 @@ export type AbilityFilter =
   | "reduce-enemy-effect"
   | "reduce-status-effect"
   | "boost-damage"
-  | "apply-enemy-effect";
-export type StatusEffect =
+  | "apply-enemy-effect"
+  | "fixed-damage";
+export type StatusDebuff =
   | "bind"
   | "despair"
   | "silence"
   | "special bind"
+  | "slot bind"
+  | "burn"
   | "atk down"
   | "rcv down"
   | "paralysis"
   | "decrease chain multiplier growth rate"
   | "special reverse"
-  | "limit special uses";
+  | "limit special uses"
+  | "eot heal to damage";
 export type BeneficialEffect =
   | "reduce special charge"
   | "atk"
   | "hp"
   | "land perfect strikes"
-  | "orb chance booster";
-export type EnemyEffect = "percent-damage" | "threshold-damage" | "def-up";
-export type DamageBoost = "atk" | "slot" | "color-affinity";
+  | "orb chance booster"
+  | "heal"
+  | "heal eot"
+  | "change orbs"
+  | "lock orbs"
+  | "reduce switch effect"
+  | "threshold damage"
+  | "percent damage"
+  | "hp guard";
+export type EnemyEffect =
+  | "percent damage"
+  | "threshold damage"
+  | "def up"
+  | "barrier"
+  | "resilience";
+export type EnemyDebuff =
+  | "def down"
+  | "negative resistance"
+  | "delay"
+  | "paralysis";
+export type DamageBoost =
+  | "base atk"
+  | "atk"
+  | "slot"
+  | "color affinity"
+  | "ignited"
+  | "def down"
+  | "poison"
+  | "final tap atk"
+  | "orb effect multiplier"
+  | "additive chain multiplier"
+  | "chain multiplier growth"
+  | "percent damage boost";
+export type FixedDamage = "instant" | "end of turn" | "percent";
+
 export type EffectUnion =
-  | StatusEffect
+  | StatusDebuff
   | BeneficialEffect
   | EnemyEffect
-  | DamageBoost;
+  | DamageBoost
+  | EnemyDebuff
+  | FixedDamage;
 
 type AbilityFilterToEffects = {
   "beneficial-status-effect": BeneficialEffect[];
-  "reduce-enemy-effect": EnemyEffect[];
-  "reduce-status-effect": StatusEffect[];
+  "reduce-status-effect": StatusDebuff[];
+};
+
+type SpecialFilterToEffects = {
+  "beneficial-status-effect": BeneficialEffect[];
   "boost-damage": DamageBoost[];
-  "apply-enemy-effect": EnemyEffect[];
+  "reduce-enemy-effect": EnemyEffect[];
+  "apply-enemy-effect": EnemyDebuff[];
+  "reduce-status-effect": StatusDebuff[];
+  "fixed-damage": FixedDamage[];
 };
 
 export type FilterHierarchy = {
@@ -43,7 +87,7 @@ export type FilterHierarchy = {
     [K in keyof AbilityFilterToEffects]: AbilityFilterToEffects[K];
   };
   special: {
-    // @TODO: define special filter structure
+    [K in keyof SpecialFilterToEffects]: SpecialFilterToEffects[K];
   };
 };
 
