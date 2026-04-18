@@ -50,15 +50,19 @@ export type DamageBoost =
   | "atk"
   | "slot"
   | "color affinity"
-  | "ignited"
-  | "def down"
-  | "poison"
   | "final tap atk"
   | "orb effect multiplier"
   | "additive chain multiplier"
   | "chain multiplier growth"
-  | "percent damage boost";
-export type FixedDamage = "instant damage" | "end of turn damage" | "percent damage";
+  | "ignited damage boost"
+  | "def down damage boost"
+  | "poison damage boost"
+  | "percent damage boost"
+  | "delayed damage boost";
+export type FixedDamage =
+  | "instant damage"
+  | "end of turn damage"
+  | "percent damage";
 
 export type EffectUnion =
   | StatusDebuff

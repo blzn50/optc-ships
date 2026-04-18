@@ -42,7 +42,7 @@ export const filterMatcher = (
         regexMatcher:
           /boosts the (type effects of normal attacks) for (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?characters by (\d+(\.\d+)?)x for (\d+) turns?/i,
       };
-    case "def down":
+    case "def down damage boost":
       return {
         textMatcher: "boosts damage dealt to def down enemies by 1x for 1 turn",
         regexMatcher:
@@ -55,7 +55,7 @@ export const filterMatcher = (
         regexMatcher:
           /boosts the (atk of the next final tap) performed by a (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?character by (\d+)%/i,
       };
-    case "ignited":
+    case "ignited damage boost":
       return {
         textMatcher:
           "boosts damage dealt to ignited enemies by 2.25x for 1 turn",

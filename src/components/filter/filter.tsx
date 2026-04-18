@@ -62,6 +62,12 @@ const formattedEffectLabel: Record<string, string> = {
   slot: "slot boost",
   "heal eot": "heal EOT",
   "hp guard": "HP guard",
+  "final tap atk": "final tap ATK",
+  "ignited damage boost": "ignited damage",
+  "def down damage boost": "def down damage",
+  "poison damage boost": "poison damage",
+  "percent damage boost": "percent damage",
+  "delayed damage boost": "delayed damage",
 };
 
 // Helper function to format labels for display
