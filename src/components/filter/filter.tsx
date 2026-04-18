@@ -59,9 +59,9 @@ const formattedEffectLabel: Record<string, string> = {
   "decrease chain multiplier growth rate": "chain coefficient reduction",
   atk: "ATK Boost",
   hp: "HP boost",
-  "slot": "slot boost",
+  slot: "slot boost",
   "heal eot": "heal EOT",
-  "hp guard": "HP guard"
+  "hp guard": "HP guard",
 };
 
 // Helper function to format labels for display
@@ -509,13 +509,13 @@ export const FilterComponent: React.FC = () => {
           onClick={() => isFilterOpen.set(false)}
         />
       )}
-      <div className="absolute -top-[4.5rem] xl:top-0 -left-2 w-full h-full xl:pt-[4.5rem]">
+      <div className="absolute -top-[4.5rem] xl:top-0 -left-2 w-full h-full max-xl:pt-3 xl:pt-1">
         {/* Filter Sidebar */}
         <div
           className={`fixed z-50 
           transition-transform duration-300 ease-in-out
-          md:w-1/2 w-full max-w-md
-          xl:fixed xl:transform-none xl:h-auto xl:max-w-full xl:w-[19rem] 2xl:w-[23rem]
+          md:w-1/2 w-full h-full max-w-md
+          xl:fixed xl:transform-none xl:max-w-full xl:w-[19rem] 2xl:w-[23rem]
           ${$isFilterOpen ? "translate-x-0" : "-translate-x-[140%]"}
         `}
         >
@@ -568,7 +568,7 @@ export const FilterComponent: React.FC = () => {
             </div>
 
             {/* Filter List */}
-            <div className="p-2 h-[calc(100vh-200px)] xl:max-h-[500px] overflow-y-auto">
+            <div className="p-2 h-[calc(100dvh-170px)] xl:max-h-[calc(100dvh-244px)] overflow-y-auto">
               {filterStructure.map((category) => (
                 <FilterItemComponent
                   key={category.id}
