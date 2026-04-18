@@ -11,8 +11,7 @@ import { details } from "@/data/details";
 import {
   getShipFullImage,
   flattenShipData,
-  replaceAndSanitizeEffect,
-  replaceAndSanitizeSpecial,
+  replaceAndSanitizeEffectAndSpecial,
   flattenShipModificationData,
 } from "@/lib/utils";
 import { shipDetailColumns } from "./columns";
@@ -96,7 +95,7 @@ export function ShipDetail() {
             <b>Special Effect 1:</b>{" "}
             <span
               dangerouslySetInnerHTML={{
-                __html: replaceAndSanitizeEffect(ship.specialEffect1),
+                __html: replaceAndSanitizeEffectAndSpecial(ship.specialEffect1),
               }}
             ></span>
           </blockquote>
@@ -106,9 +105,7 @@ export function ShipDetail() {
             <b>Special Effect 2:</b>{" "}
             <span
               dangerouslySetInnerHTML={{
-                __html: replaceAndSanitizeSpecial(
-                  replaceAndSanitizeEffect(ship.specialEffect2),
-                ),
+                __html: replaceAndSanitizeEffectAndSpecial(ship.specialEffect2),
               }}
             ></span>
           </blockquote>

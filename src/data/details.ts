@@ -1526,12 +1526,12 @@ export const details: Record<number, ShipInfo> = {
     ],
     specialEffect1: "Reduces Special charge time by 1 turn at start of quest",
     specialEffect2:
-      "Boosts top-row characters' ATK by 1.7x, and reduces the duration of healing effect converted to damage effect by 1 turn [Updated Special] (8 turns): Reduces crew's Slot Bind duration by 2 turns, changes crew's [BLOCK] slots to Rainbow slots (doubling ATK; cannot be changed by crew or enemies), and locks crew's slots for 2 turns",
+      "Boosts top-row characters' ATK by 1.7x, and reduces the duration of [HEAL_TO_DAMAGE] effect by 1 turn [Updated Special] (8 turns): Reduces crew's Slot Bind duration by 2 turns, changes crew's [BLOCK] slots to Rainbow slots (doubling ATK; cannot be changed by crew or enemies), and locks crew's slots for 2 turns",
     modification: {
       phase: [1, 2],
       effect: [
         "Reduces Special charge time by 1 turn at start of quest, boosts crew's HP by 1.4x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.6x, boosts middle and bottom-row characters' ATK by 1.8x, boosts Captain's RCV by 600, and reduces damage taken by 15%",
-        "Reduces Special charge time by 1 turn at start of quest, reduces the duration of healing effect converted to damage effect by 1 turn, boosts crew's HP by 1.4x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.7x, boosts middle and bottom-row characters' ATK by 1.8x, boosts Captain's RCV by 600, and reduces damage taken by 15%",
+        "Reduces Special charge time by 1 turn at start of quest, reduces the duration of [HEAL_TO_DAMAGE] effect by 1 turn, boosts crew's HP by 1.4x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.7x, boosts middle and bottom-row characters' ATK by 1.8x, boosts Captain's RCV by 600, and reduces damage taken by 15%",
       ],
       cd: [8, 8],
       special: [

@@ -1,10 +1,7 @@
 import { type ColumnDef } from "@tanstack/react-table";
 
 import type { ShipModificationEffect } from "@/types/Ship";
-import {
-  replaceAndSanitizeSpecial,
-  replaceAndSanitizeEffect,
-} from "@/lib/utils";
+import { replaceAndSanitizeEffectAndSpecial } from "@/lib/utils";
 
 export const shipModificationDetailColumns: ColumnDef<ShipModificationEffect>[] =
   [
@@ -19,7 +16,7 @@ export const shipModificationDetailColumns: ColumnDef<ShipModificationEffect>[] 
         const effectText = String(row.getValue("effect"));
         const phase = row.getValue("phase");
         // if needed, sanitize the val with js-xss or dompurify
-        const text = replaceAndSanitizeEffect(effectText);
+        const text = replaceAndSanitizeEffectAndSpecial(effectText);
         return (
           <p
             className="pl-1"
@@ -38,9 +35,7 @@ export const shipModificationDetailColumns: ColumnDef<ShipModificationEffect>[] 
         const special = String(row.getValue("special"));
         const cd = row.getValue("cd");
         // if needed, sanitize the val with js-xss or dompurify
-        const text = replaceAndSanitizeEffect(
-          replaceAndSanitizeSpecial(special),
-        );
+        const text = replaceAndSanitizeEffectAndSpecial(special);
         return (
           <p
             className="pl-1"

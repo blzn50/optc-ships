@@ -38,7 +38,7 @@ export function getShipFullImage(shipId: string) {
   return `full/ship_${id}_full.png`;
 }
 
-export function replaceAndSanitizeEffect(text: string) {
+export function replaceAndSanitizeEffectAndSpecial(text: string) {
   return text
     .replaceAll(
       /\[?(STR|DEX|QCK|INT)\]?/g,
@@ -89,6 +89,26 @@ export function replaceAndSanitizeEffect(text: string) {
       '<span class="px-1 rounded text-xs font-semibold align-text-bottom text-white TND">TND</span>',
     )
     .replaceAll(
+      /\[THRESHOLD_DAMAGE_CUT\]/g,
+      '<img class="w-5 h-5 inline" src="/threshold_damagecut.png" alt="threshold damage cut" />',
+    )
+    .replaceAll(
+      /\[ATK_UP\]/g,
+      '<img class="w-5 h-5 inline" src="/atk_up.png" alt="attack up"  />',
+    )
+    .replaceAll(
+      /\[EOT_HEAL\]/g,
+      '<img class="w-5 h-5 inline" src="/eot_heal.png" alt="eot heal"  />',
+    )
+    .replaceAll(
+      /\[EOT_HEAL_TO_DAMAGE\]/g,
+      '<img class="w-5 h-5 inline" src="/heal_slot_to_damage.png" alt="eot heal slot to damage"  />',
+    )
+    .replaceAll(
+      /\[HEAL_TO_DAMAGE\]/g,
+      '<img class="w-5 h-5 inline" src="/heal_to_damage.png" alt="heal to damage"  />',
+    )
+    .replaceAll(
       /\[(Straw Hat Pirates|Red-Haired Pirates|Bandits|Navy|Buggy Pirates|Baratie|Krieg Pirates|Arlong Pirates|Giant Pirate Crew|Spade Pirates|Drum Kingdom|Baroque Works|Alabasta Kingdom|Kami's Army|Jaya|Foxy Pirates|CP0|Galley-La Company|World Government|CP9|Ohara|Impel Down|Thriller Bark Pirates|Rumbar Pirates|Blackbeard Pirates|Revolutionary Army|Kuja Pirates|Whitebeard Pirates|Kamabakka Queendom|Buggy's Delivery|Neo Marines|Golden Lion Pirates|Bluejam Pirates|Fallen Monk Pirates|On-Air Pirates|Hawkins Pirates|Bonney Pirates|Kid Pirates|Heart Pirates|Firetank Pirates|Ryugu Kingdom|Sun Pirates|Flying Pirates|New Fish-Man Pirates|Dressrosa Kingdom|Donquixote Pirates|Tontatta Kingdom|Barto Club|Happosui Army|Beautiful Pirates|Gran Tesoro|World Economic Journal|Evil Black Drum Kingdom|Mokomo Dukedom|Germa 66|Big Mom Pirates|Roger Pirates|Kozuki Clan|Akazaya Nine|SWORD|Animal Kingdom Pirates|Kurozumi Clan|Rolling Pirates|Rocks Pirates|Alvida Pirates|Holy Knights|Windmill Village|CP8)\]/g,
       '<span class="pl-1 pr-[10px] rounded-s text-xs font-semibold inline-flex justify-center items-center align-text-bottom text-black [clip-path:polygon(0%_0%,100%_0%,93%_50%,100%_100%,0%_100%)] TAG_GROUP_1">$1</span>',
     )
@@ -106,25 +126,6 @@ export function replaceAndSanitizeEffect(text: string) {
     );
 }
 
-export function replaceAndSanitizeSpecial(text: string) {
-  return text
-    .replace(
-      /\[THRESHOLD_DAMAGE_CUT\]/,
-      '<img class="w-5 h-5 inline" src="/threshold_damagecut.png" alt="threshold damage cut" />',
-    )
-    .replace(
-      /\[ATK_UP\]/,
-      '<img class="w-5 h-5 inline" src="/atk_up.png" alt="attack up"  />',
-    )
-    .replace(
-      /\[EOT_HEAL\]/,
-      '<img class="w-5 h-5 inline" src="/eot_heal.png" alt="eot heal"  />',
-    )
-    .replace(
-      /\[EOT_HEAL_TO_DAMAGE\]/,
-      '<img class="w-5 h-5 inline" src="/heal_slot_to_damage.png" alt="eot heal slot to damage"  />',
-    );
-}
 
 export function flattenShipData(shipInfo: ShipInfo) {
   const shipDetail: ShipDetail[] = [];
