@@ -16,11 +16,63 @@ export const filterMatcher = (
         regexMatcher:
           /boosts\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?atk\s+((.+?\s+)?)by\s+(?:approximately\s+)?(\d+(\.\d+)?)x/i,
       };
+    case "base atk":
+      return {
+        textMatcher: `boosts base atk by +1 for 1 turn`,
+        regexMatcher:
+          /boosts (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?base atk by (\+\d+) for (\d+) turns?/i,
+      };
+    case "additive chain multiplier":
+      return {
+        textMatcher: "boosts chain multiplier by +1 for 1 turn",
+        regexMatcher:
+          /boosts (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?chain multiplier by (\+\d+(\.\d+)?) for (\d+) turns?/i,
+      };
+    case "chain multiplier growth":
+      return {
+        textMatcher:
+          "boosts chain multiplier growth rate of normal attacks up to +1 for 1 turn",
+        regexMatcher:
+          /boosts (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?chain multiplier growth rate of normal attacks up to ([+\d.]+)(?:\s*\(([^)]+)\))?\s+for (\d+) turns?/i,
+      };
+    case "color affinity":
+      return {
+        textMatcher:
+          "boosts the type effects of normal attacks for characters by 1x for 1 turn",
+        regexMatcher:
+          /boosts the (type effects of normal attacks) for (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?characters by (\d+(\.\d+)?)x for (\d+) turns?/i,
+      };
+    case "def down":
+      return {
+        textMatcher: "boosts damage dealt to def down enemies by 1x for 1 turn",
+        regexMatcher:
+          /boosts (damage dealt to def down enemies) by (\d+(\.\d+)?)x for (\d+) turns?/i,
+      };
+    case "final tap atk":
+      return {
+        textMatcher:
+          "boosts the atk of the next final tap performed by a character by 1%",
+        regexMatcher:
+          /boosts the (atk of the next final tap) performed by a (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?character by (\d+)%/i,
+      };
+    case "ignited":
+      return {
+        textMatcher:
+          "boosts damage dealt to ignited enemies by 2.25x for 1 turn",
+        regexMatcher:
+          /boosts (damage dealt to ignited enemies) by (\d+(\.\d+)?)x for (\d+) turns?/i,
+      };
     case "slot":
       return {
         textMatcher: `boosts slot effects by 1x for 1 turn`,
         regexMatcher:
           /(?:doubles|boosts)\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?(?:atk\s+and\s+)?slot\s+effects(?:\s+by\s+(\d+(\.\d+)?)x)?\s+for\s+(\d+(\.\d+)?)\s+turns?/i,
+      };
+    case "percent damage boost":
+      return {
+        textMatcher: `boost crew's atk based on the damage reduction status for 1 turn`,
+        regexMatcher:
+          /boost crew's (atk based on the damage reduction) status for (\d+) turns?/i,
       };
     case "hp":
       return {
@@ -51,6 +103,18 @@ export const filterMatcher = (
         regexMatcher:
           /changes\s+(?!.*atk multiplier of.*)(?:([\[\]\w\s'’,\-\s]+(?:and\s+[\[\]\w\s'’,\-\s]+)?\s+)?)?slots\s+(?:to|into)\s*(.*)/i,
       };
+    case "orb effect multiplier":
+      return {
+        textMatcher: "changes atk multiplier of slots to 1x when slots match",
+        regexMatcher:
+          /changes (?:the )?atk multiplier of (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?slots to (\d+(?:\.\d+)?)x when slots match/i,
+      };
+    case "lock orbs":
+      return {
+        textMatcher: "locks slots for 1 turn",
+        regexMatcher:
+          /locks\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?slots\s+for\s+(\d+)\s+turns?/i,
+      };
     case "heal":
       return {
         textMatcher: "heals crew by 1 hp",
@@ -68,12 +132,7 @@ export const filterMatcher = (
         // @TODO - wrap \d+ with () when the matcher case is introduced
         regexMatcher: /activates hp guard of \d+% effect for (\d+) turns?/i,
       };
-    case "lock orbs":
-      return {
-        textMatcher: "locks slots for 1 turn",
-        regexMatcher:
-          /locks\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?slots\s+for\s+(\d+)\s+turns?/i,
-      };
+
     case "reduce switch effect":
       return {
         textMatcher: "reduces switch effect by 1",
