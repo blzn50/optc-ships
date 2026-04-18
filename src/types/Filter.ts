@@ -31,20 +31,20 @@ export type BeneficialEffect =
   | "change orbs"
   | "lock orbs"
   | "reduce switch effect"
-  | "threshold damage"
-  | "percent damage"
+  | "threshold damage reduction"
+  | "percent damage reduction"
   | "hp guard";
 export type EnemyEffect =
-  | "percent damage"
-  | "threshold damage"
+  | "enemy percent damage reduction"
+  | "enemy threshold damage reduction"
   | "def up"
   | "barrier"
   | "resilience";
 export type EnemyDebuff =
-  | "def down"
+  | "enemy def down"
   | "negative resistance"
   | "delay"
-  | "paralysis";
+  | "enemy paralysis";
 export type DamageBoost =
   | "base atk"
   | "atk"
@@ -58,7 +58,7 @@ export type DamageBoost =
   | "additive chain multiplier"
   | "chain multiplier growth"
   | "percent damage boost";
-export type FixedDamage = "instant" | "end of turn" | "percent";
+export type FixedDamage = "instant damage" | "end of turn damage" | "percent damage";
 
 export type EffectUnion =
   | StatusDebuff

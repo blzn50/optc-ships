@@ -16,11 +16,17 @@ export const filterMatcher = (
         regexMatcher:
           /boosts\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?atk\s+((.+?\s+)?)by\s+(?:approximately\s+)?(\d+(\.\d+)?)x/i,
       };
+    case "slot":
+      return {
+        textMatcher: `boosts slot effects by 1x for 1 turn`,
+        regexMatcher:
+          /(?:doubles|boosts)\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?(?:atk\s+and\s+)?slot\s+effects(?:\s+by\s+(\d+(\.\d+)?)x)?\s+for\s+(\d+(\.\d+)?)\s+turns?/i,
+      };
     case "hp":
       return {
         textMatcher: `boosts hp by 1x`,
         regexMatcher:
-          /boosts\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?hp\s+by\s+(?:approximately\s+)?(\d+(?:\.\d+)?)x?/i,
+          /boosts\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?hp\s+by\s+(?:approximately\s+)?(\d+(?:,\.\d+)?)x?/i,
       };
     case "land perfect strikes":
       return {
@@ -33,11 +39,82 @@ export const filterMatcher = (
         regexMatcher:
           /reduces\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?special\s+charge\s+time\s+by\s+(\d+)\s+turns?/i,
       };
-    case 'orb chance booster':
+    case "orb chance booster":
       return {
-        textMatcher: 'boosts chance of landing on slot',
-        regexMatcher: /boosts\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?chances? of (?:(?:crew|them)\s+)?landing on\s+(?:([\[\]\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?slot/i
-      }
+        textMatcher: "boosts chance of landing on slot",
+        regexMatcher:
+          /boosts\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?chances? of (?:(?:crew|them)\s+)?landing on\s+(?:([\[\]\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?slot/i,
+      };
+    case "change orbs":
+      return {
+        textMatcher: "changes slots to",
+        regexMatcher:
+          /changes\s+(?!.*atk multiplier of.*)(?:([\[\]\w\s'’,\-\s]+(?:and\s+[\[\]\w\s'’,\-\s]+)?\s+)?)?slots\s+(?:to|into)\s*(.*)/i,
+      };
+    case "heal":
+      return {
+        textMatcher: "heals crew by 1 hp",
+        regexMatcher: /heals crew by (?:\d+(?:,\d+)?) hp(?! at end of turn)/i,
+      };
+    case "heal eot":
+      return {
+        textMatcher: "heals crew by 1 hp at end of turn",
+        regexMatcher:
+          /heals (?:crew by (?:\d+(?:,\d+)?|1) )?hp at end of turn/i,
+      };
+    case "hp guard":
+      return {
+        textMatcher: "activates hp guard of 1% effect for 1 turn",
+        // @TODO - wrap \d+ with () when the matcher case is introduced
+        regexMatcher: /activates hp guard of \d+% effect for (\d+) turns?/i,
+      };
+    case "lock orbs":
+      return {
+        textMatcher: "locks slots for 1 turn",
+        regexMatcher:
+          /locks\s+(?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?slots\s+for\s+(\d+)\s+turns?/i,
+      };
+    case "reduce switch effect":
+      return {
+        textMatcher: "reduces switch effect by 1",
+        regexMatcher:
+          /reduces (?:([\w\s'’,]*(?:and\s+[\w\s'’,]+)?\s+)?)?switch effect(?:\s+use)? by (\d+)/i,
+      };
+    case "percent damage reduction":
+      return {
+        textMatcher: "reduces damage taken by 1%",
+        regexMatcher: /reduces damage taken by \d+%/i,
+      };
+    case "threshold damage reduction":
+      return {
+        textMatcher:
+          "reduces a portion of each enemy's dealt damage that exceeds 1 for 1 turn",
+        // @TODO - wrap \d+(?:,\d+)* with () when the matcher case is introduced
+        regexMatcher:
+          /reduces a portion of each enemy's dealt damage that exceeds \d+(?:,\d+)* for (\d+) turns?/i,
+      };
+    case "bind":
+    case "despair":
+    case "silence":
+    case "special bind":
+    case "slot bind":
+    case "burn":
+    case "atk down":
+    case "rcv down":
+    case "paralysis":
+    case "decrease chain multiplier growth rate":
+    case "special reverse":
+    case "limit special uses":
+      return {
+        textMatcher: `reduces crew's ${type} duration by ${turnCount} turn`,
+        regexMatcher: /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
+      };
+    case "eot heal to damage":
+      return {
+        textMatcher: `reduces [eot_heal_to_damage] duration by ${turnCount} turn`,
+        regexMatcher:
+          /reduces (\[eot_heal_to_damage\]) duration by (\d+) turns?/i,
+      };
     default:
       return {
         textMatcher: "",

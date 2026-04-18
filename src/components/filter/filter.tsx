@@ -59,7 +59,9 @@ const formattedEffectLabel: Record<string, string> = {
   "decrease chain multiplier growth rate": "chain coefficient reduction",
   atk: "ATK Boost",
   hp: "HP boost",
-  "land perfect strikes": "perfect strike",
+  "slot": "slot boost",
+  "heal eot": "heal EOT",
+  "hp guard": "HP guard"
 };
 
 // Helper function to format labels for display

@@ -41,6 +41,9 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       "hp",
       "land perfect strikes",
       "orb chance booster",
+      "change orbs",
+      "percent damage reduction",
+      "heal eot",
     ],
     "reduce-status-effect": [
       "bind",
@@ -56,18 +59,16 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
   special: {
     "beneficial-status-effect": [
       "reduce special charge",
-      "land perfect strikes",
-      "orb chance booster",
       "change orbs",
       "lock orbs",
       "reduce switch effect",
-      "threshold damage",
-      "percent damage",
+      "threshold damage reduction",
+      "percent damage reduction",
       "heal",
       "heal eot",
       "hp guard",
     ],
-    "fixed-damage": ["instant", "end of turn", "percent"],
+    "fixed-damage": ["instant damage", "end of turn damage", "percent damage"],
     "boost-damage": [
       "base atk",
       "atk",
@@ -92,16 +93,16 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
     ],
     "reduce-enemy-effect": [
       "def up",
-      "percent damage",
-      "threshold damage",
+      "enemy percent damage reduction",
+      "enemy threshold damage reduction",
       "barrier",
       "resilience",
     ],
     "apply-enemy-effect": [
-      "def down",
+      "enemy def down",
       "delay",
       "negative resistance",
-      "paralysis",
+      "enemy paralysis",
     ],
   },
 };
@@ -194,128 +195,54 @@ export const filterShips = (
   }
 
   return ships.filter((ship) => {
-    if (filterState.category === "ability") {
-      // Check if the ship has an effect that matches our filter
-      if (filterState.subcategory === "beneficial-status-effect") {
-        const filterMatcherValue = filterMatcher(
-          filterState.effectType,
-          filterState.turnCount || 1,
-        );
-        return searchForCondition(
-          ship.effect,
-          filterMatcherValue.textMatcher,
-          filterMatcherValue.regexMatcher,
-          {
-            matchAnyTurns: filterState.turnCount !== null ? false : true,
-          },
-        );
-      }
-
-      if (filterState.subcategory === "reduce-enemy-effect") {
-        return searchForCondition(
-          ship.effect,
-          "reduces enemy",
-          /reduces enemy's ([\w\s\/]+) duration by (\d+) turns?/i,
-          { matchAnyTurns: true },
-        );
-      }
-
-      if (filterState.subcategory === "reduce-status-effect") {
-        if (filterState.effectType) {
-          const hasEffectType = searchForCondition(
-            ship.effect.toLowerCase(),
-            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
-            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
-            { matchAnyTurns: filterState.turnCount !== null ? false : true },
-          );
-
-          if (!hasEffectType) return false;
-
-          // If no turn count specified, return all matching effects
-          return true;
-        }
-      }
-
-      if (filterState.subcategory === "boost-damage") {
-        if (filterState.effectType) {
-          const hasEffectType = searchForCondition(
-            ship.effect.toLowerCase(),
-            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
-            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
-            { matchAnyTurns: filterState.turnCount !== null ? false : true },
-          );
-
-          console.log({ hasEffectType });
-
-          if (!hasEffectType) return false;
-
-          // If no turn count specified, return all matching effects
-          return true;
-        }
-      }
+    //early return
+    if (filterState.category === "special" && !ship.special) {
+      return false;
     }
 
-    if (filterState.category === "special" && ship.special) {
-      // Implement special filtering logic here
-      if (filterState.subcategory === "beneficial-status-effect") {
-        const filterMatcherValue = filterMatcher(
-          filterState.effectType,
-          filterState.turnCount || 1,
-        );
-        return searchForCondition(
-          ship.special,
-          filterMatcherValue.textMatcher,
-          filterMatcherValue.regexMatcher,
-          {
-            matchAnyTurns: filterState.turnCount !== null ? false : true,
-          },
-        );
-      }
+    // Implement special filtering logic here
+    const filterMatcherValue = filterMatcher(
+      filterState.effectType,
+      filterState.turnCount || 1,
+    );
+    return searchForCondition(
+      filterState.category === "ability"
+        ? ship.effect.toLowerCase()
+        : // mark the special exists because of early return
+          ship.special!.toLowerCase(),
+      filterMatcherValue.textMatcher,
+      filterMatcherValue.regexMatcher,
+      {
+        matchAnyTurns: filterState.turnCount !== null ? false : true,
+      },
+    );
 
-      if (filterState.subcategory === "reduce-enemy-effect") {
-        return searchForCondition(
-          ship.special,
-          "reduces enemy",
-          /reduces enemy's ([\w\s\/]+) duration by (\d+) turns?/i,
-          { matchAnyTurns: true },
-        );
-      }
+    // if (filterState.subcategory === "reduce-enemy-effect") {
+    //   return searchForCondition(
+    //     ship.special,
+    //     "reduces enemy",
+    //     /reduces enemy's ([\w\s\/]+) duration by (\d+) turns?/i,
+    //     { matchAnyTurns: true },
+    //   );
+    // }
 
-      if (filterState.subcategory === "reduce-status-effect") {
-        if (filterState.effectType) {
-          const hasEffectType = searchForCondition(
-            ship.special.toLowerCase(),
-            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
-            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
-            { matchAnyTurns: filterState.turnCount !== null ? false : true },
-          );
+    // if (filterState.subcategory === "boost-damage") {
+    //   if (filterState.effectType) {
+    //     const hasEffectType = searchForCondition(
+    //       ship.special.toLowerCase(),
+    //       `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
+    //       /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
+    //       { matchAnyTurns: filterState.turnCount !== null ? false : true },
+    //     );
 
+    //     console.log({ hasEffectType });
 
-          if (!hasEffectType) return false;
+    //     if (!hasEffectType) return false;
 
-          // If no turn count specified, return all matching effects
-          return true;
-        }
-      }
-
-      if (filterState.subcategory === "boost-damage") {
-        if (filterState.effectType) {
-          const hasEffectType = searchForCondition(
-            ship.special.toLowerCase(),
-            `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
-            /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
-            { matchAnyTurns: filterState.turnCount !== null ? false : true },
-          );
-
-          console.log({ hasEffectType });
-
-          if (!hasEffectType) return false;
-
-          // If no turn count specified, return all matching effects
-          return true;
-        }
-      }
-    }
+    //     // If no turn count specified, return all matching effects
+    //     return true;
+    //   }
+    // }
 
     return false;
   });
