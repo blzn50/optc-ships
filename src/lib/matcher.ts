@@ -42,18 +42,24 @@ export const filterMatcher = (
         regexMatcher:
           /boosts the (type effects of normal attacks) for (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?characters by (\d+(\.\d+)?)x for (\d+) turns?/i,
       };
-    case "def down damage boost":
-      return {
-        textMatcher: "boosts damage dealt to def down enemies by 1x for 1 turn",
-        regexMatcher:
-          /boosts (damage dealt to def down enemies) by (\d+(\.\d+)?)x for (\d+) turns?/i,
-      };
     case "final tap atk":
       return {
         textMatcher:
           "boosts the atk of the next final tap performed by a character by 1%",
         regexMatcher:
           /boosts the (atk of the next final tap) performed by a (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?character by (\d+)%/i,
+      };
+    case "slot":
+      return {
+        textMatcher: `boosts slot effects by 1x for 1 turn`,
+        regexMatcher:
+          /(?:doubles|boosts)\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?(?:atk\s+and\s+)?slot\s+effects(?:\s+by\s+(\d+(\.\d+)?)x)?\s+for\s+(\d+(\.\d+)?)\s+turns?/i,
+      };
+    case "def down damage boost":
+      return {
+        textMatcher: "boosts damage dealt to def down enemies by 1x for 1 turn",
+        regexMatcher:
+          /boosts (damage dealt to def down enemies) by (\d+(\.\d+)?)x for (\d+) turns?/i,
       };
     case "ignited damage boost":
       return {
@@ -62,17 +68,23 @@ export const filterMatcher = (
         regexMatcher:
           /boosts (damage dealt to ignited enemies) by (\d+(\.\d+)?)x for (\d+) turns?/i,
       };
-    case "slot":
-      return {
-        textMatcher: `boosts slot effects by 1x for 1 turn`,
-        regexMatcher:
-          /(?:doubles|boosts)\s+(?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?(?:atk\s+and\s+)?slot\s+effects(?:\s+by\s+(\d+(\.\d+)?)x)?\s+for\s+(\d+(\.\d+)?)\s+turns?/i,
-      };
     case "percent damage boost":
       return {
         textMatcher: `boost crew's atk based on the damage reduction status for 1 turn`,
         regexMatcher:
           /boost crew's (atk based on the damage reduction) status for (\d+) turns?/i,
+      };
+    case "delayed damage boost":
+      return {
+        textMatcher: `boosts damage dealt to delayed enemies by 1x`,
+        regexMatcher:
+          /boosts (damage dealt to delayed enemies) by (\d+(\.\d+)?)x/i,
+      };
+    case "poison damage boost":
+      return {
+        textMatcher: `boosts damage dealt to enemies affected by poison, venom, or progressive poison by 1.2x`,
+        regexMatcher:
+          /boosts damage dealt to enemies affected by poison, venom, or progressive poison by (\d+(\.\d+)?)x/i,
       };
     case "hp":
       return {
