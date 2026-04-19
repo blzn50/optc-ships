@@ -118,7 +118,37 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
             }))
             .sort(compareLabel);
         } else if (
+          subcategoryKey === "boost-damage" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as StatusDebuff[])
+            .map((effectType) => ({
+              id: `ability-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              category: "ability" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        }else if (
           subcategoryKey === "reduce-status-effect" &&
+          Array.isArray(effectTypes)
+        ) {
+          children = (effectTypes as StatusDebuff[])
+            .map((effectType) => ({
+              id: `ability-${subcategoryKey}-${effectType}`,
+              label: formatLabel(effectType),
+              value: effectType,
+              type: "effectType" as const,
+              category: "ability" as const,
+              subCategory: subcategoryKey,
+              isSelected: false,
+            }))
+            .sort(compareLabel);
+        }else if (
+          subcategoryKey === "fixed-damage" &&
           Array.isArray(effectTypes)
         ) {
           children = (effectTypes as StatusDebuff[])

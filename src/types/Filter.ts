@@ -22,7 +22,6 @@ export type StatusDebuff =
   | "eot heal to damage";
 export type BeneficialEffect =
   | "reduce special charge"
-  | "atk"
   | "hp"
   | "land perfect strikes"
   | "orb chance booster"
@@ -74,7 +73,9 @@ export type EffectUnion =
 
 type AbilityFilterToEffects = {
   "beneficial-status-effect": BeneficialEffect[];
+  "boost-damage": DamageBoost[];
   "reduce-status-effect": StatusDebuff[];
+  "fixed-damage": FixedDamage[];
 };
 
 type SpecialFilterToEffects = {

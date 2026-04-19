@@ -37,7 +37,6 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
   ability: {
     "beneficial-status-effect": [
       "reduce special charge",
-      "atk",
       "hp",
       "land perfect strikes",
       "orb chance booster",
@@ -55,6 +54,8 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       "special reverse",
       "limit special uses",
     ],
+    "boost-damage": ["atk", "poison damage boost", "delayed damage boost"],
+    "fixed-damage": ["end of turn damage"],
   },
   special: {
     "beneficial-status-effect": [
@@ -68,7 +69,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       "heal eot",
       "hp guard",
     ],
-    "fixed-damage": ["instant damage", "end of turn damage", "percent damage"],
+    "fixed-damage": ["instant damage", "percent damage"],
     "boost-damage": [
       "base atk",
       "atk",
@@ -243,7 +244,5 @@ export const filterShips = (
     //     return true;
     //   }
     // }
-
-    return false;
   });
 };
