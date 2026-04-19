@@ -69,7 +69,9 @@ const formattedEffectLabel: Record<string, string> = {
   "percent damage boost": "percent damage",
   "delayed damage boost": "delayed damage",
   "enemy percent damage": "percent damage",
-  "enemy threshold damage": "threshold damage"
+  "enemy threshold damage": "threshold damage",
+  "enemy def down": "def down",
+  "enemy paralysis": "paralysis",
 };
 
 // Helper function to format labels for display
@@ -134,7 +136,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               isSelected: false,
             }))
             .sort(compareLabel);
-        }else if (
+        } else if (
           subcategoryKey === "reduce-status-effect" &&
           Array.isArray(effectTypes)
         ) {
@@ -149,7 +151,7 @@ const buildFilterStructure = (): FilterCategoryUI[] => {
               isSelected: false,
             }))
             .sort(compareLabel);
-        }else if (
+        } else if (
           subcategoryKey === "fixed-damage" &&
           Array.isArray(effectTypes)
         ) {
@@ -342,9 +344,9 @@ const FilterItemComponent: React.FC<{
   return (
     <div className="select-none">
       <div
-        className={`flex items-center py-2 px-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ${hasChildren || isSelectable ? "cursor-pointer" : "cursor-default"}`}
+        className={`flex items-center py-2 px-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ${hasChildren ? "cursor-pointer" : "cursor-default"}`}
         style={{ paddingLeft: `${paddingLeft}px` }}
-        onClick={hasChildren || isSelectable ? handleToggle : undefined}
+        onClick={hasChildren ? handleToggle : undefined}
       >
         {/* Chevron icon for expandable items */}
         {hasChildren && (

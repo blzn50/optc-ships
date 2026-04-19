@@ -228,6 +228,29 @@ export const filterMatcher = (
         regexMatcher:
           /reduces all (enemies' resilience duration) by (\d+) turns?/i,
       };
+    case "enemy def down":
+      return {
+        textMatcher: "reduces all enemies' def by 90% for 1 turn",
+        regexMatcher: /reduces all (enemies' def) by \d+% for (\d+) turns?/i,
+      };
+    case "negative resistance":
+      return {
+        textMatcher: "applies -1% resistance to all enemies for 1 turn",
+        regexMatcher:
+          /applies -\d+% (?:[\w\s]+(?: and [\w\s]+)? )?(resistance) to all enemies for (\d+) turns?/i,
+      };
+    case "delay":
+      return {
+        textMatcher: "reduces all enemies' resilience duration by 1 turn",
+        regexMatcher:
+          /reduces all (enemies' resilience duration) by (\d+) turns?/i,
+      };
+    case "enemy paralysis":
+      return {
+        textMatcher: "applies paralysis to all enemies for 1 turn",
+        regexMatcher:
+          /(applies paralysis)(?: \([^)]+\))? to all enemies for (\d+) turns?/i,
+      };
     default:
       return {
         textMatcher: "",
