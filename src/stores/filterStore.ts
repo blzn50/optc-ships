@@ -94,8 +94,8 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
     ],
     "reduce-enemy-effect": [
       "def up",
-      "enemy percent damage reduction",
-      "enemy threshold damage reduction",
+      "enemy percent damage",
+      "enemy threshold damage",
       "barrier",
       "resilience",
     ],

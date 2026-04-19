@@ -68,6 +68,8 @@ const formattedEffectLabel: Record<string, string> = {
   "poison damage boost": "poison damage",
   "percent damage boost": "percent damage",
   "delayed damage boost": "delayed damage",
+  "enemy percent damage": "percent damage",
+  "enemy threshold damage": "threshold damage"
 };
 
 // Helper function to format labels for display

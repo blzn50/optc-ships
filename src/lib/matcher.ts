@@ -198,6 +198,36 @@ export const filterMatcher = (
         regexMatcher:
           /(?:deals (?:\d+(?:,\d+)?) non-type damage to all enemies|reduces all enemies' hp by (?:\d+)%) at end of turn/i,
       };
+    case "def up":
+      return {
+        textMatcher: "reduces all enemies' def up duration by 1 turn",
+        regexMatcher: /reduces all (enemies' def up duration) by (\d+) turns?/i,
+      };
+    case "enemy percent damage":
+      return {
+        textMatcher: "reduces all enemies' damage reduction duration by 1 turn",
+        regexMatcher:
+          /reduces all (enemies' damage reduction) (\(except \[THRESHOLD_DAMAGE_CUT\]\) )?duration by (\d+) turns?/i,
+      };
+    case "enemy threshold damage":
+      return {
+        textMatcher:
+          "reduces all enemies [threshold_damage_cut] duration by 1 turn",
+        regexMatcher:
+          /reduces all (enemies \[threshold_damage_cut\]) duration by (\d+) turns?/i,
+      };
+    case "barrier":
+      return {
+        textMatcher: "reduces the duration of all enemy barriers by 1 turn",
+        regexMatcher:
+          /reduces the duration of all (enemy barriers?) by (\d+) turns?/i,
+      };
+    case "resilience":
+      return {
+        textMatcher: "reduces all enemies' resilience duration by 1 turn",
+        regexMatcher:
+          /reduces all (enemies' resilience duration) by (\d+) turns?/i,
+      };
     default:
       return {
         textMatcher: "",

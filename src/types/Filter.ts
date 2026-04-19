@@ -34,8 +34,8 @@ export type BeneficialEffect =
   | "percent damage reduction"
   | "hp guard";
 export type EnemyEffect =
-  | "enemy percent damage reduction"
-  | "enemy threshold damage reduction"
+  | "enemy percent damage"
+  | "enemy threshold damage"
   | "def up"
   | "barrier"
   | "resilience";
