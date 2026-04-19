@@ -186,6 +186,18 @@ export const filterMatcher = (
         regexMatcher:
           /reduces (\[eot_heal_to_damage\]) duration by (\d+) turns?/i,
       };
+    case "instant damage":
+      return {
+        textMatcher: "deals 1 damage to all enemies",
+        regexMatcher:
+          /deals\s+\d+(?:,\d+)*\s*(?:in\s+)?(?:[\w\s'\,-]*(?:and\s+[\w\s'\,-]+)?\s+)?(?:non-type\s+)?damage\s+to\s+(?:all enemies|one enemy)(?!\s+at end of turn)/i,
+      };
+    case "end of turn damage":
+      return {
+        textMatcher: "deals 1 non-type damage to all enemies at end of turn",
+        regexMatcher:
+          /(?:deals (?:\d+(?:,\d+)?) non-type damage to all enemies|reduces all enemies' hp by (?:\d+)%) at end of turn/i,
+      };
     default:
       return {
         textMatcher: "",
