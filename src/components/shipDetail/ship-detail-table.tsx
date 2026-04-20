@@ -3,7 +3,7 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-} from "@tanstack/react-table";
+} from '@tanstack/react-table';
 
 import {
   Table,
@@ -12,9 +12,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { useMemo } from "react";
-import type { ShipDetail } from "@/types/Ship";
+} from '@/components/ui/table';
+import { useMemo } from 'react';
+import type { ShipDetail } from '@/types/Ship';
 
 export interface ShipDetailTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -26,7 +26,7 @@ export function ShipDetailTable<TData, TValue>({
   data,
 }: ShipDetailTableProps<TData, TValue>) {
   const toggledColumns: string[] = JSON.parse(
-    localStorage.getItem("toggledColumns") || "[]",
+    localStorage.getItem('toggledColumns') || '[]',
   );
 
   const ship = useMemo(() => {
@@ -38,16 +38,16 @@ export function ShipDetailTable<TData, TValue>({
     columns,
     initialState: {
       columnVisibility: {
-        "colaCount.superColaCount": "colaCount" in ship,
+        'colaCount.superColaCount': 'colaCount' in ship,
         colaCount:
-          "colaCount" in ship &&
-          toggledColumns.some((found) => found === "colaCount"),
+          'colaCount' in ship &&
+          toggledColumns.some((found) => found === 'colaCount'),
         superColaCount:
-          "superColaCount" in ship &&
-          toggledColumns.some((found) => found === "superColaCount"),
-        period: "period" in ship,
-        effect: "effect" in ship,
-        special: "special" in ship,
+          'superColaCount' in ship &&
+          toggledColumns.some((found) => found === 'superColaCount'),
+        period: 'period' in ship,
+        effect: 'effect' in ship,
+        special: 'special' in ship,
         cd: false,
       },
     },

@@ -1,11 +1,11 @@
-import { useStore } from "@nanostores/react";
-import { Menu, X } from "lucide-react";
+import { useStore } from '@nanostores/react';
+import { Menu, X } from 'lucide-react';
 import {
   isFilterOpen,
   toggleIsFilterOpen,
   selectedFilterCount,
-} from "@/stores/filterStore";
-import { Button } from "@/components/ui/button";
+} from '@/stores/filterStore';
+import { Button } from '@/components/ui/button';
 
 /* Hamburger menu toggle button - visible below xl */
 export function ToggleFilterButton() {

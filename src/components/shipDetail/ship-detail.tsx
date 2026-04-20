@@ -1,25 +1,25 @@
-import { useMemo } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useMemo } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { details } from "@/data/details";
+} from '@/components/ui/dialog';
+import { details } from '@/data/details';
 import {
   getShipFullImage,
   flattenShipData,
   replaceAndSanitizeEffectAndSpecial,
   flattenShipModificationData,
-} from "@/lib/utils";
-import { shipDetailColumns } from "./columns";
-import { ShipDetailTable } from "./ship-detail-table";
+} from '@/lib/utils';
+import { shipDetailColumns } from './columns';
+import { ShipDetailTable } from './ship-detail-table';
 import {
   ShipModificationTable,
   shipModificationDetailColumns,
-} from "./modification";
+} from './modification';
 
 export function ShipDetail() {
   let navigate = useNavigate();
@@ -56,7 +56,7 @@ export function ShipDetail() {
   }, [shipId]);
 
   return (
-    <Dialog open onOpenChange={() => navigate("/")}>
+    <Dialog open onOpenChange={() => navigate('/')}>
       <DialogContent
         className="h-5/6 overflow-y-auto w-11/12 max-w-6xl pt-0 max-md:px-2 border-none"
         showDialogClose={false}
@@ -92,7 +92,7 @@ export function ShipDetail() {
         )}
         {!!ship.specialEffect1 && (
           <blockquote className="text-center p-1 mb-1 max-md:mb-0 bg-stone-200 dark:bg-stone-800 font-light">
-            <b>Special Effect 1:</b>{" "}
+            <b>Special Effect 1:</b>{' '}
             <span
               dangerouslySetInnerHTML={{
                 __html: replaceAndSanitizeEffectAndSpecial(ship.specialEffect1),
@@ -102,7 +102,7 @@ export function ShipDetail() {
         )}
         {!!ship.specialEffect2 && (
           <blockquote className="text-center p-1 mb-1 max-md:mb-0 bg-stone-200 dark:bg-stone-800 font-light">
-            <b>Special Effect 2:</b>{" "}
+            <b>Special Effect 2:</b>{' '}
             <span
               dangerouslySetInnerHTML={{
                 __html: replaceAndSanitizeEffectAndSpecial(ship.specialEffect2),

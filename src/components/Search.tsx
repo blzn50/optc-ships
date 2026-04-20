@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useStore } from "@nanostores/react";
-import { X } from "lucide-react";
+import { useEffect, useState } from 'react';
+import { useStore } from '@nanostores/react';
+import { X } from 'lucide-react';
 
-import { Input } from "@/components/ui/input";
-import { searchVal } from "@/stores/searchStore";
-import { Button } from "./ui/button";
+import { Input } from '@/components/ui/input';
+import { searchVal } from '@/stores/searchStore';
+import { Button } from './ui/button';
 
 export function Search({ debounce = 500 }: { debounce?: number }) {
   const $searchVal = useStore(searchVal);
@@ -35,7 +35,7 @@ export function Search({ debounce = 500 }: { debounce?: number }) {
           variant="ghost"
           size="sm"
           className="absolute right-3 top-0.5 opacity-70 hover:bg-transparent focus:outline-none hover:opacity-100"
-          onClick={() => searchVal.set("")}
+          onClick={() => searchVal.set('')}
         >
           <X className="absolute h-4 w-4" />
         </Button>

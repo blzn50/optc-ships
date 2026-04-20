@@ -1,11 +1,11 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type {
   ShipDetail,
   ShipInfo,
   ShipModificationEffect,
   ShipModificationEffectTable,
-} from "@/types/Ship";
+} from '@/types/Ship';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -13,7 +13,7 @@ export function cn(...inputs: ClassValue[]) {
 
 // public\icon\ship_0001_thumbnail.png
 export function getShipThumbnail(shipId: string) {
-  const id = ("000" + shipId).slice(-4);
+  const id = ('000' + shipId).slice(-4);
   return `icon/ship_${id}_thumbnail.png`;
 }
 
@@ -29,12 +29,12 @@ export function convertToPSTTimestamp() {
  * @returns no. of milliseconds
  */
 export function getPSTTimestamp(dateString: string) {
-  return new Date(dateString + "-08:00").getTime();
+  return new Date(dateString + '-08:00').getTime();
 }
 
 // public\full\ship_0001_full.png
 export function getShipFullImage(shipId: string) {
-  const id = ("0000" + shipId).slice(-4);
+  const id = ('0000' + shipId).slice(-4);
   return `full/ship_${id}_full.png`;
 }
 
@@ -125,7 +125,6 @@ export function replaceAndSanitizeEffectAndSpecial(text: string) {
       '<span class="pl-1 pr-[10px] rounded-s text-xs font-semibold inline-flex justify-center items-center align-text-bottom text-white [clip-path:polygon(0%_0%,100%_0%,93%_50%,100%_100%,0%_100%)] TAG_GROUP_4">$1</span>',
     );
 }
-
 
 export function flattenShipData(shipInfo: ShipInfo) {
   const shipDetail: ShipDetail[] = [];

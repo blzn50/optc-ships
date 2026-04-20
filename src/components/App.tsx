@@ -1,11 +1,11 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { Ships } from "./ships/ships";
-import { ShipDetail } from "./shipDetail/ship-detail";
-import { Toaster } from "./ui/toaster";
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { Ships } from './ships/ships';
+import { ShipDetail } from './shipDetail/ship-detail';
+import { Toaster } from './ui/toaster';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: (
       <>
         <Ships />
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "view/:shipId",
+        path: 'view/:shipId',
         element: <ShipDetail />,
       },
     ],

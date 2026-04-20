@@ -1,7 +1,7 @@
-import { atom } from "nanostores";
-import { filterMatcher } from "@/lib/matcher";
-import type { ShipOverview } from "@/types/Ship";
-import type { FilterHierarchy, FilterState } from "@/types/Filter";
+import { atom } from 'nanostores';
+import { filterMatcher } from '@/lib/matcher';
+import type { ShipOverview } from '@/types/Ship';
+import type { FilterHierarchy, FilterState } from '@/types/Filter';
 
 export const isFilterOpen = atom(false);
 
@@ -35,75 +35,75 @@ export const resetFilter = () => {
 // Define our filter hierarchy with better structure
 export const FILTER_HIERARCHY: FilterHierarchy = {
   ability: {
-    "beneficial-status-effect": [
-      "reduce special charge",
-      "hp",
-      "land perfect strikes",
-      "orb chance booster",
-      "change orbs",
-      "percent damage reduction",
-      "heal eot",
+    'beneficial-status-effect': [
+      'reduce special charge',
+      'hp',
+      'land perfect strikes',
+      'orb chance booster',
+      'change orbs',
+      'percent damage reduction',
+      'heal eot',
     ],
-    "reduce-status-effect": [
-      "bind",
-      "despair",
-      "special bind",
-      "atk down",
-      "paralysis",
-      "decrease chain multiplier growth rate",
-      "special reverse",
-      "limit special uses",
+    'reduce-status-effect': [
+      'bind',
+      'despair',
+      'special bind',
+      'atk down',
+      'paralysis',
+      'decrease chain multiplier growth rate',
+      'special reverse',
+      'limit special uses',
     ],
-    "boost-damage": ["atk", "poison damage boost", "delayed damage boost"],
-    "fixed-damage": ["end of turn damage"],
+    'boost-damage': ['atk', 'poison damage boost', 'delayed damage boost'],
+    'fixed-damage': ['end of turn damage'],
   },
   special: {
-    "beneficial-status-effect": [
-      "reduce special charge",
-      "change orbs",
-      "lock orbs",
-      "reduce switch effect",
-      "threshold damage reduction",
-      "percent damage reduction",
-      "heal",
-      "heal eot",
-      "hp guard",
+    'beneficial-status-effect': [
+      'reduce special charge',
+      'change orbs',
+      'lock orbs',
+      'reduce switch effect',
+      'threshold damage reduction',
+      'percent damage reduction',
+      'heal',
+      'heal eot',
+      'hp guard',
     ],
-    "fixed-damage": ["instant damage", "percent damage"],
-    "boost-damage": [
-      "base atk",
-      "atk",
-      "color affinity",
-      "slot",
-      "final tap atk",
-      "orb effect multiplier",
-      "additive chain multiplier",
-      "chain multiplier growth",
-      "percent damage boost",
-      "ignited damage boost",
-      "def down damage boost",
+    'fixed-damage': ['instant damage', 'percent damage'],
+    'boost-damage': [
+      'base atk',
+      'atk',
+      'color affinity',
+      'slot',
+      'final tap atk',
+      'orb effect multiplier',
+      'additive chain multiplier',
+      'chain multiplier growth',
+      'percent damage boost',
+      'ignited damage boost',
+      'def down damage boost',
     ],
-    "reduce-status-effect": [
-      "bind",
-      "despair",
-      "atk down",
-      "paralysis",
-      "slot bind",
-      "burn",
-      "eot heal to damage",
+    'reduce-status-effect': [
+      'bind',
+      'despair',
+      'atk down',
+      'paralysis',
+      'slot bind',
+      'burn',
+      'eot heal to damage',
     ],
-    "reduce-enemy-effect": [
-      "def up",
-      "enemy percent damage",
-      "enemy threshold damage",
-      "barrier",
-      "resilience",
+    'reduce-enemy-effect': [
+      'def up',
+      'enemy percent damage',
+      'enemy threshold damage',
+      'barrier',
+      'resilience',
     ],
-    "apply-enemy-effect": [
-      "enemy def down",
-      "delay",
-      "negative resistance",
-      "enemy paralysis",
+    'apply-enemy-effect': [
+      'enemy def down',
+      'delay',
+      'negative resistance',
+      'enemy paralysis',
     ],
   },
 };
@@ -127,7 +127,7 @@ const searchForCondition = (
   if (!searchMatch) return false;
 
   // Handle cases where first capture group might be undefined (for reduce special charge)
-  const searchCondition = searchMatch[1] ? searchMatch[1].trim() : "";
+  const searchCondition = searchMatch[1] ? searchMatch[1].trim() : '';
   const searchTurns = matchAnyTurns
     ? null
     : searchMatch[2]
@@ -135,7 +135,7 @@ const searchForCondition = (
       : null;
 
   // Find all matches in the target text
-  const regex = new RegExp(regExpression.source, "gi");
+  const regex = new RegExp(regExpression.source, 'gi');
   regex.lastIndex = 0;
   let match;
 
@@ -157,7 +157,7 @@ const searchForCondition = (
 
     // Check if search condition appears as a separate item
     const conditionParts = conditionsPart
-      ? conditionsPart.split("/").map((part) => part.trim())
+      ? conditionsPart.split('/').map((part) => part.trim())
       : [];
 
     // For "reduce special charge" (when searchCondition is empty),
@@ -197,7 +197,7 @@ export const filterShips = (
 
   return ships.filter((ship) => {
     //early return
-    if (filterState.category === "special" && !ship.special) {
+    if (filterState.category === 'special' && !ship.special) {
       return false;
     }
 
@@ -207,7 +207,7 @@ export const filterShips = (
       filterState.turnCount || 1,
     );
     return searchForCondition(
-      filterState.category === "ability"
+      filterState.category === 'ability'
         ? ship.effect.toLowerCase()
         : // mark the special exists because of early return
           ship.special!.toLowerCase(),

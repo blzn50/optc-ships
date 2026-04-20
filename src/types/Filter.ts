@@ -1,67 +1,67 @@
-export type FilterCategory = "ability" | "special";
+export type FilterCategory = 'ability' | 'special';
 export type AbilityFilter =
-  | "beneficial-status-effect"
-  | "reduce-enemy-effect"
-  | "reduce-status-effect"
-  | "boost-damage"
-  | "apply-enemy-effect"
-  | "fixed-damage";
+  | 'beneficial-status-effect'
+  | 'reduce-enemy-effect'
+  | 'reduce-status-effect'
+  | 'boost-damage'
+  | 'apply-enemy-effect'
+  | 'fixed-damage';
 export type StatusDebuff =
-  | "bind"
-  | "despair"
-  | "silence"
-  | "special bind"
-  | "slot bind"
-  | "burn"
-  | "atk down"
-  | "rcv down"
-  | "paralysis"
-  | "decrease chain multiplier growth rate"
-  | "special reverse"
-  | "limit special uses"
-  | "eot heal to damage";
+  | 'bind'
+  | 'despair'
+  | 'silence'
+  | 'special bind'
+  | 'slot bind'
+  | 'burn'
+  | 'atk down'
+  | 'rcv down'
+  | 'paralysis'
+  | 'decrease chain multiplier growth rate'
+  | 'special reverse'
+  | 'limit special uses'
+  | 'eot heal to damage';
 export type BeneficialEffect =
-  | "reduce special charge"
-  | "hp"
-  | "land perfect strikes"
-  | "orb chance booster"
-  | "heal"
-  | "heal eot"
-  | "change orbs"
-  | "lock orbs"
-  | "reduce switch effect"
-  | "threshold damage reduction"
-  | "percent damage reduction"
-  | "hp guard";
+  | 'reduce special charge'
+  | 'hp'
+  | 'land perfect strikes'
+  | 'orb chance booster'
+  | 'heal'
+  | 'heal eot'
+  | 'change orbs'
+  | 'lock orbs'
+  | 'reduce switch effect'
+  | 'threshold damage reduction'
+  | 'percent damage reduction'
+  | 'hp guard';
 export type EnemyEffect =
-  | "enemy percent damage"
-  | "enemy threshold damage"
-  | "def up"
-  | "barrier"
-  | "resilience";
+  | 'enemy percent damage'
+  | 'enemy threshold damage'
+  | 'def up'
+  | 'barrier'
+  | 'resilience';
 export type EnemyDebuff =
-  | "enemy def down"
-  | "negative resistance"
-  | "delay"
-  | "enemy paralysis";
+  | 'enemy def down'
+  | 'negative resistance'
+  | 'delay'
+  | 'enemy paralysis';
 export type DamageBoost =
-  | "base atk"
-  | "atk"
-  | "slot"
-  | "color affinity"
-  | "final tap atk"
-  | "orb effect multiplier"
-  | "additive chain multiplier"
-  | "chain multiplier growth"
-  | "ignited damage boost"
-  | "def down damage boost"
-  | "poison damage boost"
-  | "percent damage boost"
-  | "delayed damage boost";
+  | 'base atk'
+  | 'atk'
+  | 'slot'
+  | 'color affinity'
+  | 'final tap atk'
+  | 'orb effect multiplier'
+  | 'additive chain multiplier'
+  | 'chain multiplier growth'
+  | 'ignited damage boost'
+  | 'def down damage boost'
+  | 'poison damage boost'
+  | 'percent damage boost'
+  | 'delayed damage boost';
 export type FixedDamage =
-  | "instant damage"
-  | "end of turn damage"
-  | "percent damage";
+  | 'instant damage'
+  | 'end of turn damage'
+  | 'percent damage';
 
 export type EffectUnion =
   | StatusDebuff
@@ -72,19 +72,19 @@ export type EffectUnion =
   | FixedDamage;
 
 type AbilityFilterToEffects = {
-  "beneficial-status-effect": BeneficialEffect[];
-  "boost-damage": DamageBoost[];
-  "reduce-status-effect": StatusDebuff[];
-  "fixed-damage": FixedDamage[];
+  'beneficial-status-effect': BeneficialEffect[];
+  'boost-damage': DamageBoost[];
+  'reduce-status-effect': StatusDebuff[];
+  'fixed-damage': FixedDamage[];
 };
 
 type SpecialFilterToEffects = {
-  "beneficial-status-effect": BeneficialEffect[];
-  "boost-damage": DamageBoost[];
-  "reduce-enemy-effect": EnemyEffect[];
-  "apply-enemy-effect": EnemyDebuff[];
-  "reduce-status-effect": StatusDebuff[];
-  "fixed-damage": FixedDamage[];
+  'beneficial-status-effect': BeneficialEffect[];
+  'boost-damage': DamageBoost[];
+  'reduce-enemy-effect': EnemyEffect[];
+  'apply-enemy-effect': EnemyDebuff[];
+  'reduce-status-effect': StatusDebuff[];
+  'fixed-damage': FixedDamage[];
 };
 
 export type FilterHierarchy = {

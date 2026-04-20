@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useStore } from "@nanostores/react";
-import { toast } from "@/components/ui/use-toast";
-import { ShipTable } from "@/components/ships/ship-table.tsx";
-import { shipsColumns } from "@/components/ships/columns.tsx";
-import { FilterComponent } from "@/components/filter/filter.tsx";
-import { units } from "@/data/units";
-import { DB_VERSION } from "@/data/version";
-import { $filterState, filterShips } from "@/stores/filterStore";
+import { useEffect } from 'react';
+import { useStore } from '@nanostores/react';
+import { toast } from '@/components/ui/use-toast';
+import { ShipTable } from '@/components/ships/ship-table.tsx';
+import { shipsColumns } from '@/components/ships/columns.tsx';
+import { FilterComponent } from '@/components/filter/filter.tsx';
+import { units } from '@/data/units';
+import { DB_VERSION } from '@/data/version';
+import { $filterState, filterShips } from '@/stores/filterStore';
 
 // This solution of wrapper component is obtained from github discussion which in turn links to discord thread
 // https://github.com/withastro/astro/issues/7709. Table from shadcn is causing issue with hydration if header
@@ -15,18 +15,18 @@ export function Ships() {
   const filterState = useStore($filterState);
 
   useEffect(() => {
-    const dbVersion = Number(localStorage.getItem("dbVersion")) || 0;
+    const dbVersion = Number(localStorage.getItem('dbVersion')) || 0;
 
     if (dbVersion < DB_VERSION) {
       setTimeout(() => {
         toast({
-          title: "Update: 28 Mar 2026",
-          description: "Great Erik ship added",
+          title: 'Update: 28 Mar 2026',
+          description: 'Great Erik ship added',
         });
       }, 500);
       // update local storage
-      localStorage.setItem("dbVersion", DB_VERSION.toString());
-      localStorage.setItem("isToastHidden", "false");
+      localStorage.setItem('dbVersion', DB_VERSION.toString());
+      localStorage.setItem('isToastHidden', 'false');
     }
   }, []);
 
