@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   type ColumnDef,
   type SortingState,
@@ -10,18 +10,18 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { useStore } from "@nanostores/react";
-import "lazysizes";
-import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
+} from '@tanstack/react-table';
+import { useStore } from '@nanostores/react';
+import 'lazysizes';
+import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 import {
   Table,
   TableBody,
@@ -29,15 +29,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { searchVal } from "@/searchStore";
+} from '@/components/ui/select';
+import { searchVal } from '@/stores/searchStore';
 
 interface ShipTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -45,20 +45,20 @@ interface ShipTableProps<TData, TValue> {
 }
 
 const fuzzyFilter: FilterFn<any> = (row, columnId, value, _) => {
-  const toMatch = new RegExp(value, "i");
+  const toMatch = new RegExp(value, 'i');
   const itemRank = (row.getValue(columnId) as string).search(toMatch);
   return itemRank > -1;
 };
 
-const numberColumns = ["id", "colaCount", "superColaCount"];
+const numberColumns = ['id', 'colaCount', 'superColaCount'];
 
 export function ShipTable<TData, TValue>({
   columns,
   data,
 }: ShipTableProps<TData, TValue>) {
-  const paginationPageSize = localStorage.getItem("pagination.pageSize");
+  const paginationPageSize = localStorage.getItem('pagination.pageSize');
   const toggledColumns: string[] = JSON.parse(
-    localStorage.getItem("toggledColumns") || "[]",
+    localStorage.getItem('toggledColumns') || '[]',
   );
   const [pagination, setPagination] = useState({
     pageIndex: 0,
@@ -66,14 +66,14 @@ export function ShipTable<TData, TValue>({
   });
   const [sorting, setSorting] = useState<SortingState>([
     {
-      id: "id",
+      id: 'id',
       desc: false,
     },
   ]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(
     () => {
       const toggleColumnsInitial: string[] = JSON.parse(
-        localStorage.getItem("toggledColumns") || "[]",
+        localStorage.getItem('toggledColumns') || '[]',
       );
       return toggleColumnsInitial.length > 0
         ? toggleColumnsInitial.reduce(
@@ -117,7 +117,7 @@ export function ShipTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <div className="relative w-full">
       <div className="flex my-4 items-center">
         <span className="font-light text-xs text italic p-1 mb-1 max-md:mb-0">
           The toggled columns will also be reflected in individual ship table.
@@ -158,7 +158,7 @@ export function ShipTable<TData, TValue>({
                     if (newToggledColumns.length === toggledColumns.length)
                       newToggledColumns.push(col.id);
                     localStorage.setItem(
-                      "toggledColumns",
+                      'toggledColumns',
                       JSON.stringify(newToggledColumns),
                     );
                     col.toggleVisibility(!!value);
@@ -178,7 +178,7 @@ export function ShipTable<TData, TValue>({
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
-                    className={`p-2 ${header.index % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
+                    className={`p-2 ${header.index % 2 === 0 ? 'bg-muted/50' : 'bg-inherit'}`}
                     style={{
                       minWidth: header.getSize(),
                     }}
@@ -225,7 +225,7 @@ export function ShipTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={`px-2 py-3 ${cell.column.getIndex() % 2 === 0 ? "bg-muted/50" : "bg-inherit"}`}
+                      className={`px-2 py-3 ${cell.column.getIndex() % 2 === 0 ? 'bg-muted/50' : 'bg-inherit'}`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
@@ -249,26 +249,26 @@ export function ShipTable<TData, TValue>({
         </Table>
       </div>
 
-      <div className="sticky bottom-0 z-40 bg-white dark:bg-black">
-        <div className="flex items-center justify-end space-x-2 h-14">
+      <div className="fixed bottom-0 z-40 bg-white dark:bg-black w-full max-sm:left-0 sm:w-[39rem] md:w-[47rem] lg:w-[62rem] xl:w-[58.5rem] 2xl:w-[70.5rem]">
+        <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 space-x-2 h-auto p-1">
           <div className="flex-1 text-sm">
-            Showing {pagination.pageIndex + 1} to{" "}
+            Showing {pagination.pageIndex + 1} to{' '}
             {table.getFilteredRowModel().rows.length < pagination.pageSize
               ? table.getFilteredRowModel().rows.length
-              : pagination.pageSize * (pagination.pageIndex + 1)}{" "}
-            of {table.getFilteredRowModel().rows.length}{" "}
+              : pagination.pageSize * (pagination.pageIndex + 1)}{' '}
+            of {table.getFilteredRowModel().rows.length}{' '}
             {table.getFilteredRowModel().rows.length === 1
-              ? "entry"
-              : "entries"}
+              ? 'entry'
+              : 'entries'}
             {!!$searchVal &&
               ` (filtered from ${table.getPreFilteredRowModel().rows.length} total
             entries)`}
           </div>
-          <div className="space-x-2">
+          <div className="space-x-2 self-end">
             <Select
               onValueChange={(val) => {
                 table.setPageSize(Number(val));
-                localStorage.setItem("pagination.pageSize", val);
+                localStorage.setItem('pagination.pageSize', val);
               }}
               defaultValue={table.getState().pagination.pageSize.toString()}
             >
@@ -276,7 +276,7 @@ export function ShipTable<TData, TValue>({
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                {["15", "25", "50", "100"].map((pageSize) => (
+                {['15', '25', '50', '100'].map((pageSize) => (
                   <SelectItem key={pageSize} value={pageSize}>
                     {pageSize}
                   </SelectItem>
@@ -303,6 +303,9 @@ export function ShipTable<TData, TValue>({
           </div>
         </div>
       </div>
+
+      {/* Spacer to prevent content overlap */}
+      <div className="h-[3rem] flex-shrink-0"></div>
     </div>
   );
 }

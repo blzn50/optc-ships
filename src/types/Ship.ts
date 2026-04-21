@@ -4,7 +4,8 @@ export type ShipOverview = {
   colaCount: number;
   superColaCount: number;
   effect: string;
-  hasSpecial: "no" | "yes" | "afterMRank5";
+  hasSpecial: 'no' | 'yes' | 'afterMRank5';
+  special?: string;
 };
 
 export type ShipBasic = {
@@ -33,13 +34,13 @@ export type ShipModificationEffect = {
 };
 
 export type ShipModificationEffectTable = Required<
-  Pick<ShipInfo, "effect" | "special" | "cd">
+  Pick<ShipInfo, 'effect' | 'special' | 'cd'>
 > & {
   phase: number[];
 };
 
-export type ShipDetail = Pick<ShipOverview, "effect"> &
-  Partial<Pick<ShipOverview, "colaCount" | "superColaCount">> & {
+export type ShipDetail = Pick<ShipOverview, 'effect'> &
+  Partial<Pick<ShipOverview, 'colaCount' | 'superColaCount'>> & {
     period?: string;
     special?: string;
     cd?: number | string;

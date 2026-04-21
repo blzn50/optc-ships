@@ -1,25 +1,22 @@
-import { type ColumnDef } from "@tanstack/react-table";
+import { type ColumnDef } from '@tanstack/react-table';
 
-import type { ShipModificationEffect } from "@/types/Ship";
-import {
-  replaceAndSanitizeSpecial,
-  replaceAndSanitizeEffect,
-} from "@/lib/utils";
+import type { ShipModificationEffect } from '@/types/Ship';
+import { replaceAndSanitizeEffectAndSpecial } from '@/lib/utils';
 
 export const shipModificationDetailColumns: ColumnDef<ShipModificationEffect>[] =
   [
     {
-      accessorKey: "phase",
+      accessorKey: 'phase',
     },
     {
-      accessorKey: "effect",
+      accessorKey: 'effect',
       header: () => <div className="pl-1">[Modification] Effect</div>,
       enableSorting: false,
       cell: ({ row }) => {
-        const effectText = String(row.getValue("effect"));
-        const phase = row.getValue("phase");
+        const effectText = String(row.getValue('effect'));
+        const phase = row.getValue('phase');
         // if needed, sanitize the val with js-xss or dompurify
-        const text = replaceAndSanitizeEffect(effectText);
+        const text = replaceAndSanitizeEffectAndSpecial(effectText);
         return (
           <p
             className="pl-1"
@@ -32,20 +29,18 @@ export const shipModificationDetailColumns: ColumnDef<ShipModificationEffect>[] 
       minSize: 210,
     },
     {
-      accessorKey: "special",
+      accessorKey: 'special',
       header: () => <div className="pl-1">[CD] Special</div>,
       cell: ({ row }) => {
-        const special = String(row.getValue("special"));
-        const cd = row.getValue("cd");
+        const special = String(row.getValue('special'));
+        const cd = row.getValue('cd');
         // if needed, sanitize the val with js-xss or dompurify
-        const text = replaceAndSanitizeEffect(
-          replaceAndSanitizeSpecial(special),
-        );
+        const text = replaceAndSanitizeEffectAndSpecial(special);
         return (
           <p
             className="pl-1"
             dangerouslySetInnerHTML={{
-              __html: `${cd !== "-" ? `<div>[ <b>${cd} turns</b> ]</div>` : ""} ${text}`,
+              __html: `${cd !== '-' ? `<div>[ <b>${cd} turns</b> ]</div>` : ''} ${text}`,
             }}
           ></p>
         );
@@ -53,6 +48,6 @@ export const shipModificationDetailColumns: ColumnDef<ShipModificationEffect>[] 
       size: 180,
     },
     {
-      accessorKey: "cd",
+      accessorKey: 'cd',
     },
   ];

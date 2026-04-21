@@ -1,27 +1,30 @@
-import { type ColumnDef } from "@tanstack/react-table";
-import { Link } from "react-router-dom";
-import { Check, CheckCheck, Minus } from "lucide-react";
+import { type ColumnDef } from '@tanstack/react-table';
+import { Link } from 'react-router-dom';
+import { Check, CheckCheck, Minus } from 'lucide-react';
 
-import { getShipThumbnail, replaceAndSanitizeEffect } from "@/lib/utils";
-import type { ShipOverview } from "@/types/Ship";
+import {
+  getShipThumbnail,
+  replaceAndSanitizeEffectAndSpecial,
+} from '@/lib/utils';
+import type { ShipOverview } from '@/types/Ship';
 
 export const shipsColumns: ColumnDef<ShipOverview>[] = [
   {
-    accessorKey: "id",
-    header: () => <div className="text-right">Ship ID</div>,
-    size: 80,
+    accessorKey: 'id',
+    header: () => <div className="text-right">ID</div>,
+    size: 40,
     enableGlobalFilter: false,
     cell: ({ row }) => (
-      <div className="text-right pr-1">{row.getValue("id")}</div>
+      <div className="text-right pr-1">{row.getValue('id')}</div>
     ),
     enableHiding: false,
   },
   {
-    accessorKey: "name",
-    header: "Name",
+    accessorKey: 'name',
+    header: 'Name',
     cell: ({ row }) => {
-      const shipId = String(row.getValue("id"));
-      const shipName = String(row.getValue("name"));
+      const shipId = String(row.getValue('id'));
+      const shipName = String(row.getValue('name'));
       const shipIcon = getShipThumbnail(shipId);
       return (
         <div className="flex items-center gap-1">
@@ -44,37 +47,37 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     size: 200,
   },
   {
-    accessorKey: "colaCount",
-    meta: { displayLabel: "Cola count" },
+    accessorKey: 'colaCount',
+    meta: { displayLabel: 'Cola count' },
     header: () => <div className="text-right pr-1">Cola Needed</div>,
     cell: ({ row }) => {
-      const count = parseInt(row.getValue("colaCount"));
-      const formatted = new Intl.NumberFormat("en-US").format(count);
+      const count = parseInt(row.getValue('colaCount'));
+      const formatted = new Intl.NumberFormat('en-US').format(count);
       return <div className="text-right pr-1">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 100,
   },
   {
-    accessorKey: "superColaCount",
-    meta: { displayLabel: "Super cola count" },
+    accessorKey: 'superColaCount',
+    meta: { displayLabel: 'Super cola count' },
     header: () => <div className="text-right pr-1">Super Cola Needed</div>,
     cell: ({ row }) => {
-      const count = parseInt(row.getValue("superColaCount"));
-      const formatted = new Intl.NumberFormat("en-US").format(count);
+      const count = parseInt(row.getValue('superColaCount'));
+      const formatted = new Intl.NumberFormat('en-US').format(count);
       return <div className="text-right pr-1">{formatted}</div>;
     },
     enableGlobalFilter: false,
     size: 125,
   },
   {
-    accessorKey: "effect",
-    header: "Maxed Effect",
+    accessorKey: 'effect',
+    header: 'Maxed Effect',
     enableSorting: false,
     cell: ({ row }) => {
-      const effectText = String(row.getValue("effect"));
+      const effectText = String(row.getValue('effect'));
       // if needed, sanitize the val with js-xss or dompurify
-      const text = replaceAndSanitizeEffect(effectText);
+      const text = replaceAndSanitizeEffectAndSpecial(effectText);
       return (
         <p className="pl-1" dangerouslySetInnerHTML={{ __html: text }}></p>
       );
@@ -83,13 +86,13 @@ export const shipsColumns: ColumnDef<ShipOverview>[] = [
     size: 300,
   },
   {
-    accessorKey: "hasSpecial",
-    header: "Special",
+    accessorKey: 'hasSpecial',
+    header: 'Special',
     cell: ({ row }) => {
-      const specialVal = row.getValue("hasSpecial");
-      return specialVal === "yes" ? (
+      const specialVal = row.getValue('hasSpecial');
+      return specialVal === 'yes' ? (
         <CheckCheck size={16} />
-      ) : specialVal === "afterMRank5" ? (
+      ) : specialVal === 'afterMRank5' ? (
         <Check size={16} />
       ) : (
         <Minus size={16} />

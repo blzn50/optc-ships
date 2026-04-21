@@ -1,98 +1,112 @@
-import type { ShipOverview } from "@/types/Ship";
+import type { ShipOverview } from '@/types/Ship';
 
-import { details } from "./details";
-import { convertToPSTTimestamp, getPSTTimestamp } from "@/lib/utils";
+import { details } from './details';
+import { convertToPSTTimestamp, getPSTTimestamp } from '@/lib/utils';
 
 export const units: ShipOverview[] = [
   {
     id: 1,
-    name: "Dinghy",
+    name: 'Dinghy',
     colaCount: 15048,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts crew's chance of landing on own type slot, boosts Captain's RCV by 800, boosts crew's ATK by 1.65x, HP by 1.5x, and makes it much easier to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special: "Changes crew's slots to character's own type",
   },
   {
     id: 2,
-    name: "Merry Go",
+    name: 'Merry Go',
     colaCount: 15057,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 20000, boosts crew's ATK by 1.65x, reduces crew's Bind/Despair duration by 1 turn, and makes it much easier to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special: "Reduces crew's Despair/Bind duration by 1 turn",
   },
   {
     id: 3,
-    name: "Navy Ship",
+    name: 'Navy Ship',
     colaCount: 15234,
     superColaCount: 20,
     effect:
       "Boosts Shooter and Fighter characters' ATK by 500, reduces crew's Paralysis duration by 1 turn, boosts crew's HP by 1.75x, boosts chance of landing on own type slot, and boosts Shooter and Fighter characters' ATK by 1.5x",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Extends the duration of crew's [EOT_HEAL] by 2 turns and boosts Shooter and Fighter characters' base ATK by +1000 for 1 turn",
   },
   {
     id: 4,
-    name: "Baratie",
+    name: 'Baratie',
     colaCount: 15226,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts top-right character's HP by 10,000, boosts crew's ATK by 1.5x, boosts crew's chance of landing on [RCV] slots, changes [TND] slots into [SEMLA] slots, makes [RCV] [SEMLA] slots have matching slot effects, boosts ATK by 1.2x when characters have [RCV] [SEMLA] slots, and allows crew to obtain [RCV] [SEMLA] slots with PERFECT taps",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      'Reduces [EOT_HEAL_TO_DAMAGE] duration by 2 turns, heals crew by 5,000 HP, and changes ATK multiplier of [RCV] [SEMLA] slots to 2.5x when slots match (normally 2.0x when matching) 0.5x when unfavorable, 1.0x otherwise for 1 turn',
   },
   {
     id: 5,
-    name: "Coffin Boat",
+    name: 'Coffin Boat',
     colaCount: 15328,
     superColaCount: 20,
     effect:
       "Reduces Slasher characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.8x, HP by 1.75x, but reduces Captain's RCV by 700, and reduces crew's Bind duration by 1 turn",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special: "Reduces Slasher characters' Special charge time by 2 turns",
   },
   {
     id: 6,
-    name: "Miss Love Duck",
+    name: 'Miss Love Duck',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.5x, HP by 1.3x, boosts their chance of landing on own type slot, reduces damage taken by 20%, and boosts Striker characters' ATK by 600",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Greatly reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, and heals crew by 5,000 HP at end of turn for 3 turns",
   },
   {
     id: 7,
-    name: "Going Merry - Flying Model",
+    name: 'Going Merry - Flying Model',
     colaCount: 15233,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, heals crew by 5,000 HP at end of turn, reduces crew's Despair duration by 2 turns, and boosts crew's ATK by 1.7x and RCV by 1.2x",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special: "Reduces crew's Despair duration by 2 turns",
   },
   {
     id: 8,
-    name: "Moby Dick",
+    name: 'Moby Dick',
     colaCount: 15380,
     superColaCount: 20,
     effect:
       "Reduces crew's Special charge time by 1 turn at start of quest, reduces HP to 50%, boosts ATK by 1.55x, HP by 1.6x, if HP is 50% or below before attacking, reduces damage taken by 20%, and if HP is 30% or below before attacking, boosts ATK by a further 1.2x",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Activates HP Guard of 70% effect for 1 turn and reduces crew's Switch Effect use by 1",
   },
   {
     id: 9,
-    name: "Big Top",
+    name: 'Big Top',
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts ATK by 2.2x for characters with a Cost of 40 or less, boosts their HP by 1.4x, and boosts ATK by 1.6x for characters with a Cost of 41 or more",
-    hasSpecial: "no",
+      'Reduces Special charge time by 1 turn at start of quest, boosts ATK by 2.2x for characters with a Cost of 40 or less, boosts their HP by 1.4x, and boosts ATK by 1.6x for characters with a Cost of 41 or more',
+    hasSpecial: 'no',
   },
   {
     id: 10,
-    name: "Bezan Black",
+    name: 'Bezan Black',
     colaCount: 15180,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts QCK characters' ATK by 1.8x, HP by 1.5x, makes crew's [STR] [DEX] slots have matching slot effects, reduces Despair duration by 1 turn, and boosts crew's chance of landing on [QCK] slots",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces crew's Burn duration by 1 turn and boosts the type effects of normal attacks for QCK characters by 2.25x for 2 turns",
   },
   {
     id: 11,
@@ -101,104 +115,122 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.8x, HP by 1.75x, reduces crew's Bind duration by 1 turn, and drastically reduces the chance of landing on [RCV] slots",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces crew's Slot Bind duration by 1 turn, and boosts the type effects of normal attacks for Striker characters by 2.25x for 2 turn",
   },
   {
     id: 12,
-    name: "Striker",
+    name: 'Striker',
     colaCount: 15240,
     superColaCount: 20,
     effect:
       "Reduces Shooter characters' Special charge time by 2 turns at start of quest, boosts Shooter characters' ATK by 1.8x, HP by 1.35x, and boosts damage dealt to Ignited enemies by 1.05x",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces Shooter characters' Special charge time by 1 turn, and boosts the type effects of normal attacks for Shooter characters by 2.5x for 1 turn",
   },
   {
     id: 13,
-    name: "Thousand Sunny",
+    name: 'Thousand Sunny',
     colaCount: 15188,
     superColaCount: 20,
     effect:
       "Boosts crew's ATK by 1.65x, HP by 1.3x, reduces crew's ATK Down/Bind duration by 1 turn, and makes it easier to land PERFECT strikes",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces all enemies' DEF Up duration by 1 turn, and boosts crew's ATK by 2.25x for 1 turn and deals 100,000 in non-type damage to all enemies",
   },
   {
     id: 14,
-    name: "Dreadnaught Sabre",
+    name: 'Dreadnaught Sabre',
     colaCount: 15150,
     superColaCount: 20,
     effect:
       "Reduces crew's Paralysis duration by 1 turn, boosts crew's HP by 1.5x, boosts Driven and Powerhouse characters' ATK by 200, boosts Driven and Powerhouse characters' ATK by 1.4x, boosts damage dealt to enemies affected by Poison, Venom, or progressive Poison by 1.2x, and deals 20,000 non-type damage to all enemies at end of turn",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 15,
-    name: "Kuja Pirate Ship",
+    name: 'Kuja Pirate Ship',
     colaCount: 15242,
     superColaCount: 20,
     effect:
       "Reduces Free Spirit and Shooter characters' Special charge time by 1 turn at start of quest, boosts Free Spirit and Shooter characters' ATK by 1.75x, HP by 1.4x, makes it a little easier to land PERFECT strikes, and reduces crew's decrease chain multiplier growth rate duration by 2 turns",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces crew's ATK Down duration by 2 turns, heals crew by 10,000 HP, and heals crew by 5,000 HP at end of turn for 1 turn",
   },
   {
     id: 16,
-    name: "Ark Maxim",
+    name: 'Ark Maxim',
     colaCount: 15234,
     superColaCount: 20,
     effect:
       "Reduces QCK and PSY characters' Special charge time by 1 turn at start of quest, boosts QCK and PSY characters' ATK by 1.75x, HP by 1.4x, reduces crew's Paralysis duration by 1 turn, and heals crew by 4,000 HP at end of turn",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      'Deals 56,560 damage to all enemies, reduces all enemies [THRESHOLD_DAMAGE_CUT] duration by 2 turns, and applies Paralysis (50% chance not to reduce action turns) to all enemies for 1 turn',
   },
   {
     id: 17,
-    name: "Red Force",
+    name: 'Red Force',
     colaCount: 15244,
     superColaCount: 20,
     effect:
       "Boosts Cerebral and Shooter characters' ATK by 1.75x, HP by 1.4x, boosts chances of them landing on their own type slot, reduces crew's ATK Down duration by 1 turn, and makes it a little easier for crew to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces crew's ATK Down duration by 1 turn, and if crew has [ATK_UP] status when Special is launched, further increases crew's ATK boost by +0.2 (boosts Cerebral and Shooter characters' ATK by 2.25x for 1 turn otherwise)",
   },
   {
     id: 18,
-    name: "Thousand Sunny - 2nd Anniversary Model",
+    name: 'Thousand Sunny - 2nd Anniversary Model',
     colaCount: 1000,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
-    hasSpecial: "no",
+    effect: 'Boosts ATK by 1.2x',
+    hasSpecial: 'no',
   },
   {
     id: 19,
-    name: "Sun Pirates Ship",
+    name: 'Sun Pirates Ship',
     colaCount: 15168,
     superColaCount: 20,
     effect:
       "Reduces Fighter characters' Special charge time by 1 turn at start of quest, boosts Fighter characters' ATK by 1.5x, HP by 1.5x, boosts ATK a further 1.2x and HP a further 1.3x if a character's 1st class is Fighter, and makes it easier to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces crew's Despair duration by 1 turn and boosts Fighter characters' ATK by 2.5x for 2 turns",
   },
   {
     id: 20,
-    name: "Donquixote Pirates Ship",
+    name: 'Donquixote Pirates Ship',
     colaCount: 15369,
     superColaCount: 20,
     effect:
       "Reduces Driven characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.8x, HP by 1.5x, and makes it easier for Driven characters to land PERFECT strikes",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      'Boosts chain multiplier by +1.2 for 2 turns (increases chain multiplier boost by +0.2 if boost is already in effect)',
   },
   {
     id: 21,
-    name: "Rocketman",
+    name: 'Rocketman',
     colaCount: 15228,
     superColaCount: 20,
     effect:
       "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, reduces crew's Paralysis duration by 1 turn, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP)",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
   },
   {
     id: 22,
-    name: "Moby Dick - Paramount War Version",
+    name: 'Moby Dick - Paramount War Version',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts HP by 1.3x",
-    hasSpecial: "no",
+    effect: 'Boosts HP by 1.3x',
+    hasSpecial: 'no',
   },
   {
     id: 23,
@@ -207,33 +239,40 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Boosts STR and PSY characters' ATK by 1.75x, HP by 1.4x, and if crew uses a Special to launch additive chain multiplier boost (except multiplicative boost) or to set the chain multiplier, extends the duration of that effect by 1 turn",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Boosts STR and PSY characters' chain multiplier growth rate of normal attacks up to +0.5 (GOOD +0.1; GREAT +0.4; PERFECT +0.5) for 1 turn",
   },
   {
     id: 24,
-    name: "Polar Tang",
+    name: 'Polar Tang',
     colaCount: 15300,
     superColaCount: 20,
     effect:
       "Reduces Free Spirit and Slasher characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.6x, HP by 1.25x, makes it a little easier to land PERFECT strikes, boosts Cerebral characters' ATK by a further 1.2x, and reduces crew's Paralysis duration by 1 turn",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "If crew's HP is 80% or below, boosts Free Spirit and Slasher characters' base ATK by +1000 for 1 turn (effect can be overwritten with other base ATK boost effects) and heals crew by 15,000 HP",
   },
   {
     id: 25,
-    name: "Big Top - Grand Line Feast",
+    name: 'Big Top - Grand Line Feast',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK of characters with 20 cost or less by 1.2x",
-    hasSpecial: "yes",
+    effect: 'Boosts ATK of characters with 20 cost or less by 1.2x',
+    hasSpecial: 'yes',
+    special: 'Boosts ATK of characters with 20 cost or less by 1.2x',
   },
   {
     id: 26,
-    name: "Thousand Sunny - Coated Vessel",
+    name: 'Thousand Sunny - Coated Vessel',
     colaCount: 15156,
     superColaCount: 20,
     effect:
       "Boosts crew's ATK by 1.65x, reduces damage taken by 20%, reduces crew's Bind duration by 2 turns, and makes it easier to land PERFECT strikes",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces damage taken by 90% for 1 turn, and launches effect to boost crew's ATK based on the damage reduction status for 1 turn (approximately 1.3x at 90% damage reduction)",
   },
   {
     id: 27,
@@ -242,50 +281,59 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Boosts Shooter characters' ATK by 1.75x, HP by 1.2x, reduces their Special charge time by 2 turns at start of quest, boosts Slasher characters' ATK by 1.1x, reduces Slasher characters' Special charge time by 1 turn at start of quest, and makes it easier to land PERFECT strikes",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces all enemies' DEF Up duration by 2 turns, further increases lock chain multiplier effect by +0.2, and reduces all enemies' HP by 10%",
   },
   {
     id: 28,
-    name: "Mister Luffy Go",
+    name: 'Mister Luffy Go',
     colaCount: 15194,
     superColaCount: 20,
     effect:
       "Reduces Striker characters' Special charge time by 1 turn at start of quest, makes it a little easier to land PERFECT strikes, reduces damage taken by 10%, boosts Driven characters' ATK by 1.1x, and if 6 Striker characters are on the crew, boosts crew's ATK by a further 1.75x and HP by 1.6x",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Massively reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn",
   },
   {
     id: 29,
-    name: "Thriller Bark",
+    name: 'Thriller Bark',
     colaCount: 15204,
     superColaCount: 20,
     effect:
       "Reduces DEX and INT characters' Special charge time by 1 turn at start of quest, boosts chances of crew landing on their own type slot, boosts DEX and INT characters' ATK by 1.5x, HP by 1.25x, boosts Driven and Powerhouse characters' ATK by a further 1.15x, and if crew applies slot effect boosts with a Special, extends the duration of crew's slot effect boosts by 1 turn",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      'Applies -15% Driven and Powerhouse Resistance to all enemies for 2 turns',
   },
   {
     id: 30,
-    name: "Karasumaru",
+    name: 'Karasumaru',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK of Shooters by 1.2x",
-    hasSpecial: "yes",
+    effect: 'Boosts ATK of Shooters by 1.2x',
+    hasSpecial: 'yes',
+    special: 'Delays all enemies by 1 turn',
   },
   {
     id: 32,
-    name: "Thousand Sunny - Special Anniversary Model",
+    name: 'Thousand Sunny - Special Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
-    hasSpecial: "no",
+    effect: 'Boosts ATK by 1.2x',
+    hasSpecial: 'no',
   },
   {
     id: 33,
-    name: "Flying Dutchman",
+    name: 'Flying Dutchman',
     colaCount: 15119,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.65x, HP by 1.2x, and Pirate EXP earned by 1.75x",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces all enemies' DEF by 90% for 1 turn and boosts damage dealt to DEF Down enemies by 2.25x for 1 turn",
   },
   {
     id: 34,
@@ -294,240 +342,264 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces crew's Bind duration by 1 turn, boosts crew's HP by 1.75x, reduces Special charge time by 2 turns at start of quest, and if Fighter, Slasher, Striker, and Shooter characters are on the crew, boosts crew's ATK by 1.75x, and if Driven and Powerhouse characters are on the crew, boosts crew's ATK by 1.1x",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 35,
-    name: "Revolutionary Army Blackbirds",
+    name: 'Revolutionary Army Blackbirds',
     colaCount: 15199,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, reduces STR, DEX and QCK characters' Special charge time by a further 1 turn, boosts crew's HP by 1.4x, reduces damage taken by 10%, and if the crew has STR, DEX and QCK characters, boosts STR, DEX and QCK characters' ATK by 1.7x, and if no PSY or INT characters are on the crew, boosts STR, DEX and QCK characters' ATK by a further 1.1x",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces STR, DEX and QCK characters' Special charge time by 1 turn and reduces their Switch Effect by 2",
   },
   {
     id: 36,
-    name: "Zunesha",
+    name: 'Zunesha',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts Powerhouse and Cerebral characters' ATK by 1.85x, HP by 1.5x, makes their [RCV] [TND] slots have matching slot effects, reduces crew's Special Bind duration by 1 turn, and makes it much easier to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Deals 300,000 non-type damage to one enemy, and reduces all enemies' damage reduction (except [THRESHOLD_DAMAGE_CUT]) duration by 2 turns",
   },
   {
     id: 37,
-    name: "Sexy Foxy",
+    name: 'Sexy Foxy',
     colaCount: 15208,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.5x, boosts damage dealt to delayed enemies by 1.25x, doubles Berries earned, boosts Pirate EXP earned by 1.3x, and makes it easier to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      'Delays all enemies for 1 turn ignoring immunity to Delay, immunity to all status effects, or immunity (excluding certain status effect)',
   },
   {
     id: 38,
-    name: "Laboon",
+    name: 'Laboon',
     colaCount: 0,
     superColaCount: 0,
     effect:
       details[38].effect[
-        convertToPSTTimestamp() >= getPSTTimestamp("2025-04-03T00:00:00") &&
-        convertToPSTTimestamp() <= getPSTTimestamp("2025-04-21T11:59:59")
+        convertToPSTTimestamp() >= getPSTTimestamp('2025-04-03T00:00:00') &&
+        convertToPSTTimestamp() <= getPSTTimestamp('2025-04-21T11:59:59')
           ? 0
           : 1
       ],
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 39,
-    name: "Thousand Sunny - 4th Anniversary Model",
+    name: 'Thousand Sunny - 4th Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
-    hasSpecial: "no",
+    effect: 'Boosts ATK by 1.2x',
+    hasSpecial: 'no',
   },
   {
     id: 40,
-    name: "Nostra Castello",
+    name: 'Nostra Castello',
     colaCount: 15244,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.6x, HP by 1.3x, boosts Driven and Shooter characters' ATK by a further 1.2x, reduces crew's ATK Down duration by 1 turn, makes it easier to land PERFECT strikes, reduces all enemies' HP by 5% at end of turn, but slightly reduces ATK depending on number of Slasher, Free Spirit, or Powerhouse classes on the crew",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 41,
-    name: "Queen Mama Chanter",
+    name: 'Queen Mama Chanter',
     colaCount: 15260,
     superColaCount: 20,
     effect:
       "Reduces STR, DEX, and QCK characters' Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, boosts HP by 1.5x, and makes crew's [RCV] slots into [SEMLA] slots. If Captain is a Driven or Powerhouse class, boosts STR, DEX, and QCK characters' ATK by 1.7x, if crew lands 3 PERFECT strikes in a row, boosts their ATK by approximately 1.8x, and allows STR, DEX, and QCK characters to obtain [RCV] [SEMLA] slots with PERFECT taps",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces crew's Slot Bind duration by 1 turn, and changes middle-row and bottom-row characters' slots to [RCV]",
   },
   {
     id: 42,
-    name: "Germa 66 Ship",
+    name: 'Germa 66 Ship',
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Boosts crew's chance of landing on [RCV] [TND] slots and reduces crew's Special Reverse by 1 turn. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
-    hasSpecial: "no",
+      "Boosts crew's chance of landing on [RCV] [TND] slots and reduces crew's Special Reverse duration by 1 turn. If every type is on the crew, reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.5x, boosts ATK a further 1.1x when character has [RCV] [TND] slots, and makes it a little easier to land PERFECT strikes",
+    hasSpecial: 'no',
   },
   {
     id: 43,
-    name: "Going Merry - 5th Anniversary Model",
+    name: 'Going Merry - 5th Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
-    hasSpecial: "no",
+    effect: 'Boosts ATK by 1.2x',
+    hasSpecial: 'no',
   },
   {
     id: 44,
-    name: "Hoe",
+    name: 'Hoe',
     colaCount: 15256,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.65x, makes it easier to land PERFECT strikes, doubles Pirate EXP earned, and heals crew by 2,000 HP at end of turn",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Doubles crew's slot effects for 2 turns and heals crew by 5,000 HP at end of turn for 2 turns",
   },
   {
     id: 45,
-    name: "Megalo",
+    name: 'Megalo',
     colaCount: 15232,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, reduces the duration of healing effect converted to damage effect by 1 turn, boosts crew's HP by 1.4x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.7x, boosts middle and bottom-row characters' ATK by 1.8x, boosts Captain's RCV by 600, and reduces damage taken by 15%",
-    hasSpecial: "yes",
+      "Reduces Special charge time by 1 turn at start of quest, reduces the duration of [HEAL_TO_DAMAGE] by 1 turn, boosts crew's HP by 1.4x, and if Captain is a PSY or INT type, boosts top-row characters' ATK by 1.7x, boosts middle and bottom-row characters' ATK by 1.8x, boosts Captain's RCV by 600, and reduces damage taken by 15%",
+    hasSpecial: 'yes',
+    special:
+      "Reduces crew's Slot Bind duration by 2 turns, changes crew's [BLOCK] slots to Rainbow slots (doubling ATK; cannot be changed by crew or enemies), and locks crew's slots for 2 turns",
   },
   {
     id: 46,
-    name: "Thousand Sunny - Flying Model",
+    name: 'Thousand Sunny - Flying Model',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK and EXP gained by 1.2x",
-    hasSpecial: "no",
+    effect: 'Boosts ATK and EXP gained by 1.2x',
+    hasSpecial: 'no',
   },
   {
     id: 47,
-    name: "Piece of Spadille",
+    name: 'Piece of Spadille',
     colaCount: 15232,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, reduces crew's Despair duration by 1 turn, boosts Powerhouse, Shooter, Free Spirit and Fighter characters' HP by 1.25x and ATK by 1.6x, and boosts their ATK by approximately 1.8x if HP is 30% or below before attacking",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "If crew's HP is 30% or below, reduces crew's Burn duration by 3 turns, boosts damage dealt to Ignited enemies by 2.25x for 1 turn (increases boost by +0.15 if boost is already in effect)",
   },
   {
     id: 48,
-    name: "Giant Koi",
+    name: 'Giant Koi',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts QCK and INT characters' ATK by 1.7x, HP by 1.35x, makes their [RCV] slots have matching slot effects, boosts their ATK by approximately 1.85x when HP is full at start of attack, heals crew by 2,000 HP at end of turn, and boosts amount of Berries earned by 3x",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      'Heals crew by 12,500 HP and boosts the chain multiplier by +1.2 for 1 turn',
   },
   {
     id: 49,
-    name: "Grudge Dolph",
+    name: 'Grudge Dolph',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
   },
   {
     id: 50,
-    name: "Going Merry - Farewell Edition",
+    name: 'Going Merry - Farewell Edition',
     colaCount: 0,
     superColaCount: 0,
-    effect: "Boosts ATK by 1.2x",
-    hasSpecial: "no",
+    effect: 'Boosts ATK by 1.2x',
+    hasSpecial: 'no',
   },
   {
     id: 51,
-    name: "Shark Superb",
+    name: 'Shark Superb',
     colaCount: 15009,
     superColaCount: 20,
     effect:
       "If Captain is a STR, DEX, or QCK type, boosts crew's ATK by 2x, HP by 1.2x, reduces Special charge time by 2 turns at start of quest, makes [QCK] [DEX] slots have matching slot effects, makes it much easier to land PERFECT strikes, but reduces ATK after each turn (to a minimum of 1.75x after 5 turns)",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 52,
-    name: "Thousand Sunny - 6th Anniversary Model",
+    name: 'Thousand Sunny - 6th Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
     effect: "Boosts crew's ATK by 1.2x",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 53,
-    name: "Victoria Punk",
+    name: 'Victoria Punk',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      'Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn',
   },
   {
     id: 54,
-    name: "Liberal Hind",
+    name: 'Liberal Hind',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces crew's Bind duration by 1 turn, reduces Special charge time by 1 turn at start of quest, reduces PSY characters' Special charge time by a further 1 turn, boosts Captain's RCV by 500, boosts crew's HP by 1.4x, and heals crew by 1,000 HP at end of turn. If Captain is a Free Spirit, Slasher, or Cerebral class, boosts crew's ATK by 1.6x. If 6 PSY characters are on the crew, boosts ATK a further 1.2x",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces PSY characters' Special charge time by 1 turn and applies -10% PSY Resistance to all enemies for 1 turn",
   },
   {
     id: 55,
-    name: "Nostra Castello (Amphibious)",
+    name: 'Nostra Castello (Amphibious)',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts STR, PSY, and INT characters' ATK by 1.65x, HP by 1.4x, reduces damage taken by 10%, boosts their ATK by approximately 1.85x when HP is full or 30% or below at start of attack, heals crew by 2,000 HP at end of turn, and makes it a little easier for them to land PERFECT strikes",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 56,
-    name: "Oro Jackson",
+    name: 'Oro Jackson',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn, boosts Free Spirit and Slasher characters' ATK by 150, boosts their ATK by 1.7x, HP by 1.3x, makes their [RCV] [TND] slots have matching slot effects, makes it much easier to land PERFECT strikes, boosts QCK and PSY characters' ATK by a further 1.1x, and heals crew by 1,000 HP at end of turn",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces crew's Bind/Paralysis duration by 2 turns, and boosts the ATK of the next final tap performed by a Free Spirit or Slasher character by 15% (similar effects can stack, up to 200%; the effect will be spent during the final tap when attacking with all available characters regardless of the type/class requirement of the effect)",
   },
   {
     id: 57,
-    name: "Thousand Sunny - 7th Anniversary Model",
+    name: 'Thousand Sunny - 7th Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
     effect: "Boosts crew's ATK by 1.2x",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 58,
-    name: "Thousand Sunny - 8th Anniversary Model",
+    name: 'Thousand Sunny - 8th Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
     effect:
       "Boosts crew's ATK by 1.5x and makes their [TND] slots have matching slot effects",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 59,
-    name: "Whale Shark",
+    name: 'Whale Shark',
     colaCount: 15202,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts crew's ATK by 1.75x, boosts top-right character's HP by 20,000, reduces crew's Paralysis duration by 1 turn, makes crew's [TND] [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, and boosts Pirate EXP earned by 1.5x",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 60,
-    name: "Thousand Sunny - 9th Anniversary Model",
+    name: 'Thousand Sunny - 9th Anniversary Model',
     colaCount: 0,
     superColaCount: 0,
     effect:
       "Boosts crew's ATK by 1.5x and makes it a little easier to land PERFECT strikes",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 61,
@@ -536,34 +608,36 @@ export const units: ShipOverview[] = [
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts DEX, INT, and QCK characters' ATK by 1.65x, HP by 1.45x, slightly boosts chance of landing on [RCV] slots, reduces crew's Despair duration by 1 turn, and if HP is full or 30% or below at start of attack, boosts DEX, INT, and QCK characters' ATK by approximately 1.85x",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 62,
-    name: "White Tiger",
+    name: 'White Tiger',
     colaCount: 15500,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, reduces Shooter characters' Special charge time by a further 1 turn, boosts Shooter characters' ATK by 1.9x, HP by 1.25x, reduces crew's Paralysis duration by 1 turn, makes crew's [PSY] [INT] slots have matching slot effects, and makes it much easier to land PERFECT strikes",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 63,
-    name: "Catapult",
+    name: 'Catapult',
     colaCount: 15500,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 2 turns at start of quest, boosts Fighter characters' ATK by 200, boosts STR, QCK, and INT characters' ATK by 1.75x, HP by 1.25x, boosts top-right character's ATK by a further 1.25x, makes crew's [PSY] [DEX] slots have matching slot effects, and makes it easier to land PERFECT strikes",
-    hasSpecial: "afterMRank5",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces crew's Bind duration by 2 turns, and boosts [STR], [QCK], and [INT] characters' slot effects by 2.25x for 1 turn",
   },
   {
     id: 64,
-    name: "Gran Tesoro",
+    name: 'Gran Tesoro',
     colaCount: 15500,
     superColaCount: 20,
     effect:
       "Reduces Special charge time by 1 turn at start of quest, boosts crew's ATK by 1.7x, HP by 1.4x, boosts their ATK by approximately 2x when they have [G] or [RAINBOW] slots, reduces crew's Bind/ATK Down duration by 1 turn, boosts amount of Berries earned by 3x, and if every class is on the crew and crew launches a Special to set the chain multiplier, extends the duration of the effect by 1 turn",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   /**
    * p1: 2024-04-27T19:00 -> 2024-05-11T23:59:59
@@ -573,36 +647,36 @@ export const units: ShipOverview[] = [
    */
   {
     id: 65,
-    name: "Thousand Sunny - 10th Anniversary Special Model",
+    name: 'Thousand Sunny - 10th Anniversary Special Model',
     colaCount: 0,
     superColaCount: 0,
     effect:
       details[65].effect[
-        convertToPSTTimestamp() <= getPSTTimestamp("2024-05-11T23:59:59")
+        convertToPSTTimestamp() <= getPSTTimestamp('2024-05-11T23:59:59')
           ? 0
-          : convertToPSTTimestamp() <= getPSTTimestamp("2024-05-12T11:59:59")
+          : convertToPSTTimestamp() <= getPSTTimestamp('2024-05-12T11:59:59')
             ? 1
-            : convertToPSTTimestamp() <= getPSTTimestamp("2024-05-11T23:59:59")
+            : convertToPSTTimestamp() <= getPSTTimestamp('2024-05-11T23:59:59')
               ? 2
               : convertToPSTTimestamp() <=
-                  getPSTTimestamp("2024-06-29T18:59:59")
+                  getPSTTimestamp('2024-06-29T18:59:59')
                 ? 3
                 : 4
       ],
     hasSpecial:
-      convertToPSTTimestamp() >= getPSTTimestamp("2024-05-12T00:00") &&
-      convertToPSTTimestamp() <= getPSTTimestamp("2024-06-29T18:59:59")
-        ? "yes"
-        : "no",
+      convertToPSTTimestamp() >= getPSTTimestamp('2024-05-12T00:00') &&
+      convertToPSTTimestamp() <= getPSTTimestamp('2024-06-29T18:59:59')
+        ? 'yes'
+        : 'no',
   },
   {
     id: 66,
-    name: "Vacuum Rocket",
+    name: 'Vacuum Rocket',
     colaCount: 0,
     superColaCount: 0,
     effect:
       "Boosts crew's ATK by 1.2x, and makes it easier to land PERFECT strikes",
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   /**
    * p1: 2025-04-28T19:00 -> 2025-05-11T23:59:59
@@ -612,41 +686,45 @@ export const units: ShipOverview[] = [
    */
   {
     id: 67,
-    name: "Thousand Sunny - 11th Anniversary Special Model",
+    name: 'Thousand Sunny - 11th Anniversary Special Model',
     colaCount: 0,
     superColaCount: 0,
     effect:
       details[67].effect[
-        convertToPSTTimestamp() <= getPSTTimestamp("2025-04-28T18:59:59") ||
-        convertToPSTTimestamp() >= getPSTTimestamp("2025-06-27T18:59:59")
+        convertToPSTTimestamp() <= getPSTTimestamp('2025-04-28T18:59:59') ||
+        convertToPSTTimestamp() >= getPSTTimestamp('2025-06-27T18:59:59')
           ? 4
-          : convertToPSTTimestamp() <= getPSTTimestamp("2025-05-11T23:59:59")
+          : convertToPSTTimestamp() <= getPSTTimestamp('2025-05-11T23:59:59')
             ? 0
-            : convertToPSTTimestamp() <= getPSTTimestamp("2024-05-12T11:59:59")
+            : convertToPSTTimestamp() <= getPSTTimestamp('2024-05-12T11:59:59')
               ? 1
               : convertToPSTTimestamp() <=
-                  getPSTTimestamp("2024-05-12T23:59:59")
+                  getPSTTimestamp('2024-05-12T23:59:59')
                 ? 2
                 : 3
       ],
-    hasSpecial: "no",
+    hasSpecial: 'no',
   },
   {
     id: 68,
-    name: "Jewelry Margherita",
+    name: 'Jewelry Margherita',
     colaCount: 15500,
     superColaCount: 20,
     effect:
       "Reduces STR, PSY, and INT characters' Special charge time by 2 turns at start of quest, boosts top-right character's HP by 20000, boosts STR, PSY, and INT characters' ATK by 1.75x, boosts their ATK by approximately 2x when they have [RCV] slots, reduces crew's Despair duration by 1 turn, makes [STR] [RCV] slots have matching slot effects, and boosts [Bonney Pirates] [Worst Generation] [Paramythia-type] characters' ATK by a further 1.1x",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces crew's Slot Bind duration by 2 turns, and boosts STR, PSY, and INT characters' ATK by 1.75x for 1 turn (effect can be overwritten with other ATK boost effects)",
   },
   {
     id: 69,
-    name: "Great Erik",
+    name: 'Great Erik',
     colaCount: 15500,
     superColaCount: 20,
     effect:
       "Reduces Free Spirit and Powerhouse characters' Special charge time by 1 turn at start of quest, reduces Special charge time a further 1 turn if a character's 1st class is Free Spirit, reduces damage taken by 20%, boosts Free Spirit and Powerhouse characters' ATK by 1.6x, HP by 1.4x, and boosts ATK a further 1.15x if a character's 1st class is Free Spirit. If 3 or more [Giant Pirate Crew] [Giant] characters are on the crew, reduces crew's Limit Special Uses duration by 1 turn, and boosts crew's ATK a further 1.2x",
-    hasSpecial: "yes",
+    hasSpecial: 'yes',
+    special:
+      "Reduces crew's Bind/Paralysis duration by 2 turns, and reduces damage taken by 90% for 1 turn",
   },
 ];
