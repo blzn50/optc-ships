@@ -249,7 +249,7 @@ export function ShipTable<TData, TValue>({
         </Table>
       </div>
 
-      <div className="sticky bottom-0 z-40 bg-white dark:bg-black">
+      <div className="fixed bottom-0 z-40 bg-white dark:bg-black w-full max-sm:left-0 sm:w-[39rem] md:w-[47rem] lg:w-[62rem] xl:w-[58.5rem] 2xl:w-[70.5rem]">
         <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 space-x-2 h-auto p-1">
           <div className="flex-1 text-sm">
             Showing {pagination.pageIndex + 1} to{' '}
@@ -303,6 +303,9 @@ export function ShipTable<TData, TValue>({
           </div>
         </div>
       </div>
+
+      {/* Spacer to prevent content overlap */}
+      <div className="h-[3rem] flex-shrink-0"></div>
     </div>
   );
 }
