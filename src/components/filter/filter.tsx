@@ -344,7 +344,7 @@ const FilterItemComponent: React.FC<{
   return (
     <div className="select-none">
       <div
-        className={`flex items-center py-2 px-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ${hasChildren ? 'cursor-pointer' : 'cursor-default'}`}
+        className={`text-sm flex items-center py-2 px-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ${hasChildren ? 'cursor-pointer' : 'cursor-default'}`}
         style={{ paddingLeft: `${paddingLeft}px` }}
         onClick={hasChildren ? handleToggle : undefined}
       >
