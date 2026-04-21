@@ -608,7 +608,7 @@ export const FilterComponent: React.FC = () => {
             </div>
 
             {/* Filter List */}
-            <div className="p-2 h-[calc(100dvh-170px)] xl:max-h-[calc(100dvh-244px)] overflow-y-auto">
+            <div className="p-2 h-[calc(100dvh-224px)] sm:h-[calc(100dvh-176px)] xl:max-h-[calc(100dvh-244px)] overflow-y-auto">
               {filterStructure.map((category) => (
                 <FilterItemComponent
                   key={category.id}
