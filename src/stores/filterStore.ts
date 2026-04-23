@@ -35,7 +35,7 @@ export const resetFilter = () => {
 // Define our filter hierarchy with better structure
 export const FILTER_HIERARCHY: FilterHierarchy = {
   ability: {
-    'beneficial-status-effect': [
+    'beneficial-team-effect': [
       'reduce special charge',
       'hp',
       'land perfect strikes',
@@ -58,7 +58,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
     'fixed-damage': ['end of turn damage'],
   },
   special: {
-    'beneficial-status-effect': [
+    'beneficial-team-effect': [
       'reduce special charge',
       'change orbs',
       'lock orbs',
