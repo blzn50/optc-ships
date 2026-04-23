@@ -217,32 +217,5 @@ export const filterShips = (
         matchAnyTurns: filterState.turnCount !== null ? false : true,
       },
     );
-
-    // if (filterState.subcategory === "reduce-enemy-effect") {
-    //   return searchForCondition(
-    //     ship.special,
-    //     "reduces enemy",
-    //     /reduces enemy's ([\w\s\/]+) duration by (\d+) turns?/i,
-    //     { matchAnyTurns: true },
-    //   );
-    // }
-
-    // if (filterState.subcategory === "boost-damage") {
-    //   if (filterState.effectType) {
-    //     const hasEffectType = searchForCondition(
-    //       ship.special.toLowerCase(),
-    //       `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
-    //       /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
-    //       { matchAnyTurns: filterState.turnCount !== null ? false : true },
-    //     );
-
-    //     console.log({ hasEffectType });
-
-    //     if (!hasEffectType) return false;
-
-    //     // If no turn count specified, return all matching effects
-    //     return true;
-    //   }
-    // }
   });
 };
