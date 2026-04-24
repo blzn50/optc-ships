@@ -2246,6 +2246,22 @@ export const details: Record<number, ShipInfo> = {
       ],
     },
   },
+  74: {
+    name: 'Thousand Sunny - 12th Anniversary Special Model',
+    obtain: 'Clear the limited time 12th Anniversary campaign quest',
+    period: [
+      '12th Anniversary Phase 1',
+      '12th Anniversary Phase 2',
+      '12th Anniversary Phase 3',
+      'After 12th Anniversary',
+    ],
+    effect: [
+      "Reduces top-row characters' Special charge time by 5 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.2x, makes crew's [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, deals 32,500 damage to all enemies at end of turn, and boosts Pirate EXP and Berries earned by 4x!",
+      "Sets top-row characters' Special charge gauge to MAX at start of quest, boosts crew's ATK by 1.8x, HP by 1.2x, makes crew's [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, deals 150,000 damage to all enemies at end of turn, and boosts Pirate EXP and Berries earned by 7x!",
+      "Reduces top-row characters' Special charge time by 5 turns at start of quest, boosts crew's ATK by 1.8x, HP by 1.2x, makes crew's [RCV] slots have matching slot effects, makes it easier to land PERFECT strikes, deals 32,500 damage to all enemies at end of turn, and boosts Pirate EXP and Berries earned by 3x!",
+      "Boosts crew's ATK by 1.5x, HP by 1.2x, and makes it easier to land PERFECT strikes",
+    ],
+  },
 };
 /*
 NUMBER: {
