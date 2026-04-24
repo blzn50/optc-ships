@@ -727,4 +727,23 @@ export const units: ShipOverview[] = [
     special:
       "Reduces crew's Bind/Paralysis duration by 2 turns, and reduces damage taken by 90% for 1 turn",
   },
+  {
+    id:74,
+    name: 'Thousand Sunny - 12th Anniversary Special Model',
+    colaCount: 0,
+    superColaCount: 0,
+    effect:
+      details[74].effect[
+        convertToPSTTimestamp() <= getPSTTimestamp('2026-04-26T18:59:59') ||
+        convertToPSTTimestamp() > getPSTTimestamp('2026-07-04T18:59:59')
+          ? 3
+          : convertToPSTTimestamp() <= getPSTTimestamp('2026-05-11T23:59:59')
+            ? 0
+            : convertToPSTTimestamp() <=
+                  getPSTTimestamp('2026-05-12T23:59:59')
+                ? 1
+                : 2
+      ],
+    hasSpecial: 'no',
+  }
 ];
