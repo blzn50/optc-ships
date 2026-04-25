@@ -95,7 +95,7 @@ export const FilterItemComponent: React.FC<{
             <FieldGroup
               className={`rounded-t-sm hover:bg-gray-400 dark:hover:bg-gray-500 ${item.isSelected ? 'bg-gray-200 dark:bg-gray-700' : ''}`}
             >
-              <Field orientation="horizontal" className="">
+              <Field orientation="horizontal" className="gap-0">
                 <Checkbox
                   id={item.id}
                   checked={item.isSelected}
@@ -104,7 +104,7 @@ export const FilterItemComponent: React.FC<{
                 />
                 <FieldLabel
                   htmlFor={item.id}
-                  className="font-normal cursor-pointer py-2 pr-3"
+                  className="font-normal cursor-pointer py-2 px-3"
                 >
                   {item.label}
                 </FieldLabel>
