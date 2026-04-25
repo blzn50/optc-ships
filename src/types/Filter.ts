@@ -1,6 +1,6 @@
 export type FilterCategory = 'ability' | 'special';
 export type AbilityFilter =
-  | 'beneficial-status-effect'
+  | 'beneficial-team-effect'
   | 'reduce-enemy-effect'
   | 'reduce-status-effect'
   | 'boost-damage'
@@ -72,14 +72,14 @@ export type EffectUnion =
   | FixedDamage;
 
 type AbilityFilterToEffects = {
-  'beneficial-status-effect': BeneficialEffect[];
+  'beneficial-team-effect': BeneficialEffect[];
   'boost-damage': DamageBoost[];
   'reduce-status-effect': StatusDebuff[];
   'fixed-damage': FixedDamage[];
 };
 
 type SpecialFilterToEffects = {
-  'beneficial-status-effect': BeneficialEffect[];
+  'beneficial-team-effect': BeneficialEffect[];
   'boost-damage': DamageBoost[];
   'reduce-enemy-effect': EnemyEffect[];
   'apply-enemy-effect': EnemyDebuff[];
@@ -100,5 +100,5 @@ export interface FilterState {
   category: FilterCategory | null;
   subcategory: AbilityFilter | null;
   effectType: EffectUnion | null;
-  turnCount: number | null;
+  turnCount: string | null;
 }

@@ -35,7 +35,7 @@ export const resetFilter = () => {
 // Define our filter hierarchy with better structure
 export const FILTER_HIERARCHY: FilterHierarchy = {
   ability: {
-    'beneficial-status-effect': [
+    'beneficial-team-effect': [
       'reduce special charge',
       'hp',
       'land perfect strikes',
@@ -58,7 +58,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
     'fixed-damage': ['end of turn damage'],
   },
   special: {
-    'beneficial-status-effect': [
+    'beneficial-team-effect': [
       'reduce special charge',
       'change orbs',
       'lock orbs',
@@ -122,7 +122,7 @@ const searchForCondition = (
   // Extract condition and turn count from search text
   const searchMatch = searchText.match(regExpression);
 
-  console.log({ searchText, searchMatch, textToSearch, regExpression });
+  // console.log({ searchText, searchMatch, textToSearch, regExpression });
 
   if (!searchMatch) return false;
 
@@ -204,7 +204,7 @@ export const filterShips = (
     // Implement special filtering logic here
     const filterMatcherValue = filterMatcher(
       filterState.effectType,
-      filterState.turnCount || 1,
+      Number(filterState.turnCount)  || 1,
     );
     return searchForCondition(
       filterState.category === 'ability'
@@ -217,32 +217,5 @@ export const filterShips = (
         matchAnyTurns: filterState.turnCount !== null ? false : true,
       },
     );
-
-    // if (filterState.subcategory === "reduce-enemy-effect") {
-    //   return searchForCondition(
-    //     ship.special,
-    //     "reduces enemy",
-    //     /reduces enemy's ([\w\s\/]+) duration by (\d+) turns?/i,
-    //     { matchAnyTurns: true },
-    //   );
-    // }
-
-    // if (filterState.subcategory === "boost-damage") {
-    //   if (filterState.effectType) {
-    //     const hasEffectType = searchForCondition(
-    //       ship.special.toLowerCase(),
-    //       `reduces crew's ${filterState.effectType} duration by ${filterState.turnCount || 1} turn`,
-    //       /reduces crew's ([\w\s\/]+) duration by (\d+) turns?/i,
-    //       { matchAnyTurns: filterState.turnCount !== null ? false : true },
-    //     );
-
-    //     console.log({ hasEffectType });
-
-    //     if (!hasEffectType) return false;
-
-    //     // If no turn count specified, return all matching effects
-    //     return true;
-    //   }
-    // }
   });
 };
