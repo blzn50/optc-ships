@@ -14,15 +14,19 @@ export const FilterItemComponent: React.FC<{
   item: FilterItem;
   depth?: number;
   onToggle?: (id: string) => void;
-  onSelect?: (item: FilterEffectTypeUI | FilterSubcategoryUI, turnCount?: string) => void;
-  onTurnUpdate?: (turn?: string) => void;
+  onSelect?: (
+    item: FilterEffectTypeUI | FilterSubcategoryUI,
+    turnCount?: string,
+  ) => void;
+  onTurnUpdate?: (filterId: string, turn?: string) => void;
 }> = ({ item, depth = 0, onToggle, onSelect, onTurnUpdate }) => {
   const [turnCountValue, setTurnCountValue] = useState('');
   const shouldShowInput =
     item.type === 'effectType' &&
     item.isSelected &&
     (item.subCategory === 'reduce-status-effect' ||
-      item.subCategory === 'reduce-enemy-effect' || item.value === 'reduce special charge');
+      item.subCategory === 'reduce-enemy-effect' ||
+      item.value === 'reduce special charge');
 
   const hasChildren =
     'children' in item && item.children && item.children.length > 0;
@@ -61,7 +65,7 @@ export const FilterItemComponent: React.FC<{
         value={turnCountValue}
         onChange={(e) => {
           setTurnCountValue(e.target.value);
-          onTurnUpdate?.(e.target.value);
+          onTurnUpdate?.(item.id, e.target.value);
         }}
       />
     </Field>
@@ -91,7 +95,7 @@ export const FilterItemComponent: React.FC<{
             <FieldGroup
               className={`rounded-t-sm hover:bg-gray-400 dark:hover:bg-gray-500 ${item.isSelected ? 'bg-gray-200 dark:bg-gray-700' : ''}`}
             >
-              <Field orientation="horizontal" className="">
+              <Field orientation="horizontal" className="gap-0">
                 <Checkbox
                   id={item.id}
                   checked={item.isSelected}
@@ -100,7 +104,7 @@ export const FilterItemComponent: React.FC<{
                 />
                 <FieldLabel
                   htmlFor={item.id}
-                  className="font-normal cursor-pointer py-2 pr-3"
+                  className="font-normal cursor-pointer py-2 px-3"
                 >
                   {item.label}
                 </FieldLabel>

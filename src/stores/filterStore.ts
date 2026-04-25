@@ -1,7 +1,11 @@
 import { atom } from 'nanostores';
 import { filterMatcher } from '@/lib/matcher';
 import type { ShipOverview } from '@/types/Ship';
-import type { FilterHierarchy, FilterState } from '@/types/Filter';
+import type {
+  FilterHierarchy,
+  FilterSetArray,
+  FilterState,
+} from '@/types/Filter';
 
 export const isFilterOpen = atom(false);
 
@@ -10,27 +14,58 @@ export const selectedFilterCount = atom(0);
 export const toggleIsFilterOpen = () => isFilterOpen.set(!isFilterOpen.get());
 
 // Atoms for our filter state
-export const $filterState = atom<FilterState>({
-  category: null,
-  subcategory: null,
-  effectType: null,
-  turnCount: null,
-});
+export const $filterStateArray = atom<FilterSetArray>([]);
 
-// Function to update filter state
-export const updateFilter = (filterState: Partial<FilterState>) => {
-  $filterState.set({ ...$filterState.get(), ...filterState });
+// Function to add a new filter set
+export const addFilter = (filterState: FilterState) => {
+  const currentFilters = $filterStateArray.get();
+  $filterStateArray.set([
+    ...currentFilters,
+    {
+      id: filterState.id,
+      category: filterState.category || null,
+      subcategory: filterState.subcategory || null,
+      effectType: filterState.effectType || null,
+      turnCount: filterState.turnCount || null,
+    },
+  ]);
 };
 
-// Function to reset filter
-export const resetFilter = () => {
-  $filterState.set({
-    category: null,
-    subcategory: null,
-    effectType: null,
-    turnCount: null,
+// Function to update a specific filter set by id
+export const updateFilter = (id: string, filterState: Partial<FilterState>) => {
+  const currentFilters = $filterStateArray.get();
+
+  const updatedFilters = currentFilters.map((filter) => {
+    if (filter.id === id) {
+      return { ...filter, ...filterState };
+    }
+    return filter;
   });
+
+  $filterStateArray.set(updatedFilters);
 };
+
+// Function to remove a filter set by id
+export const removeFilter = (id: string) => {
+  const currentFilters = $filterStateArray.get();
+
+  $filterStateArray.set(currentFilters.filter((filter) => filter.id !== id));
+};
+
+// Function to clear all filters
+export const clearFilters = () => {
+  $filterStateArray.set([]);
+};
+
+// Function to reset a specific filter to defaults
+// export const resetFilter = (index: number) => {
+//   updateFilter(index, {
+//     category: null,
+//     subcategory: null,
+//     effectType: null,
+//     turnCount: null,
+//   });
+// };
 
 // Define our filter hierarchy with better structure
 export const FILTER_HIERARCHY: FilterHierarchy = {
@@ -141,7 +176,7 @@ const searchForCondition = (
 
   while ((match = regex.exec(textToSearch)) !== null) {
     // console.log("regex.exec(textToSearch)", regex.exec(textToSearch));
-    console.log({ match });
+    // console.log({ match });
     const [, conditionsPart, turnsCount] = match;
     const turns = parseInt(turnsCount, 10);
 
@@ -189,33 +224,50 @@ const searchForCondition = (
 // Filter function with improved logic and extensibility
 export const filterShips = (
   ships: ShipOverview[],
-  filterState: FilterState,
+  filterStateArray: FilterSetArray,
 ): ShipOverview[] => {
-  if (!filterState.category) {
-    return ships; // No filter applied, return all ships
+  // If no filters applied, return all ships
+  const hasActiveFilters = filterStateArray.some(
+    (filter) =>
+      filter.category !== null ||
+      filter.subcategory !== null ||
+      filter.effectType !== null ||
+      filter.turnCount !== null,
+  );
+
+  if (!hasActiveFilters) {
+    return ships;
   }
 
+  // Filter ships that match ANY of the filter sets (OR logic between filter sets)
   return ships.filter((ship) => {
-    //early return
-    if (filterState.category === 'special' && !ship.special) {
-      return false;
-    }
+    return filterStateArray.every((filterState) => {
+      // Check if this filter set matches the ship
+      if (!filterState.category) {
+        return true; // No category filter, skip this check
+      }
 
-    // Implement special filtering logic here
-    const filterMatcherValue = filterMatcher(
-      filterState.effectType,
-      Number(filterState.turnCount)  || 1,
-    );
-    return searchForCondition(
-      filterState.category === 'ability'
-        ? ship.effect.toLowerCase()
-        : // mark the special exists because of early return
-          ship.special!.toLowerCase(),
-      filterMatcherValue.textMatcher,
-      filterMatcherValue.regexMatcher,
-      {
-        matchAnyTurns: filterState.turnCount !== null ? false : true,
-      },
-    );
+      // Check category filter
+      if (filterState.category === 'special' && !ship.special) {
+        return false;
+      }
+
+      // Implement special filtering logic here
+      const filterMatcherValue = filterMatcher(
+        filterState.effectType,
+        Number(filterState.turnCount) || 1,
+      );
+      return searchForCondition(
+        filterState.category === 'ability'
+          ? ship.effect.toLowerCase()
+          : // mark the special exists because of early return
+            ship.special!.toLowerCase(),
+        filterMatcherValue.textMatcher,
+        filterMatcherValue.regexMatcher,
+        {
+          matchAnyTurns: filterState.turnCount !== null ? false : true,
+        },
+      );
+    });
   });
 };

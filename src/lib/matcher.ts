@@ -211,8 +211,7 @@ export const filterMatcher = (
       };
     case 'enemy threshold damage':
       return {
-        textMatcher:
-          `reduces all enemies [threshold_damage_cut] duration by ${turnCount} turn`,
+        textMatcher: `reduces all enemies [threshold_damage_cut] duration by ${turnCount} turn`,
         regexMatcher:
           /reduces all (enemies \[threshold_damage_cut\]) duration by (\d+) turns?/i,
       };
