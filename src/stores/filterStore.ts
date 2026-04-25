@@ -122,7 +122,7 @@ const searchForCondition = (
   // Extract condition and turn count from search text
   const searchMatch = searchText.match(regExpression);
 
-  console.log({ searchText, searchMatch, textToSearch, regExpression });
+  // console.log({ searchText, searchMatch, textToSearch, regExpression });
 
   if (!searchMatch) return false;
 
@@ -204,7 +204,7 @@ export const filterShips = (
     // Implement special filtering logic here
     const filterMatcherValue = filterMatcher(
       filterState.effectType,
-      filterState.turnCount || 1,
+      Number(filterState.turnCount)  || 1,
     );
     return searchForCondition(
       filterState.category === 'ability'

@@ -100,5 +100,5 @@ export interface FilterState {
   category: FilterCategory | null;
   subcategory: AbilityFilter | null;
   effectType: EffectUnion | null;
-  turnCount: number | null;
+  turnCount: string | null;
 }

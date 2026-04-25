@@ -10,15 +10,14 @@ import {
   updateFilter,
   resetFilter,
 } from '@/stores/filterStore';
-
-import { FilterItemComponent } from './filter-item';
-import { buildFilterStructure } from './utils';
 import type {
   FilterCategoryUI,
   FilterEffectTypeUI,
   FilterItem,
   FilterSubcategoryUI,
 } from './types';
+import { buildFilterStructure } from './utils';
+import { FilterItemComponent } from './filter-item';
 
 // Helper function to recursively update categories and their children
 const updateFilterStructure = (
@@ -116,7 +115,16 @@ export const FilterComponent: React.FC = () => {
     setFilterStructure(updatedStructure);
   };
 
-  const handleSelect = (item: FilterEffectTypeUI | FilterSubcategoryUI) => {
+  const handleTurnUpdate = (turn?: string) => {
+    updateFilter({
+      turnCount: turn || null,
+    });
+  };
+
+  const handleSelect = (
+    item: FilterEffectTypeUI | FilterSubcategoryUI,
+    turnCount?: string,
+  ) => {
     // Handle effect type selection/deselection
     if (item.type === 'effectType') {
       const isAlreadySelected =
@@ -138,7 +146,7 @@ export const FilterComponent: React.FC = () => {
           category: item.category,
           subcategory: item.subCategory,
           effectType: item.value,
-          turnCount: null,
+          turnCount: turnCount || null,
         });
       }
     }
@@ -224,6 +232,7 @@ export const FilterComponent: React.FC = () => {
                   item={category}
                   onToggle={handleToggle}
                   onSelect={handleSelect}
+                  onTurnUpdate={handleTurnUpdate}
                 />
               ))}
             </div>

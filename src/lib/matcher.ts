@@ -200,25 +200,25 @@ export const filterMatcher = (
       };
     case 'def up':
       return {
-        textMatcher: "reduces all enemies' def up duration by 1 turn",
+        textMatcher: `reduces all enemies' def up duration by ${turnCount} turn`,
         regexMatcher: /reduces all (enemies' def up duration) by (\d+) turns?/i,
       };
     case 'enemy percent damage':
       return {
-        textMatcher: "reduces all enemies' damage reduction duration by 1 turn",
+        textMatcher: `reduces all enemies' damage reduction duration by ${turnCount} turn`,
         regexMatcher:
           /reduces all (enemies' damage reduction) (\(except \[THRESHOLD_DAMAGE_CUT\]\) )?duration by (\d+) turns?/i,
       };
     case 'enemy threshold damage':
       return {
         textMatcher:
-          'reduces all enemies [threshold_damage_cut] duration by 1 turn',
+          `reduces all enemies [threshold_damage_cut] duration by ${turnCount} turn`,
         regexMatcher:
           /reduces all (enemies \[threshold_damage_cut\]) duration by (\d+) turns?/i,
       };
     case 'barrier':
       return {
-        textMatcher: 'reduces the duration of all enemy barriers by 1 turn',
+        textMatcher: `reduces the duration of all enemy barriers by ${turnCount} turn`,
         regexMatcher:
           /reduces the duration of all (enemy barriers?) by (\d+) turns?/i,
       };
