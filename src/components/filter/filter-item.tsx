@@ -14,15 +14,19 @@ export const FilterItemComponent: React.FC<{
   item: FilterItem;
   depth?: number;
   onToggle?: (id: string) => void;
-  onSelect?: (item: FilterEffectTypeUI | FilterSubcategoryUI, turnCount?: string) => void;
-  onTurnUpdate?: (turn?: string) => void;
+  onSelect?: (
+    item: FilterEffectTypeUI | FilterSubcategoryUI,
+    turnCount?: string,
+  ) => void;
+  onTurnUpdate?: (filterId: string, turn?: string) => void;
 }> = ({ item, depth = 0, onToggle, onSelect, onTurnUpdate }) => {
   const [turnCountValue, setTurnCountValue] = useState('');
   const shouldShowInput =
     item.type === 'effectType' &&
     item.isSelected &&
     (item.subCategory === 'reduce-status-effect' ||
-      item.subCategory === 'reduce-enemy-effect' || item.value === 'reduce special charge');
+      item.subCategory === 'reduce-enemy-effect' ||
+      item.value === 'reduce special charge');
 
   const hasChildren =
     'children' in item && item.children && item.children.length > 0;
@@ -61,7 +65,7 @@ export const FilterItemComponent: React.FC<{
         value={turnCountValue}
         onChange={(e) => {
           setTurnCountValue(e.target.value);
-          onTurnUpdate?.(e.target.value);
+          onTurnUpdate?.(item.id, e.target.value);
         }}
       />
     </Field>

@@ -97,8 +97,12 @@ export type FilterHierarchy = {
 };
 
 export interface FilterState {
+  id: string;
   category: FilterCategory | null;
   subcategory: AbilityFilter | null;
   effectType: EffectUnion | null;
   turnCount: string | null;
 }
+
+// Type alias for clarity
+export type FilterSetArray = FilterState[];

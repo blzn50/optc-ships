@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button';
 import {
   isFilterOpen,
   selectedFilterCount,
-  $filterState,
+  $filterStateArray,
   updateFilter,
-  resetFilter,
+  addFilter,
+  removeFilter,
+  clearFilters,
 } from '@/stores/filterStore';
 import type {
   FilterCategoryUI,
@@ -54,7 +56,7 @@ const updateFilterStructure = (
 // Main Filter Component
 export const FilterComponent: React.FC = () => {
   const $isFilterOpen = useStore(isFilterOpen);
-  const filterState = useStore($filterState);
+  const filterStateArray = useStore($filterStateArray);
   const [filterStructure, setFilterStructure] = useState<FilterCategoryUI[]>(
     buildFilterStructure(),
   );
@@ -84,26 +86,18 @@ export const FilterComponent: React.FC = () => {
   // Update filter structure when filter state changes
   useEffect(() => {
     const updatedStructure = updateFilterStructure(filterStructure, (item) => {
-      let isSelected = false;
-
-      if (item.type === 'effectType') {
-        // Check if this effect type is selected
-        isSelected =
-          item.value === filterState.effectType &&
-          item.category === filterState.category;
-      } else if (item.type === 'subcategory') {
-        // Check if this subcategory is selected
-        isSelected =
-          item.value === filterState.subcategory &&
-          filterState.effectType === null;
-      }
+      // Find all filter sets that match this filter item
+      const isSelected = filterStateArray.some(
+        (filter) => filter.id === item.id,
+      );
 
       return { ...item, isSelected };
     });
 
     setFilterStructure(updatedStructure);
-  }, [filterState]);
+  }, [filterStateArray]);
 
+  // only for expanding/collapsing the item with children
   const handleToggle = (id: string) => {
     const updatedStructure = updateFilterStructure(filterStructure, (item) => {
       if (item.id === id && 'children' in item) {
@@ -115,10 +109,8 @@ export const FilterComponent: React.FC = () => {
     setFilterStructure(updatedStructure);
   };
 
-  const handleTurnUpdate = (turn?: string) => {
-    updateFilter({
-      turnCount: turn || null,
-    });
+  const handleTurnUpdate = (filterId: string, turnCount?: string) => {
+    updateFilter(filterId, { turnCount: turnCount || null });
   };
 
   const handleSelect = (
@@ -127,22 +119,19 @@ export const FilterComponent: React.FC = () => {
   ) => {
     // Handle effect type selection/deselection
     if (item.type === 'effectType') {
-      const isAlreadySelected =
-        filterState.category === item.category &&
-        filterState.subcategory === item.subCategory &&
-        filterState.effectType === item.value;
+      const isAlreadySelected = filterStateArray.find(
+        (filterState) =>
+          filterState.category === item.category &&
+          filterState.subcategory === item.subCategory &&
+          filterState.effectType === item.value,
+      );
 
       if (isAlreadySelected) {
-        // Deselect by resetting filter
-        updateFilter({
-          category: null,
-          subcategory: null,
-          effectType: null,
-          turnCount: null,
-        });
+        removeFilter(item.id);
       } else {
-        // Select the effect type
-        updateFilter({
+        // Add the effect type
+        addFilter({
+          id: item.id,
           category: item.category,
           subcategory: item.subCategory,
           effectType: item.value,
@@ -153,7 +142,11 @@ export const FilterComponent: React.FC = () => {
   };
 
   // Count selected items based on filter state
-  const selectedCount = filterState.effectType ? 1 : 0;
+  const selectedCount = filterStateArray.reduce((count, filter) => {
+    let filterCount = count;
+    if (filter.effectType) filterCount++;
+    return filterCount;
+  }, 0);
 
   selectedFilterCount.set(selectedCount);
 
@@ -204,7 +197,7 @@ export const FilterComponent: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <Button
                     onClick={() => {
-                      resetFilter();
+                      clearFilters();
                       // Reset all selections in UI
                       const resetStructure = updateFilterStructure(
                         filterStructure,
@@ -242,7 +235,7 @@ export const FilterComponent: React.FC = () => {
               <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
                 <button
                   onClick={() => {
-                    console.log('Current filter state:', filterState);
+                    console.log('Current filter state:', filterStateArray);
                     // Close filter on mobile after applying
                     if (window.innerWidth < 1280) {
                       isFilterOpen.set(false);
@@ -254,7 +247,7 @@ export const FilterComponent: React.FC = () => {
                 </button>
                 <button
                   onClick={() => {
-                    resetFilter();
+                    clearFilters();
                     // Reset all selections and close all categories
                     const resetStructure = updateFilterStructure(
                       filterStructure,
