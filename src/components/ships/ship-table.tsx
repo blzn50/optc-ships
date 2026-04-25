@@ -38,6 +38,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { searchVal } from '@/stores/searchStore';
+import { unitsCount } from '@/data/units';
 
 interface ShipTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -252,7 +253,11 @@ export function ShipTable<TData, TValue>({
       <div className="fixed bottom-0 z-40 bg-white dark:bg-black w-full max-sm:left-0 sm:w-[39rem] md:w-[47rem] lg:w-[62rem] xl:w-[58.5rem] 2xl:w-[70.5rem]">
         <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 space-x-2 h-auto p-1">
           <div className="flex-1 text-sm">
-            Showing {pagination.pageIndex + 1} to{' '}
+            Showing{' '}
+            {table.getFilteredRowModel().rows.length > 0
+              ? pagination.pageIndex + 1
+              : 0}{' '}
+            to{' '}
             {table.getFilteredRowModel().rows.length < pagination.pageSize
               ? table.getFilteredRowModel().rows.length
               : pagination.pageSize * (pagination.pageIndex + 1)}{' '}
@@ -261,7 +266,7 @@ export function ShipTable<TData, TValue>({
               ? 'entry'
               : 'entries'}
             {!!$searchVal &&
-              ` (filtered from ${table.getPreFilteredRowModel().rows.length} total
+              ` (filtered from ${unitsCount} total
             entries)`}
           </div>
           <div className="space-x-2 self-end">

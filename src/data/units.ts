@@ -747,3 +747,5 @@ export const units: ShipOverview[] = [
     hasSpecial: 'no',
   }
 ];
+
+export const unitsCount = units.length
