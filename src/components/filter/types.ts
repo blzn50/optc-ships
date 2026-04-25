@@ -1,4 +1,8 @@
-import type { AbilityFilter, EffectUnion, FilterCategory } from "@/types/Filter";
+import type {
+  AbilityFilter,
+  EffectUnion,
+  FilterCategory,
+} from '@/types/Filter';
 
 // Discriminated union types for our filter structure
 export interface BaseFilterItem {
@@ -27,4 +31,7 @@ export interface FilterEffectTypeUI extends BaseFilterItem {
   subCategory: AbilityFilter;
 }
 
-export type FilterItem = FilterCategoryUI | FilterSubcategoryUI | FilterEffectTypeUI;
+export type FilterItem =
+  | FilterCategoryUI
+  | FilterSubcategoryUI
+  | FilterEffectTypeUI;
