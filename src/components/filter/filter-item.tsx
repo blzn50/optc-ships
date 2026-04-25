@@ -22,7 +22,7 @@ export const FilterItemComponent: React.FC<{
     item.type === 'effectType' &&
     item.isSelected &&
     (item.subCategory === 'reduce-status-effect' ||
-      item.subCategory === 'reduce-enemy-effect');
+      item.subCategory === 'reduce-enemy-effect' || item.value === 'reduce special charge');
 
   const hasChildren =
     'children' in item && item.children && item.children.length > 0;
