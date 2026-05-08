@@ -728,6 +728,50 @@ export const units: ShipOverview[] = [
       "Reduces crew's Bind/Paralysis duration by 2 turns, and reduces damage taken by 90% for 1 turn",
   },
   {
+    id: 70,
+    name: 'Thousand Sunny - Ship of an Emperor of the Sea',
+    colaCount: 15500,
+    superColaCount: 20,
+    effect:
+      "Reduces DEX and Fighter characters' Special charge time by 1 turn at start of quest and reduces Special charge time by a further 1 turn if a character's 1st class is Free Spirit. Boosts DEX and Fighter characters' HP by 1.3x, ATK by 1.5x, and boosts DEX-type Fighter characters' ATK by a further 1.3x. If 3 or more [Straw Hat Pirates] characters are on the crew, boosts DEX, Fighter, and [Straw Hat Pirates] [Four Emperors] characters' ATK by a further 1.3x. If 4 or more [Straw Hat Pirates] [Four Emperors] characters are on the crew and crew uses a Special to increase enemies' damage taken, further increases the effect by +0.1 (stackable with other further raising effects)",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces DEX characters' Special charge time by 1 turn, changes bottom-row characters' slots to [RCV], and if Captain is a [Straw Hat Pirates] [Four Emperors] character, applies -15% Fighter Resistance to all enemies for 1 turn",
+  },
+  {
+    id: 71,
+    name: 'Saber of Xebec - Ship of an Emperor of the Sea',
+    colaCount: 15500,
+    superColaCount: 20,
+    effect:
+      "Reduces QCK-type Free Spirit characters' Special charge time by 1 turn at start of quest, makes it easier to land PERFECT strikes, boosts QCK and Free Spirit characters' HP by 1.4x, ATK by 1.5x, and boosts QCK-type Free Spirit characters' ATK by a further 1.2x. If 3 or more [Blackbeard Pirates] [Worst Generation] characters are on the crew, boosts QCK, Free Spirit, and [Blackbeard Pirates] [Worst Generation] [Four Emperors] characters' ATK by a further 1.25x. If 3 or more [Blackbeard Pirates] [Four Emperors] characters are on the crew, boosts QCK, Free Spirit, and [Blackbeard Pirates] [Four Emperors] characters' damage dealt to DEF Down enemies by 1.1x",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces QCK characters' Special charge time by 1 turn, reduces crew's Paralysis duration by 1 turn, and if Captain is a [Blackbeard Pirates] [Four Emperors] character, applies -15% Free Spirit Resistance to all enemies for 1 turn",
+  },
+  {
+    id: 72,
+    name: 'Big Top Bluster - Ship of an Emperor of the Sea',
+    colaCount: 15500,
+    superColaCount: 20,
+    effect:
+      "Reduces INT and Slasher characters' Special charge time by 1 turn at start of quest and reduces INT-type Slasher characters' Special charge time by a further 1 turn. boosts INT and Slasher characters' HP by 1.3x, ATK by 1.5x, and boosts INT-type Slasher characters' ATK by a further 1.3x. If 3 or more [Cross Guild] [Four Emperors] characters are on the crew, boosts INT, Slasher, and [Cross Guild] [Four Emperors] characters' ATK by a further 1.3x. If 3 or more [Cross Guild] [Four Emperors] characters are on the crew and crew uses a Special to boost Critical ATK, further increases the effect by 8% (stackable with other further raising effects)",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces INT characters' Special charge time by 1 turn, boosts Slasher characters' Critical rate by 20% for 1 turn, and if Captain is a [Cross Guild] [Four Emperors] character, applies -15% Slasher Resistance to all enemies for 1 turn",
+  },
+  {
+    id: 73,
+    name: 'Red Force - Ship of an Emperor of the Sea',
+    colaCount: 15500,
+    superColaCount: 20,
+    effect:
+      "Reduces STR and Cerebral characters' Special charge time by 1 turn at start of quest and reduces STR-type Cerebral characters' Special charge time by a further 1 turn. Boosts STR and Cerebral characters' HP by 1.3x, ATK by 1.5x, and boosts STR-type Cerebral characters' ATK by a further 1.3x. If 2 or more [Red-Haired Pirates] characters are on the crew, boosts STR, Cerebral, and [Red-Haired Pirates] [Four Emperors] characters' ATK by a further 1.3x. If 2 or more [Red-Haired Pirates] [Four Emperors] characters are on the crew and crew uses a Special to boost ATK, further increases the effect by +0.1 (stackable with other further raising effects)",
+    hasSpecial: 'afterMRank5',
+    special:
+      "Reduces STR characters' Special charge time by 1 turn, reduces crew's decrease chain multiplier growth rate duration by 1 turn, and if Captain is a [Red-Haired Pirates] [Four Emperors] character, applies -15% Cerebral Resistance to all enemies for 1 turn",
+  },
+  {
     id: 74,
     name: 'Thousand Sunny - 12th Anniversary Special Model',
     colaCount: 0,
