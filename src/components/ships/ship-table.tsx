@@ -310,7 +310,7 @@ export function ShipTable<TData, TValue>({
       </div>
 
       {/* Spacer to prevent content overlap */}
-      <div className="h-[3rem] flex-shrink-0"></div>
+      <div className="h-[4.5rem] sm:h-[3rem] flex-shrink-0"></div>
     </div>
   );
 }
