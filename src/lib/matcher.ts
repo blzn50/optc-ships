@@ -59,7 +59,7 @@ export const filterMatcher = (
       return {
         textMatcher: 'boosts damage dealt to def down enemies by 1x for 1 turn',
         regexMatcher:
-          /boosts (damage dealt to def down enemies) by (\d+(\.\d+)?)x for (\d+) turns?/i,
+          /boosts (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?(?:characters?'?\s+)?(damage dealt to def down enemies) by (\d+(\.\d+)?)x(?:\s+for (\d+) turns?)?/i,
       };
     case 'ignited damage boost':
       return {
