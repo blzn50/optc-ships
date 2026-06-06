@@ -29,7 +29,8 @@ export function convertToPSTTimestamp() {
  * @returns no. of milliseconds
  */
 export function getPSTTimestamp(dateString: string) {
-  return new Date(dateString + '-08:00').getTime();
+  const dateInUtc = new Date(dateString + 'Z');
+  return new Date(dateInUtc.getTime() - 8 * 60 * 60 * 1000).getTime();
 }
 
 // public\full\ship_0001_full.png
