@@ -89,7 +89,12 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       'special reverse',
       'limit special uses',
     ],
-    'boost-damage': ['atk', 'poison damage boost', 'delayed damage boost', 'def down damage boost'],
+    'boost-damage': [
+      'atk',
+      'poison damage boost',
+      'delayed damage boost',
+      'def down damage boost',
+    ],
     'fixed-damage': ['end of turn damage'],
   },
   special: {

@@ -44,7 +44,10 @@ export function ShipModificationTable<TData, TValue>({
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="hover:bg-inherit max-sm:flex max-sm:flex-col">
+              <TableRow
+                key={headerGroup.id}
+                className="hover:bg-inherit max-sm:flex max-sm:flex-col"
+              >
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}

@@ -1750,7 +1750,7 @@ export const details: Record<number, ShipInfo> = {
       '-',
       'Reduces the duration of all enemy barriers by 1 turn',
       'Reduces the duration of all enemy barriers by 1 turn',
-      "Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn",
+      'Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn',
     ],
     specialEffect1:
       "Reduces Despair duration by 1 turn and boosts INT-type Striker characters' ATK by a further 1.2x",
