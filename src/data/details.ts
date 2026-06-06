@@ -1735,7 +1735,7 @@ export const details: Record<number, ShipInfo> = {
       "Slightly boosts crew's chance of landing on [TND] slots, and if Captain is a STR or DEX type, boosts crew's ATK by approximately 1.6x when they have [TND] [BOMB] [SUPERBOMB] [WANO] slots (1.5x otherwise)",
       "Boosts crew's HP by 1.2x, slightly boosts crew's chance of landing on [TND] slots, and if Captain is a STR or DEX type, boosts crew's ATK by approximately 1.65x when they have [TND] [BOMB] [SUPERBOMB] [WANO] slots (1.55x otherwise)",
       "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, boosts crew's ATK by 1.65x, and boosts crew's ATK by approximately 1.8x when they have [BOMB] [SUPERBOMB] slots",
-      "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
+      "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] [INT] slots",
     ],
     cd: ['-', '-', '-', '-', '-', '-', '-', '-', '-', 10, 10, 10],
     special: [
@@ -1752,18 +1752,20 @@ export const details: Record<number, ShipInfo> = {
       'Reduces the duration of all enemy barriers by 1 turn',
       'Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn',
     ],
-    specialEffect1: 'Reduces Despair duration by 1 turn',
-    specialEffect2: 'Reduces Special charge time by 1 turn at start of quest',
+    specialEffect1:
+      "Reduces Despair duration by 1 turn and boosts INT-type Striker characters' ATK by a further 1.2x",
+    specialEffect2:
+      "Reduces Special charge time by 1 turn at start of quest and boosts crew's ATK by approximately 2.05x when they have [BOMB] [SUPERBOMB] [INT] [TND] slots [Updated Special] (10 turns): Reduces the duration of all enemy barriers by 1 turn. If crew has slot ATK multiplier modifying effect when Special is launched, applies -15% INT Resistance to all enemies for 1 turn, then after that, changes the ATK multiplier of [BOMB] [SUPERBOMB] [INT] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB] [INT], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn. If 6 INT characters are on the crew, reduces Striker characters' Special charge time by 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
-        "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
-        "Reduces Special charge time by 1 turn at start of quest, boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
+        "Boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] [INT] slots, and boosts INT-type Striker characters' ATK by a further 1.2x",
+        "Reduces Special charge time by 1 turn at start of quest, boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, boosts crew's ATK by approximately 2.05x when they have [BOMB] [SUPERBOMB] [INT] [TND] slots, and boosts INT-type Striker characters' ATK by a further 1.2x",
       ],
       cd: [10, 10],
       special: [
         'Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn',
-        'Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn',
+        "Reduces the duration of all enemy barriers by 1 turn. If crew has slot ATK multiplier modifying effect when Special is launched, applies -15% INT Resistance to all enemies for 1 turn, then after that, changes the ATK multiplier of [BOMB] [SUPERBOMB] [INT] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB] [INT], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn. If 6 INT characters are on the crew, reduces Striker characters' Special charge time by 1 turn",
       ],
     },
   },
@@ -2307,7 +2309,7 @@ export const details: Record<number, ShipInfo> = {
       "If 3 or more [Blackbeard Pirates] [Worst Generation] characters are on the crew, boosts QCK, Free Spirit, and [Blackbeard Pirates] [Worst Generation] [Four Emperors] characters' ATK by a further 1.25x",
     specialEffect2:
       "Reduces QCK-type Free Spirit characters' Special charge time by 1 turn at start of quest, and makes it easier to land PERFECT strikes. If 3 or more [Blackbeard Pirates] [Four Emperors] characters are on the crew, boosts QCK, Free Spirit, and [Blackbeard Pirates] [Four Emperors] characters' damage dealt to DEF Down enemies by 1.1x / Special (13 turns): Reduces QCK characters' Special charge time by 1 turn, reduces crew's Paralysis duration by 1 turn, and if Captain is a [Blackbeard Pirates] [Four Emperors] character, applies -15% Free Spirit Resistance to all enemies for 1 turn",
-      modification: {
+    modification: {
       phase: [1, 2],
       effect: [
         "Makes it a little easier to land PERFECT strikes, boosts QCK and Free Spirit characters' HP by 1.4x, ATK by 1.5x, and boosts QCK-type Free Spirit characters' ATK by a further 1.2x. If 3 or more [Blackbeard Pirates] [Worst Generation] characters are on the crew, boosts QCK, Free Spirit, and [Blackbeard Pirates] [Worst Generation] [Four Emperors] characters' ATK by a further 1.25x",
@@ -2344,7 +2346,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts INT-type Slasher characters' ATK by a further 1.3x. If 3 or more [Cross Guild] [Four Emperors] characters are on the crew, boosts INT, Slasher, and [Cross Guild] [Four Emperors] characters' ATK by a further 1.3x",
     specialEffect2:
       "Reduces INT-type Slasher characters' Special charge time by a further 1 turn at start of quest. If 3 or more [Cross Guild] [Four Emperors] characters are on the crew and crew uses a Special to boost Critical ATK, further increases the effect by 8% (stackable with other further raising effects) / Special (13 turns): Reduces INT characters' Special charge time by 1 turn, boosts Slasher characters' Critical rate by 20% for 1 turn, and if Captain is a [Cross Guild] [Four Emperors] character, applies -15% Slasher Resistance to all enemies for 1 turn",
-      modification: {
+    modification: {
       phase: [1, 2],
       effect: [
         "Reduces INT and Slasher characters' Special charge time by 1 turn at start of quest, boosts INT and Slasher characters' HP by 1.3x, ATK by 1.5x, and boosts INT-type Slasher characters' ATK by a further 1.3x. If 3 or more [Cross Guild] [Four Emperors] characters are on the crew, boosts INT, Slasher, and [Cross Guild] [Four Emperors] characters' ATK by a further 1.3x",
@@ -2381,7 +2383,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts STR-type Cerebral characters' ATK by a further 1.3x. If 2 or more [Red-Haired Pirates] characters are on the crew, boosts STR, Cerebral, and [Red-Haired Pirates] [Four Emperors] characters' ATK by a further 1.3x",
     specialEffect2:
       "Reduces STR-type Cerebral characters' Special charge time by a further 1 turn at start of quest. If 2 or more [Red-Haired Pirates] [Four Emperors] characters are on the crew and crew uses a Special to boost ATK, further increases the effect by +0.1 (stackable with other further raising effects) / Special (13 turns): Reduces STR characters' Special charge time by 1 turn, reduces crew's decrease chain multiplier growth rate duration by 1 turn, and if Captain is a [Red-Haired Pirates] [Four Emperors] character, applies -15% Cerebral Resistance to all enemies for 1 turn",
-      modification: {
+    modification: {
       phase: [1, 2],
       effect: [
         "Reduces STR and Cerebral characters' Special charge time by 1 turn at start of quest, boosts STR and Cerebral characters' HP by 1.3x, ATK by 1.5x, and boosts STR-type Cerebral characters' ATK by a further 1.3x. If 2 or more [Red-Haired Pirates] characters are on the crew, boosts STR, Cerebral, and [Red-Haired Pirates] [Four Emperors] characters' ATK by a further 1.3x",

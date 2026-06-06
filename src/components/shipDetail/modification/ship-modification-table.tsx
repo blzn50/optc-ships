@@ -44,11 +44,14 @@ export function ShipModificationTable<TData, TValue>({
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="hover:bg-inherit">
+              <TableRow
+                key={headerGroup.id}
+                className="hover:bg-inherit max-sm:flex max-sm:flex-col"
+              >
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
-                    className="bg-[#553c2c] border-l border-slate-300 text-slate-50 font-semibold"
+                    className="bg-[#553c2c] border-l border-slate-300 text-slate-50 font-semibold max-sm:!w-full max-sm:border-l-0 max-sm:first-of-type:border-b"
                     style={{
                       minWidth: header.getSize(),
                       width: header.getSize() + 20,
@@ -70,7 +73,7 @@ export function ShipModificationTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  className="odd:hover:bg-inherit odd:even:bg-muted/50 odd:bg-inherit even:bg-muted/50"
+                  className="max-sm:flex max-sm:flex-col odd:hover:bg-inherit odd:even:bg-muted/50 odd:bg-inherit even:bg-muted/50"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id} className="px-2 py-3">

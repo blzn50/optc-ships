@@ -530,10 +530,10 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, and boosts crew's ATK by approximately 2x when they have [BOMB] [SUPERBOMB] slots",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's HP by 1.35x, slightly boosts crew's chance of landing on [TND] slots, reduces crew's Despair duration by 1 turn, makes [BOMB] [SUPERBOMB] slots have matching slot effects, boosts crew's ATK by 1.7x, boosts crew's ATK by approximately 2.05x when they have [BOMB] [SUPERBOMB] [INT] [TND] slots, and boosts INT-type Striker characters' ATK by a further 1.2x",
     hasSpecial: 'yes',
     special:
-      'Reduces the duration of all enemy barriers by 1 turn, and changes the ATK multiplier of [BOMB] [SUPERBOMB] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn',
+      "Reduces the duration of all enemy barriers by 1 turn. If crew has slot ATK multiplier modifying effect when Special is launched, applies -15% INT Resistance to all enemies for 1 turn, then after that, changes the ATK multiplier of [BOMB] [SUPERBOMB] [INT] slots to 2.25x when slots match (normally 2x when matching, 1x otherwise for [BOMB] [INT], 1.5x otherwise for [SUPERBOMB]), 0.5x when unfavorable, 1.5x otherwise for 1 turn. If 6 INT characters are on the crew, reduces Striker characters' Special charge time by 1 turn",
   },
   {
     id: 54,
