@@ -1,1 +1,1 @@
-export const DB_VERSION = 10;
+export const DB_VERSION = 11;
