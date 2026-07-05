@@ -103,10 +103,10 @@ export const units: ShipOverview[] = [
     colaCount: 15180,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts QCK characters' ATK by 1.8x, HP by 1.5x, makes crew's [STR] [DEX] slots have matching slot effects, reduces Despair duration by 1 turn, and boosts crew's chance of landing on [QCK] slots",
+      "Reduces Special charge time by 1 turn at start of quest, boosts QCK characters' ATK by 1.8x, HP by 1.5x, makes crew's [STR] [DEX] slots have matching slot effects, reduces Despair duration by 1 turn, boosts crew's chance of landing on [QCK] slots, and further boosts QCK-Free Spirit characters' ATK by 1.2x. If crew's HP is 30% or below, further boosts QCK and Free Spirit characters' ATK by 1.1x",
     hasSpecial: 'afterMRank5',
     special:
-      "Reduces crew's Burn duration by 1 turn and boosts the type effects of normal attacks for QCK characters by 2.25x for 2 turns",
+      "Reduces crew's Burn duration by 1 turn. If crew has type effect boost when Special is launched, applies -15% QCK Resistance to all enemies for 1 turn (boosts the type effects of normal attacks for QCK characters by 2.25x for 2 turns otherwise)",
   },
   {
     id: 11,
