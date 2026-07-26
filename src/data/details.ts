@@ -2413,6 +2413,11 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.5x, HP by 1.2x, and makes it easier to land PERFECT strikes",
     ],
   },
+  75: {
+    name: 'Thousand Sunny - The Voyage to Elbaph',
+    obtain: "Purchase from Rayleigh's Bazaar for 1 training point",
+    effect: ["Boosts crew's ATK by 1.2x and makes it easier to land PERFECT strikes"],
+  }
 };
 /*
 NUMBER: {

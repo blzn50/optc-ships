@@ -789,6 +789,15 @@ export const units: ShipOverview[] = [
       ],
     hasSpecial: 'no',
   },
+  {
+    id: 75,
+    name: 'Thousand Sunny - The Voyage to Elbaph',
+    colaCount: 0,
+    superColaCount: 0,
+    effect:
+      "Boosts crew's ATK by 1.2x and makes it easier to land PERFECT strikes",
+    hasSpecial: 'no',
+  },
 ];
 
 export const unitsCount = units.length;
