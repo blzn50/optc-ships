@@ -494,10 +494,10 @@ export const units: ShipOverview[] = [
     colaCount: 15202,
     superColaCount: 20,
     effect:
-      "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
+      "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 2x when they have [RAINBOW], [WANO] or own type slots (1.8x otherwise), boosts DEX-type Striker characters' ATK by a further 1.2x, and heals crew by 2,000 HP at end of turn",
     hasSpecial: 'afterMRank5',
     special:
-      "Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
+      "Doubles damage taken for 3 turns, but if crew has ATK boost and slot effect boost at the same time when Special is launched, further increases slot effect boost by +0.25 (boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn otherwise)",
   },
   {
     id: 50,
@@ -787,6 +787,15 @@ export const units: ShipOverview[] = [
               ? 1
               : 2
       ],
+    hasSpecial: 'no',
+  },
+  {
+    id: 75,
+    name: 'Thousand Sunny - The Voyage to Elbaph',
+    colaCount: 0,
+    superColaCount: 0,
+    effect:
+      "Boosts crew's ATK by 1.2x and makes it easier to land PERFECT strikes",
     hasSpecial: 'no',
   },
 ];

@@ -1650,21 +1650,21 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Slasher and Striker characters' HP by 1.25x and ATK by 1.6x when they have [RAINBOW], [WANO] or own type slots (1.5x ATK otherwise), and heals crew by 750 HP at the end of turn",
       "Reduces Special charge time by 1 turn at start of quest, boosts Slasher and Striker characters' HP by 1.25x and ATK by 1.6x when they have [RAINBOW], [WANO] or own type slots (1.5x ATK otherwise), and heals crew by 1,000 HP at the end of turn",
       "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.65x when they have [RAINBOW], [WANO] or own type slots (1.55x otherwise) and heals crew by 2,000 HP at end of turn",
-      "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
+      "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 2x when they have [RAINBOW], [WANO] or own type slots (1.8x otherwise) and heals crew by 2,000 HP at end of turn",
     ],
-    specialEffect1: "Boosts crew's chance of landing on own type slot",
+    specialEffect1: "Boosts crew's chance of landing on own type slot and boosts DEX-type Striker characters' ATK by a further 1.2x",
     specialEffect2:
-      "Reduces Special Bind duration by 1 turn [Special] (11 turns): Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
+      "Reduces Special Bind duration by 1 turn [Special] (11 turns): Doubles damage taken for 3 turns, but if crew has ATK boost and slot effect boost at the same time when Special is launched, further increases slot effect boost by +0.25 (boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn otherwise)",
     modification: {
       phase: [1, 2],
       effect: [
-        "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
-        "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.75x when they have [RAINBOW], [WANO] or own type slots (1.6x otherwise) and heals crew by 2,000 HP at end of turn",
+        "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 2x when they have [RAINBOW], [WANO] or own type slots (1.8x otherwise), boosts DEX-type Striker characters' ATK by a further 1.2x, and heals crew by 2,000 HP at end of turn",
+        "Reduces Special charge time by 1 turn at start of quest, boosts crew's chance of landing on own type slot, reduces crew's Special Bind duration by 1 turn, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 2x when they have [RAINBOW], [WANO] or own type slots (1.8x otherwise), boosts DEX-type Striker characters' ATK by a further 1.2x, and heals crew by 2,000 HP at end of turn",
       ],
       cd: ['-', 11],
       special: [
         '-',
-        "Doubles damage taken for 3 turns, but boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn",
+        "Doubles damage taken for 3 turns, but if crew has ATK boost and slot effect boost at the same time when Special is launched, further increases slot effect boost by +0.25 (boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn otherwise)",
       ],
     },
   },
@@ -2413,6 +2413,11 @@ export const details: Record<number, ShipInfo> = {
       "Boosts crew's ATK by 1.5x, HP by 1.2x, and makes it easier to land PERFECT strikes",
     ],
   },
+  75: {
+    name: 'Thousand Sunny - The Voyage to Elbaph',
+    obtain: "Purchase from Rayleigh's Bazaar for 1 training point",
+    effect: ["Boosts crew's ATK by 1.2x and makes it easier to land PERFECT strikes"],
+  }
 };
 /*
 NUMBER: {
