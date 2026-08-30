@@ -291,10 +291,10 @@ export const units: ShipOverview[] = [
     colaCount: 15194,
     superColaCount: 20,
     effect:
-      "Reduces Striker characters' Special charge time by 1 turn at start of quest, makes it a little easier to land PERFECT strikes, reduces damage taken by 10%, boosts Driven characters' ATK by 1.1x, and if 6 Striker characters are on the crew, boosts crew's ATK by a further 1.75x and HP by 1.6x",
+      "Reduces Striker characters' Special charge time by 1 turn at start of quest, makes it a little easier to land PERFECT strikes, and reduces damage taken by 10%. If 5 or more PSY characters are on the crew, boosts Striker characters' ATK by a further 1.25x, and boosts PSY and Driven characters' ATK by 1.1x. If 6 PSY characters or 6 Striker characters are on the crew, boosts crew's ATK by a further 1.75x, and if 6 Striker characters are on the crew, boosts crew's HP by 1.6x",
     hasSpecial: 'yes',
     special:
-      "Massively reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn",
+      "Massively reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, extends the duration of crew's Critical ATK boost by 1 turn, and boosts crew's Critical rate by 20% for 2 turns",
   },
   {
     id: 29,
