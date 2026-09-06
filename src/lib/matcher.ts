@@ -250,6 +250,18 @@ export const filterMatcher = (
         regexMatcher:
           /(applies paralysis)(?: \([^)]+\))? to all enemies for (\d+) turns?/i,
       };
+    case 'buff duration extender':
+      return {
+        textMatcher: `extends the duration of the effect by ${turnCount} turn`,
+        regexMatcher:
+          /extends the duration of ([\[\]\w\s.,'’-]+?) by (\d+) turns?/i,
+      };
+    case 'critical rate':
+      return {
+        textMatcher: `boosts Critical rate by 1% for ${turnCount} turn`,
+        regexMatcher:
+          /boosts (?:([\[\]\w\s.,'’-]*(?:and\s+[\[\]\w\s.,'’-]+)?\s+)?)?(Critical rate) by \d+% for (\d+) turns?/i,
+      };
     default:
       return {
         textMatcher: '',

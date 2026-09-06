@@ -5,7 +5,8 @@ export type AbilityFilter =
   | 'reduce-status-effect'
   | 'boost-damage'
   | 'apply-enemy-effect'
-  | 'fixed-damage';
+  | 'fixed-damage'
+  | 'modify-buff';
 export type StatusDebuff =
   | 'bind'
   | 'despair'
@@ -40,10 +41,7 @@ export type EnemyEffect =
   | 'barrier'
   | 'resilience';
 export type EnemyDebuff =
-  | 'enemy def down'
-  | 'negative resistance'
-  | 'delay'
-  | 'enemy paralysis';
+  'enemy def down' | 'negative resistance' | 'delay' | 'enemy paralysis';
 export type DamageBoost =
   | 'base atk'
   | 'atk'
@@ -57,11 +55,12 @@ export type DamageBoost =
   | 'def down damage boost'
   | 'poison damage boost'
   | 'percent damage boost'
-  | 'delayed damage boost';
+  | 'delayed damage boost'
+  | 'critical rate';
+
+export type ModifyBuff = 'buff duration extender';
 export type FixedDamage =
-  | 'instant damage'
-  | 'end of turn damage'
-  | 'percent damage';
+  'instant damage' | 'end of turn damage' | 'percent damage';
 
 export type EffectUnion =
   | StatusDebuff
@@ -69,6 +68,7 @@ export type EffectUnion =
   | EnemyEffect
   | DamageBoost
   | EnemyDebuff
+  | ModifyBuff
   | FixedDamage;
 
 type AbilityFilterToEffects = {
@@ -76,6 +76,7 @@ type AbilityFilterToEffects = {
   'boost-damage': DamageBoost[];
   'reduce-status-effect': StatusDebuff[];
   'fixed-damage': FixedDamage[];
+  'modify-buff': ModifyBuff[];
 };
 
 type SpecialFilterToEffects = {
@@ -85,6 +86,7 @@ type SpecialFilterToEffects = {
   'apply-enemy-effect': EnemyDebuff[];
   'reduce-status-effect': StatusDebuff[];
   'fixed-damage': FixedDamage[];
+  'modify-buff': ModifyBuff[];
 };
 
 export type FilterHierarchy = {

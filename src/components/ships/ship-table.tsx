@@ -38,6 +38,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { searchVal } from '@/stores/searchStore';
+import { selectedFilterCount } from '@/stores/filterStore';
 import { unitsCount } from '@/data/units';
 
 interface ShipTableProps<TData, TValue> {
@@ -265,7 +266,7 @@ export function ShipTable<TData, TValue>({
             {table.getFilteredRowModel().rows.length === 1
               ? 'entry'
               : 'entries'}
-            {!!$searchVal &&
+            {!!($searchVal || selectedFilterCount.get()) &&
               ` (filtered from ${unitsCount} total
             entries)`}
           </div>
