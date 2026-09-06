@@ -113,6 +113,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       'percent damage boost',
       'ignited damage boost',
       'def down damage boost',
+      'critical rate',
     ],
     'modify-buff': ['buff duration extender'],
     'reduce-status-effect': [
