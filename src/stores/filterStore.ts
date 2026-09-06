@@ -57,16 +57,6 @@ export const clearFilters = () => {
   $filterStateArray.set([]);
 };
 
-// Function to reset a specific filter to defaults
-// export const resetFilter = (index: number) => {
-//   updateFilter(index, {
-//     category: null,
-//     subcategory: null,
-//     effectType: null,
-//     turnCount: null,
-//   });
-// };
-
 // Define our filter hierarchy with better structure
 export const FILTER_HIERARCHY: FilterHierarchy = {
   ability: {
@@ -95,6 +85,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       'delayed damage boost',
       'def down damage boost',
     ],
+    'modify-buff': ['buff duration extender'],
     'fixed-damage': ['end of turn damage'],
   },
   special: {
@@ -123,6 +114,7 @@ export const FILTER_HIERARCHY: FilterHierarchy = {
       'ignited damage boost',
       'def down damage boost',
     ],
+    'modify-buff': ['buff duration extender'],
     'reduce-status-effect': [
       'bind',
       'despair',
@@ -162,8 +154,6 @@ const searchForCondition = (
   // Extract condition and turn count from search text
   const searchMatch = searchText.match(regExpression);
 
-  // console.log({ searchText, searchMatch, textToSearch, regExpression });
-
   if (!searchMatch) return false;
 
   // Handle cases where first capture group might be undefined (for reduce special charge)
@@ -180,8 +170,6 @@ const searchForCondition = (
   let match;
 
   while ((match = regex.exec(textToSearch)) !== null) {
-    // console.log("regex.exec(textToSearch)", regex.exec(textToSearch));
-    // console.log({ match });
     const [, conditionsPart, turnsCount] = match;
     const turns = parseInt(turnsCount, 10);
 
@@ -213,6 +201,11 @@ const searchForCondition = (
         return true;
       }
 
+      // Special case: if the search condition is generic ('the effect'),
+      // any match of the regex is considered a success.
+      if (searchCondition === 'the effect' || searchCondition === 'effect') {
+        return true;
+      }
       // If search condition is a single word, check if it appears as a word in the part
       // if (!searchCondition.includes(" ")) {
       //   const words = part.split(/\s+/);

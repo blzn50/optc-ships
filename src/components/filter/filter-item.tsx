@@ -26,7 +26,8 @@ export const FilterItemComponent: React.FC<{
     item.isSelected &&
     (item.subCategory === 'reduce-status-effect' ||
       item.subCategory === 'reduce-enemy-effect' ||
-      item.value === 'reduce special charge');
+      item.value === 'reduce special charge' ||
+      item.value === 'buff duration extender');
 
   const hasChildren =
     'children' in item && item.children && item.children.length > 0;
