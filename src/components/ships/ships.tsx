@@ -21,8 +21,8 @@ export function Ships() {
     if (dbVersion < DB_VERSION) {
       setTimeout(() => {
         toast({
-          title: 'Update: 30 Aug 2026',
-          description: 'Mister Luffy Go update',
+          title: 'Update: 26 Sep 2026',
+          description: 'Rocketman update',
         });
       }, 500);
       // update local storage
