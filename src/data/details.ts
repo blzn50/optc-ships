@@ -747,7 +747,7 @@ export const details: Record<number, ShipInfo> = {
       "Boosts Powerhouse characters' ATK by 1.4x, drastically cuts other classes' HP, and heals HP at the end of the turn (depending on number of Powerhouse characters in your crew)",
       "Boosts Powerhouse characters' ATK by 1.55x, drastically cuts other classes' HP, and heals HP at the end of the turn (depending on number of Powerhouse characters in your crew) <hr><b># of Powerhouse units:</b> <ul><li>(1) 1 HP healed per turn</li><li>(2) 10 HP healed per turn</li><li>(3) 20 HP healed per turn</li><li>(4) 30 HP healed per turn</li><li>(5) 100 HP healed per turn</li><li>(6) 900 HP healed per turn</li></ul>",
       "Boosts Powerhouse characters' ATK by 1.7x, cuts crew's HP by 30%, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 1500 HP)",
-      "Boosts Powerhouse characters' ATK by 1.85x, cuts crew's HP by 30%, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP)",
+      "Boosts Powerhouse characters' ATK by 1.85x, cuts crew's HP by 30%, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP), and if 6 Powerhouse characters are on the crew, boosts PSY characters' ATK by a further 1.1x",
     ],
     cd: [25, 23, 22, 21, 20, 19, 19, 19, 18, 17, 11, 11],
     special: [
@@ -765,19 +765,19 @@ export const details: Record<number, ShipInfo> = {
       'Deals 99,999 non-type damage to one enemy, boosts the type effects of normal attacks for Powerhouse characters by 2x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)',
     ],
     specialEffect1:
-      "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest",
+      "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, and boosts PSY-type Powerhouse characters' ATK by a further 1.15x",
     specialEffect2:
-      "Reduces Paralysis duration by 1 turn [Updated Special] (11 turns): Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
+      "Reduces Paralysis duration by 1 turn [Updated Special] (11 turns): Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, further increases crew's type effect boost by +0.2, boosts Powerhouse characters' slot effects by 2.25x for 1 turn, then after that, boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn",
     modification: {
       phase: [1, 2],
       effect: [
-        "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP)",
-        "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, reduces crew's Paralysis duration by 1 turn, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP)",
+        "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, but boosts PSY type Powerhouse characters' ATK by a further 1.15x, heals HP at end of turn based on number of Powerhouse characters in the crew (up to 2,500 HP), and if 6 Powerhouse characters are on the crew, boosts PSY characters' ATK by a further 1.1x",
+        "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, but boosts PSY type Powerhouse characters' ATK by a further 1.15x, reduces crew's Paralysis duration by 1 turn, heals HP at end of turn based on number of Powerhouse characters in the crew (up to 2,500 HP), and if 6 Powerhouse characters are on the crew, boosts PSY characters' ATK by a further 1.1x",
       ],
       cd: [11, 11],
       special: [
         'Deals 99,999 non-type damage to one enemy, boosts the type effects of normal attacks for Powerhouse characters by 2x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)',
-        "Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
+        "Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, boosts Powerhouse characters' slot effects by 2.25x for 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
       ],
     },
   },
@@ -1023,7 +1023,8 @@ export const details: Record<number, ShipInfo> = {
       "Massively reduces a portion of each enemy's dealt damage that exceeds 5,000 for 1 turn",
       "Massively reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn",
     ],
-    specialEffect1: "Reduces damage taken by 10%, and if 5 or more PSY characters are on the crew, boosts Striker characters' ATK by a further 1.25x",
+    specialEffect1:
+      "Reduces damage taken by 10%, and if 5 or more PSY characters are on the crew, boosts Striker characters' ATK by a further 1.25x",
     specialEffect2:
       "Boosts crew's HP by 1.6x when 6 Striker characters are on the crew [Updated Special] (12 turns): Massively reduces a portion of each enemy's dealt damage that exceeds 3,000 for 1 turn, extends the duration of crew's Critical ATK boost by 1 turn, and boosts crew's Critical rate by 20% for 2 turns",
     modification: {
@@ -1652,7 +1653,8 @@ export const details: Record<number, ShipInfo> = {
       "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 1.65x when they have [RAINBOW], [WANO] or own type slots (1.55x otherwise) and heals crew by 2,000 HP at end of turn",
       "Reduces Special charge time by 1 turn at start of quest, boosts Slasher, Striker, and Cerebral characters' HP by 1.25x, boosts their ATK by approximately 2x when they have [RAINBOW], [WANO] or own type slots (1.8x otherwise) and heals crew by 2,000 HP at end of turn",
     ],
-    specialEffect1: "Boosts crew's chance of landing on own type slot and boosts DEX-type Striker characters' ATK by a further 1.2x",
+    specialEffect1:
+      "Boosts crew's chance of landing on own type slot and boosts DEX-type Striker characters' ATK by a further 1.2x",
     specialEffect2:
       "Reduces Special Bind duration by 1 turn [Special] (11 turns): Doubles damage taken for 3 turns, but if crew has ATK boost and slot effect boost at the same time when Special is launched, further increases slot effect boost by +0.25 (boosts Slasher, Striker, and Cerebral characters' ATK and slot effects by 1.75x for 1 turn otherwise)",
     modification: {
@@ -2416,8 +2418,10 @@ export const details: Record<number, ShipInfo> = {
   75: {
     name: 'Thousand Sunny - The Voyage to Elbaph',
     obtain: "Purchase from Rayleigh's Bazaar for 1 training point",
-    effect: ["Boosts crew's ATK by 1.2x and makes it easier to land PERFECT strikes"],
-  }
+    effect: [
+      "Boosts crew's ATK by 1.2x and makes it easier to land PERFECT strikes",
+    ],
+  },
 };
 /*
 NUMBER: {

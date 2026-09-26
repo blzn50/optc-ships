@@ -219,10 +219,10 @@ export const units: ShipOverview[] = [
     colaCount: 15228,
     superColaCount: 20,
     effect:
-      "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, reduces crew's Paralysis duration by 1 turn, and heals HP at end of turn (more depending on number of Powerhouses in crew; up to 2500 HP)",
+      "Reduces Powerhouse characters' Special charge time by 1 turn at start of quest, boosts their ATK by 1.85x, cuts crew's HP by 30%, but boosts PSY type Powerhouse characters' ATK by a further 1.15x, reduces crew's Paralysis duration by 1 turn, heals HP at end of turn based on number of Powerhouse characters in the crew (up to 2,500 HP), and if 6 Powerhouse characters are on the crew, boosts PSY characters' ATK by a further 1.1x",
     hasSpecial: 'yes',
     special:
-      "Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
+      "Deals 99,999 non-type damage to one enemy, reduces all enemies' Resilience duration by 1 turn, boosts Powerhouse characters' slot effects by 2.25x for 1 turn, and boosts the type effects of normal attacks for Powerhouse characters by 2.25x for 1 turn (increases type effect boost by +0.2 if boost is already in effect)",
   },
   {
     id: 22,
